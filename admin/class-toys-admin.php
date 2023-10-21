@@ -77,8 +77,8 @@ class Toys_Admin
 
 		if ($hook == "toplevel_page_toys") {
 
-			wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/toys-admin.css', array(), $this->version, 'all');
-			wp_enqueue_style("$this->plugin_name-backend", plugin_dir_url(__FILE__) . 'css/backend.css', array(), $this->version, 'all');
+			wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/toys-admin.css', array(), md5(time()) ?? $this->version, 'all');
+			wp_enqueue_style("$this->plugin_name-backend", plugin_dir_url(__FILE__) . 'css/backend.css', array(), md5(time()) ?? $this->version, 'all');
 		}
 	}
 
@@ -103,8 +103,8 @@ class Toys_Admin
 		 */
 
 		if ($hook == "toplevel_page_toys") {
-			wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/toys-admin.js', array('jquery'), $this->version, false);
-			wp_enqueue_script("$this->plugin_name-backend", plugin_dir_url(__FILE__) . 'js/backend.js', array('jquery'), $this->version, true);
+			wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/toys-admin.js', array('jquery'), md5(time()) ?? $this->version, false);
+			wp_enqueue_script("$this->plugin_name-backend", plugin_dir_url(__FILE__) . 'js/backend.js', array('jquery'), md5(time()) ?? $this->version, true);
 		}
 	}
 
@@ -139,7 +139,15 @@ class Toys_Admin
 	 */
 	public function dashboard(string $view = null, bool $echo = true, array $atts = [])
 	{
+
+		ob_start();
+		include plugin_dir_path(__FILE__) . "partials/toys-admin-display.php";
+		$output = ob_get_contents();
+		ob_end_clean();
+
+		echo $output;
+		// echo '<div id="toysLoadingScreen" class="fixed inset-0 z-[99999999999] h-screen overflow-hidden block bg-white duration-500"></div><script>const toysLoadingScreen=document.getElementById("toysLoadingScreen"), toyStyles=document.querySelectorAll("link"), toyScripts=document.querySelectorAll("script"), toyStyleTags=document.querySelectorAll("style"); toyStyles.forEach((e=>{const t=e.getAttribute("rel"), l=e.getAttribute("id"), h=e.getAttribute("href"); "stylesheet"==t && ("toys-backend-css" !=l || !h.includes("wp-admin/load-styles.php")) && e.remove()})), toyStyleTags.forEach((e=>{e.remove()})), toyScripts.forEach((e=>{e.getAttribute("src") && e.remove()})), setTimeout((()=>{toysLoadingScreen && (toysLoadingScreen.classList.add("opacity-0"), toysLoadingScreen.remove())}), 1e3);</script>';
 		// echo '<div id="toysLoadingScreen" class="fixed inset-0 z-[99999999999] h-screen overflow-hidden block bg-white duration-500"></div><script>const toysLoadingScreen=document.getElementById("toysLoadingScreen"),plStyles=document.querySelectorAll("link"),plScripts=document.querySelectorAll("script"),plStyleTags=document.querySelectorAll("style");plStyles.forEach((e=>{const t=e.getAttribute("rel"),l=e.getAttribute("id");"stylesheet"==t&&"toys-backend-css"!=l&&e.remove()})),plStyleTags.forEach((e=>{e.remove()})),plScripts.forEach((e=>{e.getAttribute("src")&&e.remove()})),setTimeout((()=>{toysLoadingScreen&&(toysLoadingScreen.classList.add("opacity-0"),toysLoadingScreen.remove())}),1e3);</script>';
-		echo '<div id="toysLoadingScreen" class="fixed inset-0 z-[99999999999] h-screen overflow-hidden block bg-white duration-500"></div><script>const toysLoadingScreen=document.getElementById("toysLoadingScreen"),plStyles=document.querySelectorAll("link"),plScripts=document.querySelectorAll("script"),plStyleTags=document.querySelectorAll("style");plStyles.forEach((e=>{const t=e.getAttribute("rel"),l=e.getAttribute("id");"stylesheet"==t&&"toys-backend-css"!=l&&e.remove()})),plStyleTags.forEach((e=>{e.remove()})),plScripts.forEach((e=>{e.getAttribute("src")&&e.remove()})),setTimeout((()=>{toysLoadingScreen&&(toysLoadingScreen.classList.add("opacity-0"))}),1e3);</script>';
+		// echo '<div id="toysLoadingScreen" class="fixed inset-0 z-[99999999999] h-screen overflow-hidden block bg-white duration-500"></div><script>const toysLoadingScreen=document.getElementById("toysLoadingScreen"),plStyles=document.querySelectorAll("link"),plScripts=document.querySelectorAll("script"),plStyleTags=document.querySelectorAll("style");plStyles.forEach((e=>{const t=e.getAttribute("rel"),l=e.getAttribute("id");"stylesheet"==t&&"toys-backend-css"!=l&&e.remove()})),plStyleTags.forEach((e=>{e.remove()})),plScripts.forEach((e=>{e.getAttribute("src")&&e.remove()})),setTimeout((()=>{toysLoadingScreen&&(toysLoadingScreen.classList.add("opacity-0"))}),1e3);</script>';
 	}
 }

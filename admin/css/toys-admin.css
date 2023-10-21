@@ -1,4 +1,11 @@
-/**
- * All of the CSS for your admin-specific functionality should be
- * included in this file.
- */
+html.wp-toolbar,
+#wpcontent,
+#wpfooter {
+	margin-left: 0px !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+#media-attachment-date-filters {
+	width: 20rem !important;
+}

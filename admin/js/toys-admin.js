@@ -1,5 +1,5 @@
-(function( $ ) {
-	'use strict';
+(function ($) {
+	"use strict";
 
 	/**
 	 * All of the code for your admin-facing JavaScript source
@@ -29,4 +29,47 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
-})( jQuery );
+	// // Uploading files
+	// var file_frame;
+
+	// $(document).on("click", "#selectme", function (event) {
+	// 	event.preventDefault();
+
+	// 	// If the media frame already exists, reopen it.
+	// 	if (file_frame) {
+	// 		file_frame.open();
+	// 		return;
+	// 	}
+
+	// 	// Create the media frame.
+	// 	file_frame = wp.media.frames.downloadable_file = wp.media({
+	// 		title: "Choose an image",
+	// 		button: {
+	// 			text: "Select Slider",
+	// 		},
+	// 		multiple: false,
+	// 	});
+
+	// 	// When an image is selected, run a callback.
+	// 	file_frame.on("select", function () {
+	// 		var attachment = file_frame
+	// 			.state()
+	// 			.get("selection")
+	// 			.first()
+	// 			.toJSON();
+	// 		var attachment_thumbnail =
+	// 			attachment.sizes.thumbnail || attachment.sizes.full;
+
+	// 		$("#slider_thumbnail_id").val(attachment.id);
+	// 		$("#slider_thumbnail").css(
+	// 			"background-image",
+	// 			`url(${attachment_thumbnail.url})`
+	// 		);
+	// 		// $(".remove_image_button").show();
+	// 		$("#slider_thumbnail_placeholder").css("z-index", "-1");
+	// 	});
+
+	// 	// Finally, open the modal.
+	// 	file_frame.open();
+	// });
+})(jQuery);

@@ -746,17 +746,17 @@ input[type="checkbox"]:focus,
 .h-3{
   height: 0.75rem;
 }
-.h-10{
-  height: 2.5rem;
-}
 .h-full{
   height: 100%;
+}
+.h-10{
+  height: 2.5rem;
 }
 .max-h-screen{
   max-height: 100vh;
 }
-.min-h-\[1rem\]{
-  min-height: 1rem;
+.min-h-\[10rem\]{
+  min-height: 10rem;
 }
 .w-full{
   width: 100%;
@@ -793,9 +793,6 @@ input[type="checkbox"]:focus,
 }
 .w-1\/2{
   width: 50%;
-}
-.max-w-\[100vw\]{
-  max-width: 100vw;
 }
 .flex-1{
   flex: 1 1 0%;
@@ -932,19 +929,25 @@ input[type="checkbox"]:focus,
 .border-t{
   border-top-width: 1px;
 }
+.border-r{
+  border-right-width: 1px;
+}
+.border-dashed{
+  border-style: dashed;
+}
 .border-slate-400\/25{
   border-color: rgb(148 163 184 / 0.25);
 }
 .border-gray-300\/10{
   border-color: rgb(209 213 219 / 0.1);
 }
-.border-primary-100{
-  --tw-border-opacity: 1;
-  border-color: rgb(224 242 254 / var(--tw-border-opacity));
-}
 .border-zinc-100{
   --tw-border-opacity: 1;
   border-color: rgb(244 244 245 / var(--tw-border-opacity));
+}
+.border-zinc-600{
+  --tw-border-opacity: 1;
+  border-color: rgb(82 82 91 / var(--tw-border-opacity));
 }
 .bg-white{
   --tw-bg-opacity: 1;
@@ -970,17 +973,17 @@ input[type="checkbox"]:focus,
   --tw-bg-opacity: 1;
   background-color: rgb(56 189 248 / var(--tw-bg-opacity));
 }
-.bg-slate-100{
+.bg-zinc-100{
   --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+  background-color: rgb(244 244 245 / var(--tw-bg-opacity));
 }
 .bg-primary-100{
   --tw-bg-opacity: 1;
   background-color: rgb(224 242 254 / var(--tw-bg-opacity));
 }
-.bg-zinc-100{
+.bg-zinc-600{
   --tw-bg-opacity: 1;
-  background-color: rgb(244 244 245 / var(--tw-bg-opacity));
+  background-color: rgb(82 82 91 / var(--tw-bg-opacity));
 }
 .p-2{
   padding: 0.5rem;
@@ -993,9 +996,6 @@ input[type="checkbox"]:focus,
 }
 .p-10{
   padding: 2.5rem;
-}
-.p-40{
-  padding: 10rem;
 }
 .px-5{
   padding-left: 1.25rem;
@@ -1016,10 +1016,6 @@ input[type="checkbox"]:focus,
 .py-10{
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
-}
-.px-40{
-  padding-left: 10rem;
-  padding-right: 10rem;
 }
 .pb-1{
   padding-bottom: 0.25rem;

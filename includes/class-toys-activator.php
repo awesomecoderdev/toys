@@ -20,7 +20,8 @@
  * @subpackage Toys/includes
  * @author     Mohammad Ibrahim <awesomecoder.dev@gmail.com>
  */
-class Toys_Activator {
+class Toys_Activator
+{
 
 	/**
 	 * Short Description. (use period)
@@ -29,8 +30,34 @@ class Toys_Activator {
 	 *
 	 * @since    1.0.0
 	 */
-	public static function activate() {
+	public static function activate()
+	{
+		global $wpdb;
+		$table = "{$wpdb->prefix}toys";
 
+		$sql = "CREATE TABLE $table (
+			id INT NOT NULL AUTO_INCREMENT,
+			parent_id INT,
+			title VARCHAR(255) NOT NULL,
+			image VARCHAR(255),
+			link VARCHAR(255),
+			PRIMARY KEY (id)
+		);";
+
+		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+		dbDelta($sql);
 	}
 
+	function get_nested_structure($parent_id = null)
+	{
+		global $wpdb;
+		$table = "{$wpdb->prefix}toys";
+		$data = $wpdb->get_results($wpdb->prepare("SELECT * FROM $table WHERE parent_id = %d", $parent_id), ARRAY_A);
+		$result = [];
+		foreach ($data as $record) {
+			$record['children'] = $this->get_nested_structure($record['id']);
+			$result[] = $record;
+		}
+		return $result;
+	}
 }
