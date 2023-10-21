@@ -1,4 +1,5 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useRef, useState } from "react";
+import { useDraggable } from "react-use-draggable-scroll";
 
 const App = () => {
 	const [steps, setSteps] = useState([
@@ -130,9 +131,17 @@ const App = () => {
 		},
 	]);
 	console.log("steps", steps);
+
+	const ref = useRef(); // We will use React useRef hook to reference the wrapping div:
+	const { events } = useDraggable(ref); // Now we pass the reference to the useDraggable hook:
+
 	return (
 		<Fragment>
-			<div className="relative w-full overflow-scroll mx-auto">
+			<div
+				className="relative w-full h-full max-h-screen overflow-scroll mx-auto no-scrollbar "
+				{...events}
+				ref={ref} // add reference and events to the wrapping div
+			>
 				<div className="relative p-10">
 					{steps.map((step, i) => (
 						<Fragment key={step.id + i}>
@@ -152,7 +161,7 @@ const Card = ({ tree, step, position, end }) => {
 		<Fragment>
 			<div className="relative space-y-10 space-x-20">
 				<div
-					className={`relative p-3 mx-auto shadow-md rounded-md w-40 min-h-[1rem] border border-primary-100 ${
+					className={`relative p-3 mx-auto shadow-md rounded-md w-40 min-h-[1rem] border border-zinc-100 ${
 						position === 0
 							? ""
 							: // "-translate-x-20"
@@ -165,7 +174,7 @@ const Card = ({ tree, step, position, end }) => {
 					}`}
 				>
 					{step == null && (
-						<span className="absolute w-0.5 h-10 bg-slate-100 left-1/2 translate-x-[-50%] -top-10"></span>
+						<span className="absolute w-0.5 h-10 bg-zinc-100 left-1/2 translate-x-[-50%] -top-10"></span>
 					)}
 					{/* <span className="absolute w-1/2 h-10 bg-primary-100 left-0 -top-10"></span> */}
 					<h1 className="text-center">
@@ -175,7 +184,7 @@ const Card = ({ tree, step, position, end }) => {
 					</h1>
 
 					{tree?.children && (
-						<span className="absolute w-0.5 h-10 bg-slate-100 left-1/2 translate-x-[-50%] -bottom-10"></span>
+						<span className="absolute w-0.5 h-10 bg-zinc-100 left-1/2 translate-x-[-50%] -bottom-10"></span>
 					)}
 				</div>
 
