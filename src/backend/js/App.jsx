@@ -1,135 +1,21 @@
+import { random } from "lodash";
 import React, { Fragment, useRef, useState } from "react";
 import { useDraggable } from "react-use-draggable-scroll";
 
 const App = () => {
-	const [steps, setSteps] = useState([
-		{
-			id: 0,
-			title: "Start",
-			image: null,
-			link: null,
-			children: [
-				{
-					id: 1,
-					title: "One",
-					image: null,
-					link: null,
-				},
-				{
-					id: 2,
-					title: "Two",
-					image: null,
-					link: null,
-					children: [
-						{
-							id: 4,
-							title: "One",
-							image: null,
-							link: null,
-						},
-						{
-							id: 5,
-							title: "Two",
-							image: null,
-							link: null,
-							children: [
-								{
-									id: 10,
-									title: "One",
-									image: null,
-									link: null,
-								},
-								{
-									id: 11,
-									title: "Two",
-									image: null,
-									link: null,
-								},
-								{
-									id: 12,
-									title: "Three",
-									image: null,
-									link: null,
-									children: [
-										{
-											id: 13,
-											title: "One",
-											image: null,
-											link: null,
-										},
-										{
-											id: 14,
-											title: "Two",
-											image: null,
-											link: null,
-											children: [
-												{
-													id: 16,
-													title: "One",
-													image: null,
-													link: null,
-												},
-												{
-													id: 17,
-													title: "Two",
-													image: null,
-													link: null,
-												},
-												{
-													id: 18,
-													title: "Three",
-													image: null,
-													link: null,
-												},
-											],
-										},
-										{
-											id: 15,
-											title: "Three",
-											image: null,
-											link: null,
-										},
-									],
-								},
-							],
-						},
-						{
-							id: 6,
-							title: "Three",
-							image: null,
-							link: null,
-						},
-					],
-				},
-				{
-					id: 3,
-					title: "Three",
-					image: null,
-					link: null,
-					children: [
-						{
-							id: 7,
-							title: "One",
-							image: null,
-							link: null,
-						},
-						{
-							id: 8,
-							title: "Two",
-							image: null,
-							link: null,
-						},
-						{
-							id: 9,
-							title: "Three",
-							image: null,
-							link: null,
-						},
-					],
-				},
-			],
-		},
+	// Call the recursive function to structure the data starting from the root level
+	// Sample array of data (replace this with your data)
+	const [nestedData, setNestedData] = useState([
+		{ id: 1, title: "Start", image: null, link: null },
+		{ id: 2, title: "One", image: null, link: null, parent_id: 1 },
+		{ id: 3, title: "Two", image: null, link: null, parent_id: 1 },
+		{ id: 4, title: "One", image: null, link: null, parent_id: 2 },
+		{ id: 5, title: "Two", image: null, link: null, parent_id: 2 },
+		{ id: 6, title: "Three", image: null, link: null, parent_id: 2 },
 	]);
+	const structuredData = structureData(nestedData);
+	const [steps, setSteps] = useState(structuredData);
+
 	console.log("steps", steps);
 
 	const ref = useRef(); // We will use React useRef hook to reference the wrapping div:
@@ -145,7 +31,11 @@ const App = () => {
 				<div className="relative p-10">
 					{steps.map((step, i) => (
 						<Fragment key={step.id + i}>
-							<Card tree={step} step={i} />
+							<Card
+								tree={step}
+								step={i}
+								setNestedData={setNestedData}
+							/>
 						</Fragment>
 					))}
 				</div>
@@ -156,7 +46,7 @@ const App = () => {
 
 export default App;
 
-const Card = ({ tree, step, position, end }) => {
+const Card = ({ tree, step, position, end, setNestedData }) => {
 	let frame;
 
 	const handleMediaUploader = (e, step) => {
@@ -192,6 +82,21 @@ const Card = ({ tree, step, position, end }) => {
 		frame.open();
 	};
 
+	const addNewDataToLists = (e, step) => {
+		const newItem = {
+			id: step.id + Math.ceil(Math.random(1, 1000)),
+			parent_id: step.id,
+			title: "New Item",
+			children: [],
+		};
+
+		// Update the state with the new item
+		setNestedData((prevState) => {
+			const updatedNestedData = [...prevState];
+			updatedNestedData[0].children.push(newItem); // Add to the first parent
+			return updatedNestedData;
+		});
+	};
 	return (
 		<Fragment>
 			<div
@@ -215,7 +120,6 @@ const Card = ({ tree, step, position, end }) => {
 					{step == null && (
 						<span className="absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -top-10"></span>
 					)}
-					{/* <span className="absolute w-1/2 h-10 bg-primary-100 left-0 -top-10"></span> */}
 					{/* content */}
 					<div className="relative space-y-2">
 						<div className="relative border-b border-dashed border-zinc-600 p-2">
@@ -240,6 +144,7 @@ const Card = ({ tree, step, position, end }) => {
 								</svg>
 
 								<svg
+									onClick={(e) => addNewDataToLists(e, tree)}
 									xmlns="http://www.w3.org/2000/svg"
 									fill="none"
 									viewBox="0 0 24 24"
@@ -259,7 +164,7 @@ const Card = ({ tree, step, position, end }) => {
 									xmlns="http://www.w3.org/2000/svg"
 									fill="none"
 									viewBox="0 0 24 24"
-									stroke-width="1.5"
+									strokeWidth="1.5"
 									stroke="currentColor"
 									className="cursor-pointer w-4 h-4 text-red-600"
 								>
@@ -285,7 +190,7 @@ const Card = ({ tree, step, position, end }) => {
 						</div>
 					</div>
 
-					{tree?.children && (
+					{tree?.children?.length > 0 && (
 						<span className="absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -bottom-10"></span>
 					)}
 				</div>
@@ -319,3 +224,25 @@ const Card = ({ tree, step, position, end }) => {
 		</Fragment>
 	);
 };
+
+function structureData(data) {
+	const map = {};
+	const result = [];
+
+	data.forEach((item) => {
+		const newItem = { ...item };
+		newItem.children = [];
+
+		map[item.id] = newItem;
+
+		const parent = item.parent_id || null;
+
+		if (!map[parent]) {
+			result.push(newItem);
+		} else {
+			map[parent].children.push(newItem);
+		}
+	});
+
+	return result;
+}

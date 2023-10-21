@@ -2475,10 +2475,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_use_draggable_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-use-draggable-scroll */ "./node_modules/react-use-draggable-scroll/dist/react-use-draggable-scroll.esm.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_use_draggable_scroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-use-draggable-scroll */ "./node_modules/react-use-draggable-scroll/dist/react-use-draggable-scroll.esm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -2510,138 +2512,83 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var App = function App() {
   var _console;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([{
-    id: 0,
+  // Call the recursive function to structure the data starting from the root level
+  // Sample array of data (replace this with your data)
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([{
+    id: 1,
     title: "Start",
     image: null,
+    link: null
+  }, {
+    id: 2,
+    title: "One",
+    image: null,
     link: null,
-    children: [{
-      id: 1,
-      title: "One",
-      image: null,
-      link: null
-    }, {
-      id: 2,
-      title: "Two",
-      image: null,
-      link: null,
-      children: [{
-        id: 4,
-        title: "One",
-        image: null,
-        link: null
-      }, {
-        id: 5,
-        title: "Two",
-        image: null,
-        link: null,
-        children: [{
-          id: 10,
-          title: "One",
-          image: null,
-          link: null
-        }, {
-          id: 11,
-          title: "Two",
-          image: null,
-          link: null
-        }, {
-          id: 12,
-          title: "Three",
-          image: null,
-          link: null,
-          children: [{
-            id: 13,
-            title: "One",
-            image: null,
-            link: null
-          }, {
-            id: 14,
-            title: "Two",
-            image: null,
-            link: null,
-            children: [{
-              id: 16,
-              title: "One",
-              image: null,
-              link: null
-            }, {
-              id: 17,
-              title: "Two",
-              image: null,
-              link: null
-            }, {
-              id: 18,
-              title: "Three",
-              image: null,
-              link: null
-            }]
-          }, {
-            id: 15,
-            title: "Three",
-            image: null,
-            link: null
-          }]
-        }]
-      }, {
-        id: 6,
-        title: "Three",
-        image: null,
-        link: null
-      }]
-    }, {
-      id: 3,
-      title: "Three",
-      image: null,
-      link: null,
-      children: [{
-        id: 7,
-        title: "One",
-        image: null,
-        link: null
-      }, {
-        id: 8,
-        title: "Two",
-        image: null,
-        link: null
-      }, {
-        id: 9,
-        title: "Three",
-        image: null,
-        link: null
-      }]
-    }]
+    parent_id: 1
+  }, {
+    id: 3,
+    title: "Two",
+    image: null,
+    link: null,
+    parent_id: 1
+  }, {
+    id: 4,
+    title: "One",
+    image: null,
+    link: null,
+    parent_id: 2
+  }, {
+    id: 5,
+    title: "Two",
+    image: null,
+    link: null,
+    parent_id: 2
+  }, {
+    id: 6,
+    title: "Three",
+    image: null,
+    link: null,
+    parent_id: 2
   }]),
       _useState2 = _slicedToArray(_useState, 2),
-      steps = _useState2[0],
-      setSteps = _useState2[1];
+      nestedData = _useState2[0],
+      setNestedData = _useState2[1];
+
+  var structuredData = structureData(nestedData);
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(structuredData),
+      _useState4 = _slicedToArray(_useState3, 2),
+      steps = _useState4[0],
+      setSteps = _useState4[1];
   /* eslint-disable */
 
 
-  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("2173497692_0", "steps", steps)));
+  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("1501418484_0", "steps", steps)));
 
-  var ref = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(); // We will use React useRef hook to reference the wrapping div:
+  var ref = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(); // We will use React useRef hook to reference the wrapping div:
 
-  var _useDraggable = (0,react_use_draggable_scroll__WEBPACK_IMPORTED_MODULE_1__.useDraggable)(ref),
+  var _useDraggable = (0,react_use_draggable_scroll__WEBPACK_IMPORTED_MODULE_2__.useDraggable)(ref),
       events = _useDraggable.events; // Now we pass the reference to the useDraggable hook:
 
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", _objectSpread(_objectSpread({
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", _objectSpread(_objectSpread({
       className: "relative awesomecoder w-full h-full max-h-screen overflow-scroll mx-auto no-scrollbar "
     }, events), {}, {
       ref: ref // add reference and events to the wrapping div
       ,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "relative p-10",
         children: steps.map(function (step, i) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Card, {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Card, {
               tree: step,
-              step: i
+              step: i,
+              setNestedData: setNestedData
             })
           }, step.id + i);
         })
@@ -2653,10 +2600,13 @@ var App = function App() {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
 var Card = function Card(_ref) {
+  var _tree$children;
+
   var tree = _ref.tree,
       step = _ref.step,
       position = _ref.position,
-      end = _ref.end;
+      end = _ref.end,
+      setNestedData = _ref.setNestedData;
   var frame;
 
   var handleMediaUploader = function handleMediaUploader(e, step) {
@@ -2667,7 +2617,7 @@ var Card = function Card(_ref) {
     e.stopPropagation();
     /* eslint-disable */
 
-    (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("2173497692_1", "step", step))); // If the media frame already exists, reopen it.
+    (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("1501418484_1", "step", step))); // If the media frame already exists, reopen it.
 
 
     if (frame) {
@@ -2691,32 +2641,49 @@ var Card = function Card(_ref) {
       var image = attachment.sizes.thumbnail || attachment.sizes.full;
       /* eslint-disable */
 
-      (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("2173497692_2", "attachment", attachment.id, attachment)));
+      (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("1501418484_2", "attachment", attachment.id, attachment)));
       /* eslint-disable */
 
 
-      (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("2173497692_3", "image", image, image.url)));
+      (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("1501418484_3", "image", image, image.url)));
     }); // Finally, open the modal.
 
     frame.open();
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+  var addNewDataToLists = function addNewDataToLists(e, step) {
+    var newItem = {
+      id: step.id + Math.ceil(Math.random(1, 1000)),
+      parent_id: step.id,
+      title: "New Item",
+      children: []
+    }; // Update the state with the new item
+
+    setNestedData(function (prevState) {
+      var updatedNestedData = _toConsumableArray(prevState);
+
+      updatedNestedData[0].children.push(newItem); // Add to the first parent
+
+      return updatedNestedData;
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "relative space-y-10 space-x-20 ".concat(step == null && end == position ? "pr-56" : ""),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "relative mx-auto shadow-xl drop-shadow-2xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600 ".concat(position === 0 ? "" : // "-translate-x-20"
         "", " ").concat(step == null && end == position ? //  "translate-x-20"
         "" : ""),
-        children: [step == null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        children: [step == null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
           className: "absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -top-10"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "relative space-y-2",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "relative border-b border-dashed border-zinc-600 p-2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
               className: "flex justify-end space-x-2",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
                 onClick: function onClick(e) {
                   return handleMediaUploader(e, tree);
                 },
@@ -2726,33 +2693,36 @@ var Card = function Card(_ref) {
                 strokeWidth: "1.5",
                 stroke: "currentColor",
                 className: "cursor-pointer w-4 h-4",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
                   strokeLinecap: "round",
                   strokeLinejoin: "round",
                   className: "pointer-events-none",
                   d: "M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
                 })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
+                onClick: function onClick(e) {
+                  return addNewDataToLists(e, tree);
+                },
                 xmlns: "http://www.w3.org/2000/svg",
                 fill: "none",
                 viewBox: "0 0 24 24",
                 strokeWidth: "1.5",
                 stroke: "currentColor",
                 className: "cursor-pointer w-4 h-4",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
                   className: "pointer-events-none",
                   strokeLinecap: "round",
                   strokeLinejoin: "round",
                   d: "M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
                 })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
                 xmlns: "http://www.w3.org/2000/svg",
                 fill: "none",
                 viewBox: "0 0 24 24",
-                "stroke-width": "1.5",
+                strokeWidth: "1.5",
                 stroke: "currentColor",
                 className: "cursor-pointer w-4 h-4 text-red-600",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
                   className: "pointer-events-none",
                   strokeLinecap: "round",
                   strokeLinejoin: "round",
@@ -2760,23 +2730,23 @@ var Card = function Card(_ref) {
                 })
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "relative p-2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h1", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
               className: "text-sm",
-              children: ["ID: ", tree === null || tree === void 0 ? void 0 : tree.id, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "Title: ", tree === null || tree === void 0 ? void 0 : tree.title, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "Pos: ", position, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "End: ", end]
+              children: ["ID: ", tree === null || tree === void 0 ? void 0 : tree.id, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), "Title: ", tree === null || tree === void 0 ? void 0 : tree.title, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), "Pos: ", position, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), "End: ", end]
             })
           })]
-        }), (tree === null || tree === void 0 ? void 0 : tree.children) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        }), (tree === null || tree === void 0 ? void 0 : (_tree$children = tree.children) === null || _tree$children === void 0 ? void 0 : _tree$children.length) > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
           className: "absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -bottom-10"
         })]
       }), function () {
         if (tree !== null && tree !== void 0 && tree.children) {
-          var _tree$children$length, _tree$children, _tree$children2;
+          var _tree$children$length, _tree$children2, _tree$children3;
 
-          var _end = (_tree$children$length = tree === null || tree === void 0 ? void 0 : (_tree$children = tree.children) === null || _tree$children === void 0 ? void 0 : _tree$children.length) !== null && _tree$children$length !== void 0 ? _tree$children$length : 0;
+          var _end = (_tree$children$length = tree === null || tree === void 0 ? void 0 : (_tree$children2 = tree.children) === null || _tree$children2 === void 0 ? void 0 : _tree$children2.length) !== null && _tree$children$length !== void 0 ? _tree$children$length : 0;
 
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             // className="relative grid gap-10"
             // style={{
             // 	"grid-template-columns": `repeat(${
@@ -2784,8 +2754,8 @@ var Card = function Card(_ref) {
             // 	}, minmax(0, 1fr))`,
             // }}
             className: "relative border-t border-dashed border-zinc-600 py-10 inline-flex justify-between space-x-20",
-            children: tree === null || tree === void 0 ? void 0 : (_tree$children2 = tree.children) === null || _tree$children2 === void 0 ? void 0 : _tree$children2.map(function (steps, i) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Card, {
+            children: tree === null || tree === void 0 ? void 0 : (_tree$children3 = tree.children) === null || _tree$children3 === void 0 ? void 0 : _tree$children3.map(function (steps, i) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Card, {
                 tree: steps,
                 position: i,
                 end: _end - 1
@@ -2797,6 +2767,25 @@ var Card = function Card(_ref) {
     })
   });
 };
+
+function structureData(data) {
+  var map = {};
+  var result = [];
+  data.forEach(function (item) {
+    var newItem = _objectSpread({}, item);
+
+    newItem.children = [];
+    map[item.id] = newItem;
+    var parent = item.parent_id || null;
+
+    if (!map[parent]) {
+      result.push(newItem);
+    } else {
+      map[parent].children.push(newItem);
+    }
+  });
+  return result;
+}
 /* eslint-disable */
 
 
