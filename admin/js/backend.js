@@ -2621,7 +2621,7 @@ var App = function App() {
   /* eslint-disable */
 
 
-  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("4199589838_0", "steps", steps)));
+  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("2173497692_0", "steps", steps)));
 
   var ref = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(); // We will use React useRef hook to reference the wrapping div:
 
@@ -2667,7 +2667,7 @@ var Card = function Card(_ref) {
     e.stopPropagation();
     /* eslint-disable */
 
-    (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("4199589838_1", "step", step))); // If the media frame already exists, reopen it.
+    (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("2173497692_1", "step", step))); // If the media frame already exists, reopen it.
 
 
     if (frame) {
@@ -2691,11 +2691,11 @@ var Card = function Card(_ref) {
       var image = attachment.sizes.thumbnail || attachment.sizes.full;
       /* eslint-disable */
 
-      (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("4199589838_2", "attachment", attachment.id, attachment)));
+      (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("2173497692_2", "attachment", attachment.id, attachment)));
       /* eslint-disable */
 
 
-      (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("4199589838_3", "image", image, image.url)));
+      (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("2173497692_3", "image", image, image.url)));
     }); // Finally, open the modal.
 
     frame.open();
@@ -2705,35 +2705,70 @@ var Card = function Card(_ref) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "relative space-y-10 space-x-20 ".concat(step == null && end == position ? "pr-56" : ""),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "relative p-4 mx-auto shadow-xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600 ".concat(position === 0 ? "" : // "-translate-x-20"
+        className: "relative mx-auto shadow-xl drop-shadow-2xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600 ".concat(position === 0 ? "" : // "-translate-x-20"
         "", " ").concat(step == null && end == position ? //  "translate-x-20"
         "" : ""),
         children: [step == null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
           className: "absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -top-10"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "relative pt-4",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h1", {
-            className: "text-sm",
-            children: ["ID: ", tree === null || tree === void 0 ? void 0 : tree.id, "Title: ", tree === null || tree === void 0 ? void 0 : tree.title, "Pos: ", position, "End: ", end]
-          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "relative space-y-2",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "relative border-b border-dashed border-zinc-600 p-2",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "flex justify-end space-x-2",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+                onClick: function onClick(e) {
+                  return handleMediaUploader(e, tree);
+                },
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "cursor-pointer w-4 h-4",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  className: "pointer-events-none",
+                  d: "M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                strokeWidth: "1.5",
+                stroke: "currentColor",
+                className: "cursor-pointer w-4 h-4",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                  className: "pointer-events-none",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                "stroke-width": "1.5",
+                stroke: "currentColor",
+                className: "cursor-pointer w-4 h-4 text-red-600",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                  className: "pointer-events-none",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  d: "M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                })
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "relative p-2",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h1", {
+              className: "text-sm",
+              children: ["ID: ", tree === null || tree === void 0 ? void 0 : tree.id, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "Title: ", tree === null || tree === void 0 ? void 0 : tree.title, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "Pos: ", position, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "End: ", end]
+            })
+          })]
         }), (tree === null || tree === void 0 ? void 0 : tree.children) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
           className: "absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -bottom-10"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
-          onClick: function onClick(e) {
-            return handleMediaUploader(e, tree);
-          },
-          xmlns: "http://www.w3.org/2000/svg",
-          fill: "none",
-          viewBox: "0 0 24 24",
-          strokeWidth: "1.5",
-          stroke: "currentColor",
-          className: "absolute cursor-pointer top-3 right-3 w-4 h-4",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
-            strokeLinecap: "round",
-            strokeLinejoin: "round",
-            className: "pointer-events-none",
-            d: "M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-          })
         })]
       }), function () {
         if (tree !== null && tree !== void 0 && tree.children) {

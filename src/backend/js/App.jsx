@@ -200,7 +200,7 @@ const Card = ({ tree, step, position, end }) => {
 				}`}
 			>
 				<div
-					className={`relative p-4 mx-auto shadow-xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600 ${
+					className={`relative mx-auto shadow-xl drop-shadow-2xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600 ${
 						position === 0
 							? ""
 							: // "-translate-x-20"
@@ -217,35 +217,77 @@ const Card = ({ tree, step, position, end }) => {
 					)}
 					{/* <span className="absolute w-1/2 h-10 bg-primary-100 left-0 -top-10"></span> */}
 					{/* content */}
-					<div className="relative pt-4">
-						<h1 className="text-sm">
-							ID: {tree?.id}
-							Title: {tree?.title}
-							Pos: {position}
-							End: {end}
-						</h1>
+					<div className="relative space-y-2">
+						<div className="relative border-b border-dashed border-zinc-600 p-2">
+							<div className="flex justify-end space-x-2">
+								<svg
+									onClick={(e) =>
+										handleMediaUploader(e, tree)
+									}
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									strokeWidth="1.5"
+									stroke="currentColor"
+									className="cursor-pointer w-4 h-4"
+								>
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										className="pointer-events-none"
+										d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+									/>
+								</svg>
+
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									strokeWidth="1.5"
+									stroke="currentColor"
+									className="cursor-pointer w-4 h-4"
+								>
+									<path
+										className="pointer-events-none"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+									/>
+								</svg>
+
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									className="cursor-pointer w-4 h-4 text-red-600"
+								>
+									<path
+										className="pointer-events-none"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+									/>
+								</svg>
+							</div>
+						</div>
+						<div className="relative p-2">
+							<h1 className="text-sm">
+								ID: {tree?.id}
+								<br />
+								Title: {tree?.title}
+								<br />
+								Pos: {position}
+								<br />
+								End: {end}
+							</h1>
+						</div>
 					</div>
 
 					{tree?.children && (
 						<span className="absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -bottom-10"></span>
 					)}
-
-					<svg
-						onClick={(e) => handleMediaUploader(e, tree)}
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						viewBox="0 0 24 24"
-						strokeWidth="1.5"
-						stroke="currentColor"
-						className="absolute cursor-pointer top-3 right-3 w-4 h-4"
-					>
-						<path
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							className="pointer-events-none"
-							d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-						/>
-					</svg>
 				</div>
 
 				{(() => {
