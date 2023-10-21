@@ -157,7 +157,7 @@ const App = () => {
 export default App;
 
 const Card = ({ tree, step, position, end }) => {
-	var frame;
+	let frame;
 
 	const handleMediaUploader = (e, step) => {
 		// Uploading files
@@ -195,11 +195,12 @@ const Card = ({ tree, step, position, end }) => {
 	return (
 		<Fragment>
 			<div
-				onClick={(e) => handleMediaUploader(e, tree)}
-				className="relative space-y-10 space-x-20"
+				className={`relative space-y-10 space-x-20 ${
+					step == null && end == position ? "pr-56" : ""
+				}`}
 			>
 				<div
-					className={`relative p-3 mx-auto shadow-md rounded-md w-40 min-h-[10rem] border border-zinc-600 ${
+					className={`relative p-4 mx-auto shadow-xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600 ${
 						position === 0
 							? ""
 							: // "-translate-x-20"
@@ -215,16 +216,36 @@ const Card = ({ tree, step, position, end }) => {
 						<span className="absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -top-10"></span>
 					)}
 					{/* <span className="absolute w-1/2 h-10 bg-primary-100 left-0 -top-10"></span> */}
-					<h1 className="text-center">
-						ID: {tree?.id}
-						Title: {tree?.title}
-						Pos: {position}
-						End: {end}
-					</h1>
+					{/* content */}
+					<div className="relative pt-4">
+						<h1 className="text-sm">
+							ID: {tree?.id}
+							Title: {tree?.title}
+							Pos: {position}
+							End: {end}
+						</h1>
+					</div>
 
 					{tree?.children && (
 						<span className="absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -bottom-10"></span>
 					)}
+
+					<svg
+						onClick={(e) => handleMediaUploader(e, tree)}
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						strokeWidth="1.5"
+						stroke="currentColor"
+						className="absolute cursor-pointer top-3 right-3 w-4 h-4"
+					>
+						<path
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							className="pointer-events-none"
+							d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+						/>
+					</svg>
 				</div>
 
 				{(() => {
