@@ -1,12 +1,18 @@
 import { random } from "lodash";
 import React, { Fragment, useRef, useState } from "react";
 import { useDraggable } from "react-use-draggable-scroll";
+import { cn } from "./utils";
 
 const App = () => {
 	// Call the recursive function to structure the data starting from the root level
 	// Sample array of data (replace this with your data)
 	const [nestedData, setNestedData] = useState([
 		{ id: 1, title: "Start", image: null, link: null },
+		{ id: 2, title: "One", image: null, link: null, parent_id: 1 },
+		{ id: 3, title: "Two", image: null, link: null, parent_id: 1 },
+		{ id: 4, title: "One", image: null, link: null, parent_id: 2 },
+		{ id: 5, title: "Two", image: null, link: null, parent_id: 2 },
+		{ id: 6, title: "Three", image: null, link: null, parent_id: 2 },
 		{ id: 2, title: "One", image: null, link: null, parent_id: 1 },
 		{ id: 3, title: "Two", image: null, link: null, parent_id: 1 },
 		{ id: 4, title: "One", image: null, link: null, parent_id: 2 },
@@ -28,12 +34,13 @@ const App = () => {
 				{...events}
 				ref={ref} // add reference and events to the wrapping div
 			>
-				<div className="relative p-10">
+				<div className="relative p-10 no-scrollbar">
 					{steps.map((step, i) => (
 						<Fragment key={step.id + i}>
 							<Card
 								tree={step}
 								step={i}
+								isFirst={true}
 								setNestedData={setNestedData}
 							/>
 						</Fragment>
@@ -46,7 +53,7 @@ const App = () => {
 
 export default App;
 
-const Card = ({ tree, step, position, end, setNestedData }) => {
+const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 	let frame;
 
 	const handleMediaUploader = (e, step) => {
@@ -97,25 +104,27 @@ const Card = ({ tree, step, position, end, setNestedData }) => {
 			return updatedNestedData;
 		});
 	};
+
 	return (
 		<Fragment>
 			<div
-				className={`relative space-y-10 space-x-20 ${
-					step == null && end == position ? "pr-56" : ""
-				}`}
+				className={cn(
+					"relative space-y-10"
+					// step == null && end == position && "mr-56",
+					// step == null && "space-x-1"
+				)}
 			>
 				<div
-					className={`relative mx-auto shadow-xl drop-shadow-2xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600 ${
+					className={cn(
+						"relative mx-auto shadow-xl drop-shadow-2xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600",
 						position === 0
-							? ""
-							: // "-translate-x-20"
-							  ""
-					} ${
+							? "" // "-translate-x-20"
+							: "",
 						step == null && end == position
 							? //  "translate-x-20"
 							  ""
 							: ""
-					}`}
+					)}
 				>
 					{step == null && (
 						<span className="absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -top-10"></span>
@@ -196,17 +205,14 @@ const Card = ({ tree, step, position, end, setNestedData }) => {
 				</div>
 
 				{(() => {
-					if (tree?.children) {
+					if (tree?.children?.length > 0) {
 						const end = tree?.children?.length ?? 0;
 						return (
 							<div
-								// className="relative grid gap-10"
-								// style={{
-								// 	"grid-template-columns": `repeat(${
-								// 		tree?.children?.length ?? 1
-								// 	}, minmax(0, 1fr))`,
-								// }}
-								className="relative border-t border-dashed border-zinc-600 py-10 inline-flex justify-between space-x-20"
+								className={cn(
+									"relative border-t border-dashed border-zinc-600 py-10 inline-flex justify-between space-x-20 ",
+									isFirst && "mr-10"
+								)}
 							>
 								{tree?.children?.map((steps, i) => (
 									<Card
