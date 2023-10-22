@@ -1038,6 +1038,10 @@ input[type="checkbox"]:focus,
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
 }
+.py-0{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 .pb-1{
   padding-bottom: 0.25rem;
 }
@@ -1049,6 +1053,9 @@ input[type="checkbox"]:focus,
 }
 .pl-56{
   padding-left: 14rem;
+}
+.pt-0{
+  padding-top: 0px;
 }
 .font-poppins{
   font-family: 'Poppins', sans-serif;

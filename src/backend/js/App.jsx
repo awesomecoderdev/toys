@@ -2,6 +2,7 @@ import { random } from "lodash";
 import React, { Fragment, useRef, useState } from "react";
 import { useDraggable } from "react-use-draggable-scroll";
 import { cn } from "./utils";
+console.log("awesomecoder", awesomecoder);
 
 const App = () => {
 	// Call the recursive function to structure the data starting from the root level
@@ -12,6 +13,12 @@ const App = () => {
 		{ id: 3, title: "Two", image: null, link: null, parent_id: 1 },
 		{ id: 4, title: "One", image: null, link: null, parent_id: 2 },
 		{ id: 5, title: "Two", image: null, link: null, parent_id: 2 },
+		{ id: 6, title: "Three", image: null, link: null, parent_id: 2 },
+		{ id: 2, title: "One", image: null, link: null, parent_id: 4 },
+		{ id: 3, title: "Two", image: null, link: null, parent_id: 5 },
+		{ id: 4, title: "One", image: null, link: null, parent_id: 6 },
+		{ id: 5, title: "Two", image: null, link: null, parent_id: 2 },
+		{ id: 6, title: "Three", image: null, link: null, parent_id: 2 },
 		{ id: 6, title: "Three", image: null, link: null, parent_id: 2 },
 		{ id: 2, title: "One", image: null, link: null, parent_id: 1 },
 		{ id: 3, title: "Two", image: null, link: null, parent_id: 1 },
@@ -127,7 +134,12 @@ const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 					)}
 				>
 					{step == null && (
-						<span className="absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -top-10"></span>
+						<span
+							className={cn(
+								"absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -top-10"
+								// tree?.children?.length < 1 && "hidden"
+							)}
+						></span>
 					)}
 					{/* content */}
 					<div className="relative space-y-2">
@@ -200,7 +212,12 @@ const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 					</div>
 
 					{tree?.children?.length > 0 && (
-						<span className="absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -bottom-10"></span>
+						<span
+							className={cn(
+								"absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -bottom-10",
+								tree?.children?.length == 1 && "hidden"
+							)}
+						></span>
 					)}
 				</div>
 
@@ -210,7 +227,9 @@ const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 						return (
 							<div
 								className={cn(
-									"relative border-t border-dashed border-zinc-600 py-10 inline-flex justify-between space-x-10 ",
+									"relative border-dashed border-zinc-600  inline-flex justify-between space-x-10",
+									tree?.children?.length != 1 && "border-t",
+									tree?.children?.length > 1 && "py-10",
 									isFirst && "mr-10"
 								)}
 							>

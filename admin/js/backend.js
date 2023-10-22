@@ -2482,41 +2482,47 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_use_draggable_scroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-use-draggable-scroll */ "./node_modules/react-use-draggable-scroll/dist/react-use-draggable-scroll.esm.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils */ "./src/backend/js/utils.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _console;
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 
 
 
 
+/* eslint-disable */
 
+
+
+
+(_console = console).log.apply(_console, _toConsumableArray(oo_oo("1762776363_0", "awesomecoder", awesomecoder)));
 
 var App = function App() {
-  var _console;
+  var _console2;
 
   // Call the recursive function to structure the data starting from the root level
   // Sample array of data (replace this with your data)
@@ -2546,6 +2552,42 @@ var App = function App() {
   }, {
     id: 5,
     title: "Two",
+    image: null,
+    link: null,
+    parent_id: 2
+  }, {
+    id: 6,
+    title: "Three",
+    image: null,
+    link: null,
+    parent_id: 2
+  }, {
+    id: 2,
+    title: "One",
+    image: null,
+    link: null,
+    parent_id: 4
+  }, {
+    id: 3,
+    title: "Two",
+    image: null,
+    link: null,
+    parent_id: 5
+  }, {
+    id: 4,
+    title: "One",
+    image: null,
+    link: null,
+    parent_id: 6
+  }, {
+    id: 5,
+    title: "Two",
+    image: null,
+    link: null,
+    parent_id: 2
+  }, {
+    id: 6,
+    title: "Three",
     image: null,
     link: null,
     parent_id: 2
@@ -2599,7 +2641,7 @@ var App = function App() {
   /* eslint-disable */
 
 
-  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("3693782144_0", "steps", steps)));
+  (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("1762776363_1", "steps", steps)));
 
   var ref = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(); // We will use React useRef hook to reference the wrapping div:
 
@@ -2633,7 +2675,7 @@ var App = function App() {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
 var Card = function Card(_ref) {
-  var _tree$children;
+  var _tree$children, _tree$children2;
 
   var tree = _ref.tree,
       step = _ref.step,
@@ -2644,14 +2686,14 @@ var Card = function Card(_ref) {
   var frame;
 
   var handleMediaUploader = function handleMediaUploader(e, step) {
-    var _console2;
+    var _console3;
 
     // Uploading files
     e.preventDefault();
     e.stopPropagation();
     /* eslint-disable */
 
-    (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("3693782144_1", "step", step))); // If the media frame already exists, reopen it.
+    (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("1762776363_2", "step", step))); // If the media frame already exists, reopen it.
 
 
     if (frame) {
@@ -2669,17 +2711,17 @@ var Card = function Card(_ref) {
     }); // When an image is selected, run a callback.
 
     frame.on("select", function () {
-      var _console3, _console4;
+      var _console4, _console5;
 
       var attachment = frame.state().get("selection").first().toJSON();
       var image = attachment.sizes.thumbnail || attachment.sizes.full;
       /* eslint-disable */
 
-      (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("3693782144_2", "attachment", attachment.id, attachment)));
+      (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("1762776363_3", "attachment", attachment.id, attachment)));
       /* eslint-disable */
 
 
-      (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("3693782144_3", "image", image, image.url)));
+      (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("1762776363_4", "image", image, image.url)));
     }); // Finally, open the modal.
 
     frame.open();
@@ -2712,7 +2754,8 @@ var Card = function Card(_ref) {
         : "", step == null && end == position ? //  "translate-x-20"
         "" : ""),
         children: [step == null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-          className: "absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -top-10"
+          className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -top-10" // tree?.children?.length < 1 && "hidden"
+          )
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "relative space-y-2",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -2774,19 +2817,19 @@ var Card = function Card(_ref) {
             })
           })]
         }), (tree === null || tree === void 0 ? void 0 : (_tree$children = tree.children) === null || _tree$children === void 0 ? void 0 : _tree$children.length) > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-          className: "absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -bottom-10"
+          className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -bottom-10", (tree === null || tree === void 0 ? void 0 : (_tree$children2 = tree.children) === null || _tree$children2 === void 0 ? void 0 : _tree$children2.length) == 1 && "hidden")
         })]
       }), function () {
-        var _tree$children2;
+        var _tree$children3;
 
-        if ((tree === null || tree === void 0 ? void 0 : (_tree$children2 = tree.children) === null || _tree$children2 === void 0 ? void 0 : _tree$children2.length) > 0) {
-          var _tree$children$length, _tree$children3, _tree$children4;
+        if ((tree === null || tree === void 0 ? void 0 : (_tree$children3 = tree.children) === null || _tree$children3 === void 0 ? void 0 : _tree$children3.length) > 0) {
+          var _tree$children$length, _tree$children4, _tree$children5, _tree$children6, _tree$children7;
 
-          var _end = (_tree$children$length = tree === null || tree === void 0 ? void 0 : (_tree$children3 = tree.children) === null || _tree$children3 === void 0 ? void 0 : _tree$children3.length) !== null && _tree$children$length !== void 0 ? _tree$children$length : 0;
+          var _end = (_tree$children$length = tree === null || tree === void 0 ? void 0 : (_tree$children4 = tree.children) === null || _tree$children4 === void 0 ? void 0 : _tree$children4.length) !== null && _tree$children$length !== void 0 ? _tree$children$length : 0;
 
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("relative border-t border-dashed border-zinc-600 py-10 inline-flex justify-between space-x-10 ", isFirst && "mr-10"),
-            children: tree === null || tree === void 0 ? void 0 : (_tree$children4 = tree.children) === null || _tree$children4 === void 0 ? void 0 : _tree$children4.map(function (steps, i) {
+            className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("relative border-dashed border-zinc-600  inline-flex justify-between space-x-10", (tree === null || tree === void 0 ? void 0 : (_tree$children5 = tree.children) === null || _tree$children5 === void 0 ? void 0 : _tree$children5.length) != 1 && "border-t", (tree === null || tree === void 0 ? void 0 : (_tree$children6 = tree.children) === null || _tree$children6 === void 0 ? void 0 : _tree$children6.length) > 1 && "py-10", isFirst && "mr-10"),
+            children: tree === null || tree === void 0 ? void 0 : (_tree$children7 = tree.children) === null || _tree$children7 === void 0 ? void 0 : _tree$children7.map(function (steps, i) {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Card, {
                 tree: steps,
                 position: i,

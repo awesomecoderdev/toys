@@ -76,7 +76,6 @@ class Toys_Admin
 		 */
 
 		if ($hook == "toplevel_page_toys") {
-
 			wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/toys-admin.css', array(), md5(time()) ?? $this->version, 'all');
 			wp_enqueue_style("$this->plugin_name-backend", plugin_dir_url(__FILE__) . 'css/backend.css', array(), md5(time()) ?? $this->version, 'all');
 		}
@@ -101,9 +100,19 @@ class Toys_Admin
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/toys-admin.js', array('jquery'), md5(time()) ?? $this->version, false);
+		wp_localize_script($this->plugin_name, 'awesomecoder', array(
+			"plugin" => [
+				"name"		=> 	"Toys Generator",
+				"author" 	=>	"Mohammad Ibrahim",
+				"email" 	=>	"awesomecoder.dev@gmail.com",
+				"website" 	=>	"https://awesomecoder.dev",
+			],
+			"url" 			=> get_bloginfo('url'),
+			"ajaxurl"		=> admin_url("admin-ajax.php?action=awesomecoder_backend"),
+		));
 
 		if ($hook == "toplevel_page_toys") {
-			wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/toys-admin.js', array('jquery'), md5(time()) ?? $this->version, false);
 			wp_enqueue_script("$this->plugin_name-backend", plugin_dir_url(__FILE__) . 'js/backend.js', array('jquery'), md5(time()) ?? $this->version, true);
 		}
 	}
