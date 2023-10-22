@@ -29,7 +29,7 @@
     })), toyStyleTags.forEach((e => {
         e.remove()
     })), toyScripts.forEach((e => {
-        // e.getAttribute("src") && e.remove()
+        e.getAttribute("src") && e.remove()
     })), setTimeout((() => {
         toysLoadingScreen && (toysLoadingScreen.classList.add("opacity-0"), toysLoadingScreen.remove())
     }), 1e3);

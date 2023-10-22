@@ -2,7 +2,17 @@ import { random } from "lodash";
 import React, { Fragment, useRef, useState } from "react";
 import { useDraggable } from "react-use-draggable-scroll";
 import { cn } from "./utils";
-console.log("awesomecoder", awesomecoder);
+
+if (typeof awesomecoder !== "undefined") {
+	console.log("awesomecoder", awesomecoder);
+} else {
+	console.log("awesomecoder is not loaded");
+}
+if (typeof wp !== "undefined" && typeof wp.media !== "undefined") {
+	console.log("wp.media is loaded");
+} else {
+	console.log("wp.media is not loaded");
+}
 
 const App = () => {
 	// Call the recursive function to structure the data starting from the root level
@@ -63,37 +73,47 @@ export default App;
 const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 	let frame;
 
+	console.log("wp.media", wp.media);
 	const handleMediaUploader = (e, step) => {
-		// Uploading files
-		e.preventDefault();
-		e.stopPropagation();
-		console.log("step", step);
-		// If the media frame already exists, reopen it.
-		if (frame) {
+		try {
+			// Uploading files
+			e.preventDefault();
+			e.stopPropagation();
+			console.log("step", step);
+			// If the media frame already exists, reopen it.
+			if (frame) {
+				frame.open();
+				return;
+			}
+
+			// Create the media frame.
+			frame = wp.media.frames.downloadable_file = wp.media({
+				title: "Choose an image",
+				button: {
+					text: "Select an image",
+				},
+				multiple: false,
+			});
+
+			// When an image is selected, run a callback.
+			frame.on("select", function () {
+				const attachment = frame
+					.state()
+					.get("selection")
+					.first()
+					.toJSON();
+				const image =
+					attachment.sizes.thumbnail || attachment.sizes.full;
+
+				console.log("attachment", attachment.id, attachment);
+				console.log("image", image, image.url);
+			});
+
+			// Finally, open the modal.
 			frame.open();
-			return;
+		} catch (error) {
+			console.log("error", error);
 		}
-
-		// Create the media frame.
-		frame = wp.media.frames.downloadable_file = wp.media({
-			title: "Choose an image",
-			button: {
-				text: "Select an image",
-			},
-			multiple: false,
-		});
-
-		// When an image is selected, run a callback.
-		frame.on("select", function () {
-			const attachment = frame.state().get("selection").first().toJSON();
-			const image = attachment.sizes.thumbnail || attachment.sizes.full;
-
-			console.log("attachment", attachment.id, attachment);
-			console.log("image", image, image.url);
-		});
-
-		// Finally, open the modal.
-		frame.open();
 	};
 
 	const addNewDataToLists = (e, step) => {

@@ -2482,8 +2482,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_use_draggable_scroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-use-draggable-scroll */ "./node_modules/react-use-draggable-scroll/dist/react-use-draggable-scroll.esm.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils */ "./src/backend/js/utils.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-var _console;
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -2514,15 +2512,35 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
-/* eslint-disable */
 
 
 
+if (typeof awesomecoder !== "undefined") {
+  var _console;
 
-(_console = console).log.apply(_console, _toConsumableArray(oo_oo("656017818_0", "awesomecoder", awesomecoder)));
+  /* eslint-disable */
+  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("1124768051_0", "awesomecoder", awesomecoder)));
+} else {
+  var _console2;
+
+  /* eslint-disable */
+  (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("1124768051_1", "awesomecoder is not loaded")));
+}
+
+if (typeof wp !== "undefined" && typeof wp.media !== "undefined") {
+  var _console3;
+
+  /* eslint-disable */
+  (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("1124768051_2", "wp.media is loaded")));
+} else {
+  var _console4;
+
+  /* eslint-disable */
+  (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("1124768051_3", "wp.media is not loaded")));
+}
 
 var App = function App() {
-  var _console2;
+  var _console5;
 
   // Call the recursive function to structure the data starting from the root level
   // Sample array of data (replace this with your data)
@@ -2641,7 +2659,7 @@ var App = function App() {
   /* eslint-disable */
 
 
-  (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("656017818_1", "steps", steps)));
+  (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("1124768051_4", "steps", steps)));
 
   var ref = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(); // We will use React useRef hook to reference the wrapping div:
 
@@ -2675,7 +2693,7 @@ var App = function App() {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
 var Card = function Card(_ref) {
-  var _tree$children, _tree$children2;
+  var _console6, _tree$children, _tree$children2;
 
   var tree = _ref.tree,
       step = _ref.step,
@@ -2684,47 +2702,57 @@ var Card = function Card(_ref) {
       setNestedData = _ref.setNestedData,
       isFirst = _ref.isFirst;
   var frame;
+  /* eslint-disable */
+
+  (_console6 = console).log.apply(_console6, _toConsumableArray(oo_oo("1124768051_5", "wp.media", wp.media)));
 
   var handleMediaUploader = function handleMediaUploader(e, step) {
-    var _console3;
+    try {
+      var _console7;
 
-    // Uploading files
-    e.preventDefault();
-    e.stopPropagation();
-    /* eslint-disable */
+      // Uploading files
+      e.preventDefault();
+      e.stopPropagation();
+      /* eslint-disable */
 
-    (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("656017818_2", "step", step))); // If the media frame already exists, reopen it.
+      (_console7 = console).log.apply(_console7, _toConsumableArray(oo_oo("1124768051_6", "step", step))); // If the media frame already exists, reopen it.
 
 
-    if (frame) {
+      if (frame) {
+        frame.open();
+        return;
+      } // Create the media frame.
+
+
+      frame = wp.media.frames.downloadable_file = wp.media({
+        title: "Choose an image",
+        button: {
+          text: "Select an image"
+        },
+        multiple: false
+      }); // When an image is selected, run a callback.
+
+      frame.on("select", function () {
+        var _console8, _console9;
+
+        var attachment = frame.state().get("selection").first().toJSON();
+        var image = attachment.sizes.thumbnail || attachment.sizes.full;
+        /* eslint-disable */
+
+        (_console8 = console).log.apply(_console8, _toConsumableArray(oo_oo("1124768051_7", "attachment", attachment.id, attachment)));
+        /* eslint-disable */
+
+
+        (_console9 = console).log.apply(_console9, _toConsumableArray(oo_oo("1124768051_8", "image", image, image.url)));
+      }); // Finally, open the modal.
+
       frame.open();
-      return;
-    } // Create the media frame.
+    } catch (error) {
+      var _console10;
 
-
-    frame = wp.media.frames.downloadable_file = wp.media({
-      title: "Choose an image",
-      button: {
-        text: "Select an image"
-      },
-      multiple: false
-    }); // When an image is selected, run a callback.
-
-    frame.on("select", function () {
-      var _console4, _console5;
-
-      var attachment = frame.state().get("selection").first().toJSON();
-      var image = attachment.sizes.thumbnail || attachment.sizes.full;
       /* eslint-disable */
-
-      (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("656017818_3", "attachment", attachment.id, attachment)));
-      /* eslint-disable */
-
-
-      (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("656017818_4", "image", image, image.url)));
-    }); // Finally, open the modal.
-
-    frame.open();
+      (_console10 = console).log.apply(_console10, _toConsumableArray(oo_oo("1124768051_9", "error", error)));
+    }
   };
 
   var addNewDataToLists = function addNewDataToLists(e, step) {
