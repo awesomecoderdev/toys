@@ -114,16 +114,20 @@ const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 
 	return (
 		<Fragment>
-			<div
-				className={cn(
-					"relative space-y-10"
-					// step == null && end == position && "mr-56",
-					// step == null && "space-x-1"
-				)}
-			>
+			<div className={cn("relative")}>
 				<div
 					className={cn(
-						"relative mx-auto shadow-xl drop-shadow-2xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600",
+						"pointer-events-none",
+						position == 0 &&
+							"absolute w-1/2 bg-[#f0f0f1] h-5 -top-11",
+						step == null &&
+							end == position &&
+							"absolute w-1/2 bg-[#f0f0f1] h-5 -top-11 -right-[1px]"
+					)}
+				></div>
+				<div
+					className={cn(
+						"relative mx-auto mb-10 z-10 shadow-xl drop-shadow-2xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600",
 						position === 0
 							? "" // "-translate-x-20"
 							: "",

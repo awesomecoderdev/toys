@@ -2519,7 +2519,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
-(_console = console).log.apply(_console, _toConsumableArray(oo_oo("1762776363_0", "awesomecoder", awesomecoder)));
+(_console = console).log.apply(_console, _toConsumableArray(oo_oo("656017818_0", "awesomecoder", awesomecoder)));
 
 var App = function App() {
   var _console2;
@@ -2641,7 +2641,7 @@ var App = function App() {
   /* eslint-disable */
 
 
-  (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("1762776363_1", "steps", steps)));
+  (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("656017818_1", "steps", steps)));
 
   var ref = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(); // We will use React useRef hook to reference the wrapping div:
 
@@ -2693,7 +2693,7 @@ var Card = function Card(_ref) {
     e.stopPropagation();
     /* eslint-disable */
 
-    (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("1762776363_2", "step", step))); // If the media frame already exists, reopen it.
+    (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("656017818_2", "step", step))); // If the media frame already exists, reopen it.
 
 
     if (frame) {
@@ -2717,11 +2717,11 @@ var Card = function Card(_ref) {
       var image = attachment.sizes.thumbnail || attachment.sizes.full;
       /* eslint-disable */
 
-      (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("1762776363_3", "attachment", attachment.id, attachment)));
+      (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("656017818_3", "attachment", attachment.id, attachment)));
       /* eslint-disable */
 
 
-      (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("1762776363_4", "image", image, image.url)));
+      (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("656017818_4", "image", image, image.url)));
     }); // Finally, open the modal.
 
     frame.open();
@@ -2746,11 +2746,11 @@ var Card = function Card(_ref) {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("relative space-y-10" // step == null && end == position && "mr-56",
-      // step == null && "space-x-1"
-      ),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("relative mx-auto shadow-xl drop-shadow-2xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600", position === 0 ? "" // "-translate-x-20"
+      className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("relative"),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("pointer-events-none", position == 0 && "absolute w-1/2 bg-[#f0f0f1] h-5 -top-11", step == null && end == position && "absolute w-1/2 bg-[#f0f0f1] h-5 -top-11 -right-[1px]")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("relative mx-auto mb-10 z-10 shadow-xl drop-shadow-2xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600", position === 0 ? "" // "-translate-x-20"
         : "", step == null && end == position ? //  "translate-x-20"
         "" : ""),
         children: [step == null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
