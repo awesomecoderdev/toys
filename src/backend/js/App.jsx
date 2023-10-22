@@ -210,7 +210,7 @@ const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 						return (
 							<div
 								className={cn(
-									"relative border-t border-dashed border-zinc-600 py-10 inline-flex justify-between space-x-20 ",
+									"relative border-t border-dashed border-zinc-600 py-10 inline-flex justify-between space-x-10 ",
 									isFirst && "mr-10"
 								)}
 							>

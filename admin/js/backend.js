@@ -2599,7 +2599,7 @@ var App = function App() {
   /* eslint-disable */
 
 
-  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("68163583_0", "steps", steps)));
+  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("3693782144_0", "steps", steps)));
 
   var ref = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(); // We will use React useRef hook to reference the wrapping div:
 
@@ -2651,7 +2651,7 @@ var Card = function Card(_ref) {
     e.stopPropagation();
     /* eslint-disable */
 
-    (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("68163583_1", "step", step))); // If the media frame already exists, reopen it.
+    (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("3693782144_1", "step", step))); // If the media frame already exists, reopen it.
 
 
     if (frame) {
@@ -2675,11 +2675,11 @@ var Card = function Card(_ref) {
       var image = attachment.sizes.thumbnail || attachment.sizes.full;
       /* eslint-disable */
 
-      (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("68163583_2", "attachment", attachment.id, attachment)));
+      (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("3693782144_2", "attachment", attachment.id, attachment)));
       /* eslint-disable */
 
 
-      (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("68163583_3", "image", image, image.url)));
+      (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("3693782144_3", "image", image, image.url)));
     }); // Finally, open the modal.
 
     frame.open();
@@ -2785,7 +2785,7 @@ var Card = function Card(_ref) {
           var _end = (_tree$children$length = tree === null || tree === void 0 ? void 0 : (_tree$children3 = tree.children) === null || _tree$children3 === void 0 ? void 0 : _tree$children3.length) !== null && _tree$children$length !== void 0 ? _tree$children$length : 0;
 
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("relative border-t border-dashed border-zinc-600 py-10 inline-flex justify-between space-x-20 ", isFirst && "mr-10"),
+            className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("relative border-t border-dashed border-zinc-600 py-10 inline-flex justify-between space-x-10 ", isFirst && "mr-10"),
             children: tree === null || tree === void 0 ? void 0 : (_tree$children4 = tree.children) === null || _tree$children4 === void 0 ? void 0 : _tree$children4.map(function (steps, i) {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Card, {
                 tree: steps,
