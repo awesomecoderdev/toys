@@ -2519,24 +2519,24 @@ if (typeof awesomecoder !== "undefined") {
   var _console;
 
   /* eslint-disable */
-  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("1124768051_0", "awesomecoder", awesomecoder)));
+  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("1138944687_0", "awesomecoder", awesomecoder)));
 } else {
   var _console2;
 
   /* eslint-disable */
-  (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("1124768051_1", "awesomecoder is not loaded")));
+  (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("1138944687_1", "awesomecoder is not loaded")));
 }
 
 if (typeof wp !== "undefined" && typeof wp.media !== "undefined") {
   var _console3;
 
   /* eslint-disable */
-  (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("1124768051_2", "wp.media is loaded")));
+  (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("1138944687_2", "wp.media is loaded")));
 } else {
   var _console4;
 
   /* eslint-disable */
-  (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("1124768051_3", "wp.media is not loaded")));
+  (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("1138944687_3", "wp.media is not loaded")));
 }
 
 var App = function App() {
@@ -2659,7 +2659,7 @@ var App = function App() {
   /* eslint-disable */
 
 
-  (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("1124768051_4", "steps", steps)));
+  (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("1138944687_4", "steps", steps)));
 
   var ref = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(); // We will use React useRef hook to reference the wrapping div:
 
@@ -2669,7 +2669,7 @@ var App = function App() {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", _objectSpread(_objectSpread({
-      className: "relative awesomecoder w-full h-full max-h-screen overflow-scroll mx-auto no-scrollbar "
+      className: "relative bg-white awesomecoder w-full h-full max-h-screen overflow-scroll mx-auto no-scrollbar "
     }, events), {}, {
       ref: ref // add reference and events to the wrapping div
       ,
@@ -2704,7 +2704,7 @@ var Card = function Card(_ref) {
   var frame;
   /* eslint-disable */
 
-  (_console6 = console).log.apply(_console6, _toConsumableArray(oo_oo("1124768051_5", "wp.media", wp.media)));
+  (_console6 = console).log.apply(_console6, _toConsumableArray(oo_oo("1138944687_5", "wp.media", wp.media)));
 
   var handleMediaUploader = function handleMediaUploader(e, step) {
     try {
@@ -2715,7 +2715,7 @@ var Card = function Card(_ref) {
       e.stopPropagation();
       /* eslint-disable */
 
-      (_console7 = console).log.apply(_console7, _toConsumableArray(oo_oo("1124768051_6", "step", step))); // If the media frame already exists, reopen it.
+      (_console7 = console).log.apply(_console7, _toConsumableArray(oo_oo("1138944687_6", "step", step))); // If the media frame already exists, reopen it.
 
 
       if (frame) {
@@ -2739,11 +2739,11 @@ var Card = function Card(_ref) {
         var image = attachment.sizes.thumbnail || attachment.sizes.full;
         /* eslint-disable */
 
-        (_console8 = console).log.apply(_console8, _toConsumableArray(oo_oo("1124768051_7", "attachment", attachment.id, attachment)));
+        (_console8 = console).log.apply(_console8, _toConsumableArray(oo_oo("1138944687_7", "attachment", attachment.id, attachment)));
         /* eslint-disable */
 
 
-        (_console9 = console).log.apply(_console9, _toConsumableArray(oo_oo("1124768051_8", "image", image, image.url)));
+        (_console9 = console).log.apply(_console9, _toConsumableArray(oo_oo("1138944687_8", "image", image, image.url)));
       }); // Finally, open the modal.
 
       frame.open();
@@ -2751,7 +2751,7 @@ var Card = function Card(_ref) {
       var _console10;
 
       /* eslint-disable */
-      (_console10 = console).log.apply(_console10, _toConsumableArray(oo_oo("1124768051_9", "error", error)));
+      (_console10 = console).log.apply(_console10, _toConsumableArray(oo_oo("1138944687_9", "error", error)));
     }
   };
 
@@ -2776,9 +2776,9 @@ var Card = function Card(_ref) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("relative"),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("pointer-events-none", position == 0 && "absolute w-1/2 bg-[#f0f0f1] h-5 -top-11", step == null && end == position && "absolute w-1/2 bg-[#f0f0f1] h-5 -top-11 -right-[1px]")
+        className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("pointer-events-none", position == 0 && "absolute w-1/2 bg-white h-5 -top-11", step == null && end == position && "absolute w-1/2 bg-white h-5 -top-11 -right-[1px]")
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("relative mx-auto mb-10 z-10 shadow-xl drop-shadow-2xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600", position === 0 ? "" // "-translate-x-20"
+        className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("relative mx-auto bg-white mb-10 z-10 shadow-xl drop-shadow-2xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600", position === 0 ? "" // "-translate-x-20"
         : "", step == null && end == position ? //  "translate-x-20"
         "" : ""),
         children: [step == null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {

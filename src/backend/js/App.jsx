@@ -47,7 +47,7 @@ const App = () => {
 	return (
 		<Fragment>
 			<div
-				className="relative awesomecoder w-full h-full max-h-screen overflow-scroll mx-auto no-scrollbar "
+				className="relative bg-white awesomecoder w-full h-full max-h-screen overflow-scroll mx-auto no-scrollbar "
 				{...events}
 				ref={ref} // add reference and events to the wrapping div
 			>
@@ -138,16 +138,15 @@ const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 				<div
 					className={cn(
 						"pointer-events-none",
-						position == 0 &&
-							"absolute w-1/2 bg-[#f0f0f1] h-5 -top-11",
+						position == 0 && "absolute w-1/2 bg-white h-5 -top-11",
 						step == null &&
 							end == position &&
-							"absolute w-1/2 bg-[#f0f0f1] h-5 -top-11 -right-[1px]"
+							"absolute w-1/2 bg-white h-5 -top-11 -right-[1px]"
 					)}
 				></div>
 				<div
 					className={cn(
-						"relative mx-auto mb-10 z-10 shadow-xl drop-shadow-2xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600",
+						"relative mx-auto bg-white mb-10 z-10 shadow-xl drop-shadow-2xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600",
 						position === 0
 							? "" // "-translate-x-20"
 							: "",
