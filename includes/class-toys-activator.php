@@ -38,6 +38,7 @@ class Toys_Activator
 		$sql = "CREATE TABLE $table (
 			id INT NOT NULL AUTO_INCREMENT,
 			parent_id INT,
+			thumbnail_id INT,
 			title VARCHAR(255) NOT NULL,
 			image VARCHAR(255),
 			link VARCHAR(255),

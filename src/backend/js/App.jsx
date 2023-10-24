@@ -18,23 +18,135 @@ const App = () => {
 	// Call the recursive function to structure the data starting from the root level
 	// Sample array of data (replace this with your data)
 	const [nestedData, setNestedData] = useState([
-		{ id: 1, title: "Start", image: null, link: null },
-		{ id: 2, title: "One", image: null, link: null, parent_id: 1 },
-		{ id: 3, title: "Two", image: null, link: null, parent_id: 1 },
-		{ id: 4, title: "One", image: null, link: null, parent_id: 2 },
-		{ id: 5, title: "Two", image: null, link: null, parent_id: 2 },
-		{ id: 6, title: "Three", image: null, link: null, parent_id: 2 },
-		{ id: 2, title: "One", image: null, link: null, parent_id: 4 },
-		{ id: 3, title: "Two", image: null, link: null, parent_id: 5 },
-		{ id: 4, title: "One", image: null, link: null, parent_id: 6 },
-		{ id: 5, title: "Two", image: null, link: null, parent_id: 2 },
-		{ id: 6, title: "Three", image: null, link: null, parent_id: 2 },
-		{ id: 6, title: "Three", image: null, link: null, parent_id: 2 },
-		{ id: 2, title: "One", image: null, link: null, parent_id: 1 },
-		{ id: 3, title: "Two", image: null, link: null, parent_id: 1 },
-		{ id: 4, title: "One", image: null, link: null, parent_id: 2 },
-		{ id: 5, title: "Two", image: null, link: null, parent_id: 2 },
-		{ id: 6, title: "Three", image: null, link: null, parent_id: 2 },
+		{ id: 1, thumbnail_id: null, title: "Start", image: null, link: null },
+		{
+			id: 2,
+			thumbnail_id: null,
+			title: "One",
+			image: null,
+			link: null,
+			parent_id: 1,
+		},
+		{
+			id: 3,
+			thumbnail_id: null,
+			title: "Two",
+			image: null,
+			link: null,
+			parent_id: 1,
+		},
+		{
+			id: 4,
+			thumbnail_id: null,
+			title: "One",
+			image: null,
+			link: null,
+			parent_id: 2,
+		},
+		{
+			id: 5,
+			thumbnail_id: null,
+			title: "Two",
+			image: null,
+			link: null,
+			parent_id: 2,
+		},
+		{
+			id: 6,
+			thumbnail_id: null,
+			title: "Three",
+			image: null,
+			link: null,
+			parent_id: 2,
+		},
+		{
+			id: 2,
+			thumbnail_id: null,
+			title: "One",
+			image: null,
+			link: null,
+			parent_id: 4,
+		},
+		{
+			id: 3,
+			thumbnail_id: null,
+			title: "Two",
+			image: null,
+			link: null,
+			parent_id: 5,
+		},
+		{
+			id: 4,
+			thumbnail_id: null,
+			title: "One",
+			image: null,
+			link: null,
+			parent_id: 6,
+		},
+		{
+			id: 5,
+			thumbnail_id: null,
+			title: "Two",
+			image: null,
+			link: null,
+			parent_id: 2,
+		},
+		{
+			id: 6,
+			thumbnail_id: null,
+			title: "Three",
+			image: null,
+			link: null,
+			parent_id: 2,
+		},
+		{
+			id: 6,
+			thumbnail_id: null,
+			title: "Three",
+			image: null,
+			link: null,
+			parent_id: 2,
+		},
+		{
+			id: 2,
+			thumbnail_id: null,
+			title: "One",
+			image: null,
+			link: null,
+			parent_id: 1,
+		},
+		{
+			id: 3,
+			thumbnail_id: null,
+			title: "Two",
+			image: null,
+			link: null,
+			parent_id: 1,
+		},
+		{
+			id: 4,
+			thumbnail_id: null,
+			title: "One",
+			image: null,
+			link: null,
+			parent_id: 2,
+		},
+		{
+			id: 5,
+			thumbnail_id: null,
+			title: "Two",
+			image: null,
+			link: null,
+			parent_id: 2,
+		},
+		{
+			id: 6,
+			thumbnail_id: null,
+			title: "Three",
+			image: null,
+			link: null,
+			parent_id: 2,
+		},
 	]);
 	const structuredData = structureData(nestedData);
 	const [steps, setSteps] = useState(structuredData);
@@ -168,7 +280,7 @@ const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 					<div className="relative space-y-2">
 						<div className="relative border-b border-dashed border-zinc-600 p-2">
 							<div className="flex justify-end space-x-2">
-								<svg
+								{/* <svg
 									onClick={(e) =>
 										handleMediaUploader(e, tree)
 									}
@@ -184,6 +296,29 @@ const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 										strokeLinejoin="round"
 										className="pointer-events-none"
 										d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+									/>
+								</svg> */}
+
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									className="cursor-pointer w-4 h-4"
+								>
+									{/* <path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										className="pointer-events-none"
+										d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"
+									/> */}
+
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										className="pointer-events-none"
+										d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
 									/>
 								</svg>
 
