@@ -1,4 +1,5 @@
 const mix = require("laravel-mix");
+const path = require("node:path");
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -10,10 +11,20 @@ const mix = require("laravel-mix");
  |
  */
 
-mix.webpackConfig({ stats: { children: false } })
-	.js("src/backend/js/backend.js", "admin/js")
+mix.webpackConfig({
+	// stats: {
+	// 	children: false,
+	// },
+	resolve: {
+		alias: {
+			"@/components": path.resolve(__dirname, "./src/components"),
+			"@/lib": path.resolve(__dirname, "./src/lib"),
+		},
+	},
+})
+	.js("src/backend.js", "admin/js")
 	// .js("src/backend/js/metabox.js", "backend/js")
-	.postCss("src/backend/css/backend.css", "admin/css", [
+	.postCss("src/backend.css", "admin/css", [
 		require("postcss-import"),
 		require("tailwindcss"),
 		require("autoprefixer"),

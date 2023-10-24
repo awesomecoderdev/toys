@@ -1,7 +1,7 @@
-import { random } from "lodash";
+import { DialogDemo } from "@/components/Dialog";
+import { cn, structureData } from "@/lib/utils";
 import React, { Fragment, useRef, useState } from "react";
 import { useDraggable } from "react-use-draggable-scroll";
-import { cn } from "./utils";
 
 if (typeof awesomecoder !== "undefined") {
 	console.log("awesomecoder", awesomecoder);
@@ -158,6 +158,7 @@ const App = () => {
 
 	return (
 		<Fragment>
+			<DialogDemo />
 			<div
 				className="relative bg-white awesomecoder w-full h-full max-h-screen overflow-scroll mx-auto no-scrollbar "
 				{...events}
@@ -303,7 +304,7 @@ const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 									xmlns="http://www.w3.org/2000/svg"
 									fill="none"
 									viewBox="0 0 24 24"
-									stroke-width="1.5"
+									strokeWidth="1.5"
 									stroke="currentColor"
 									className="cursor-pointer w-4 h-4"
 								>
@@ -407,25 +408,3 @@ const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 		</Fragment>
 	);
 };
-
-function structureData(data) {
-	const map = {};
-	const result = [];
-
-	data.forEach((item) => {
-		const newItem = { ...item };
-		newItem.children = [];
-
-		map[item.id] = newItem;
-
-		const parent = item.parent_id || null;
-
-		if (!map[parent]) {
-			result.push(newItem);
-		} else {
-			map[parent].children.push(newItem);
-		}
-	});
-
-	return result;
-}
