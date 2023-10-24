@@ -2654,38 +2654,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _components_Dialog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/components/Dialog */ "./src/components/Dialog.jsx");
-/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/lib/utils */ "./src/lib/utils.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_use_draggable_scroll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-use-draggable-scroll */ "./node_modules/react-use-draggable-scroll/dist/react-use-draggable-scroll.esm.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_ui_dialog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/components/ui/dialog */ "./src/components/ui/dialog.jsx");
+/* harmony import */ var _components_ui_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/ui/button */ "./src/components/ui/button.jsx");
+/* harmony import */ var _components_ui_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/ui/input */ "./src/components/ui/input.jsx");
+/* harmony import */ var _components_ui_label__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/ui/label */ "./src/components/ui/label.jsx");
+/* harmony import */ var _components_ui_textarea__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/ui/textarea */ "./src/components/ui/textarea.jsx");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/repeat-1.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/x-circle.js");
+/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/lib/utils */ "./src/lib/utils.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_use_draggable_scroll__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-use-draggable-scroll */ "./node_modules/react-use-draggable-scroll/dist/react-use-draggable-scroll.esm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
@@ -2693,36 +2698,18 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
-if (typeof awesomecoder !== "undefined") {
-  var _console;
 
-  /* eslint-disable */
-  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("2635311798_0", "awesomecoder", awesomecoder)));
-} else {
-  var _console2;
 
-  /* eslint-disable */
-  (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("2635311798_1", "awesomecoder is not loaded")));
-}
 
-if (typeof wp !== "undefined" && typeof wp.media !== "undefined") {
-  var _console3;
 
-  /* eslint-disable */
-  (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("2635311798_2", "wp.media is loaded")));
-} else {
-  var _console4;
 
-  /* eslint-disable */
-  (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("2635311798_3", "wp.media is not loaded")));
-}
 
 var App = function App() {
-  var _console5;
+  var _console;
 
   // Call the recursive function to structure the data starting from the root level
   // Sample array of data (replace this with your data)
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([{
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)([{
     id: 1,
     thumbnail_id: null,
     title: "Start",
@@ -2731,9 +2718,9 @@ var App = function App() {
   }, {
     id: 2,
     thumbnail_id: null,
-    title: "One",
+    title: "One Step",
     image: null,
-    link: null,
+    link: "https://awe.com",
     parent_id: 1
   }, {
     id: 3,
@@ -2845,34 +2832,34 @@ var App = function App() {
       nestedData = _useState2[0],
       setNestedData = _useState2[1];
 
-  var structuredData = (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.structureData)(nestedData);
+  var structuredData = (0,_lib_utils__WEBPACK_IMPORTED_MODULE_5__.structureData)(nestedData);
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(structuredData),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(structuredData),
       _useState4 = _slicedToArray(_useState3, 2),
       steps = _useState4[0],
       setSteps = _useState4[1];
   /* eslint-disable */
 
 
-  (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("2635311798_4", "steps", steps)));
+  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("1959170030_0", "steps", steps)));
 
-  var ref = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(); // We will use React useRef hook to reference the wrapping div:
+  var ref = (0,react__WEBPACK_IMPORTED_MODULE_6__.useRef)(); // We will use React useRef hook to reference the wrapping div:
 
-  var _useDraggable = (0,react_use_draggable_scroll__WEBPACK_IMPORTED_MODULE_3__.useDraggable)(ref),
+  var _useDraggable = (0,react_use_draggable_scroll__WEBPACK_IMPORTED_MODULE_7__.useDraggable)(ref),
       events = _useDraggable.events; // Now we pass the reference to the useDraggable hook:
 
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Dialog__WEBPACK_IMPORTED_MODULE_0__.DialogDemo, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", _objectSpread(_objectSpread({
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", _objectSpread(_objectSpread({
       className: "relative bg-white awesomecoder w-full h-full max-h-screen overflow-scroll mx-auto no-scrollbar "
     }, events), {}, {
       ref: ref // add reference and events to the wrapping div
       ,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
         className: "relative p-10 no-scrollbar",
         children: steps.map(function (step, i) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Card, {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(Card, {
               tree: step,
               step: i,
               isFirst: true,
@@ -2881,14 +2868,14 @@ var App = function App() {
           }, step.id + i);
         })
       })
-    }))]
+    }))
   });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
 var Card = function Card(_ref) {
-  var _console6, _tree$children, _tree$children2;
+  var _console2, _tree$children, _tree$children2;
 
   var tree = _ref.tree,
       step = _ref.step,
@@ -2897,20 +2884,24 @@ var Card = function Card(_ref) {
       setNestedData = _ref.setNestedData,
       isFirst = _ref.isFirst;
   var frame;
+  var imageRef = (0,react__WEBPACK_IMPORTED_MODULE_6__.useRef)(null);
   /* eslint-disable */
 
-  (_console6 = console).log.apply(_console6, _toConsumableArray(oo_oo("2635311798_5", "wp.media", wp.media)));
+  (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("1959170030_1", "wp.media", wp.media)));
 
   var handleMediaUploader = function handleMediaUploader(e, step) {
     try {
-      var _console7;
+      var _console3, _console4;
 
-      // Uploading files
+      /* eslint-disable */
+      (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("1959170030_2", "imageRef", imageRef.current))); // Uploading files
+
+
       e.preventDefault();
       e.stopPropagation();
       /* eslint-disable */
 
-      (_console7 = console).log.apply(_console7, _toConsumableArray(oo_oo("2635311798_6", "step", step))); // If the media frame already exists, reopen it.
+      (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("1959170030_3", "step", step))); // If the media frame already exists, reopen it.
 
 
       if (frame) {
@@ -2928,25 +2919,25 @@ var Card = function Card(_ref) {
       }); // When an image is selected, run a callback.
 
       frame.on("select", function () {
-        var _console8, _console9;
+        var _console5, _console6;
 
         var attachment = frame.state().get("selection").first().toJSON();
         var image = attachment.sizes.thumbnail || attachment.sizes.full;
         /* eslint-disable */
 
-        (_console8 = console).log.apply(_console8, _toConsumableArray(oo_oo("2635311798_7", "attachment", attachment.id, attachment)));
+        (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("1959170030_4", "attachment", attachment.id, attachment)));
         /* eslint-disable */
 
 
-        (_console9 = console).log.apply(_console9, _toConsumableArray(oo_oo("2635311798_8", "image", image, image.url)));
+        (_console6 = console).log.apply(_console6, _toConsumableArray(oo_oo("1959170030_5", "image", image, image.url)));
       }); // Finally, open the modal.
 
       frame.open();
     } catch (error) {
-      var _console10;
+      var _console7;
 
       /* eslint-disable */
-      (_console10 = console).log.apply(_console10, _toConsumableArray(oo_oo("2635311798_9", "error", error)));
+      (_console7 = console).log.apply(_console7, _toConsumableArray(oo_oo("1959170030_6", "error", error)));
     }
   };
 
@@ -2967,77 +2958,143 @@ var Card = function Card(_ref) {
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("relative"),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("pointer-events-none", position == 0 && "absolute w-1/2 bg-white h-5 -top-11", step == null && end == position && "absolute w-1/2 bg-white h-5 -top-11 -right-[1px]")
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("relative mx-auto bg-white mb-10 z-10 shadow-xl drop-shadow-2xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600", position === 0 ? "" // "-translate-x-20"
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_5__.cn)("relative"),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+        className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_5__.cn)("pointer-events-none", position == 0 && "absolute w-1/2 bg-white h-5 -top-11", step == null && end == position && "absolute w-1/2 bg-white h-5 -top-11 -right-[1px]")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_5__.cn)("relative mx-auto bg-white mb-10 z-10 shadow-xl drop-shadow-2xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600", position === 0 ? "" // "-translate-x-20"
         : "", step == null && end == position ? //  "translate-x-20"
         "" : ""),
-        children: [step == null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-          className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -top-10" // tree?.children?.length < 1 && "hidden"
+        children: [step == null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+          className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_5__.cn)("absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -top-10" // tree?.children?.length < 1 && "hidden"
           )
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
           className: "relative space-y-2",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "relative border-b border-dashed border-zinc-600 p-2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-              className: "flex justify-end space-x-2",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "cursor-pointer w-4 h-4",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  className: "pointer-events-none",
-                  d: "M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
-                onClick: function onClick(e) {
-                  return addNewDataToLists(e, tree);
-                },
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "cursor-pointer w-4 h-4",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
-                  className: "pointer-events-none",
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
-                xmlns: "http://www.w3.org/2000/svg",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                strokeWidth: "1.5",
-                stroke: "currentColor",
-                className: "cursor-pointer w-4 h-4 text-red-600",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
-                  className: "pointer-events-none",
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                })
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              className: "flex justify-between space-x-2",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("p", {
+                className: "truncate w-40",
+                children: [tree === null || tree === void 0 ? void 0 : tree.title, " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo eveniet deleniti explicabo quasi consequuntur numquam voluptates maxime laborum, eius nam, incidunt, amet possimus aut facere autem vero in excepturi. Optio."]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                className: "relative flex space-x-2",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_0__.Dialog, {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_0__.DialogTrigger, {
+                    asChild: true,
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
+                      xmlns: "http://www.w3.org/2000/svg",
+                      fill: "none",
+                      viewBox: "0 0 24 24",
+                      strokeWidth: "1.5",
+                      stroke: "currentColor",
+                      className: "cursor-pointer w-4 h-4",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("path", {
+                        strokeLinecap: "round",
+                        strokeLinejoin: "round",
+                        className: "pointer-events-none",
+                        d: "M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                      })
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_0__.DialogContent, {
+                    className: "sm:max-w-[525px]",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_0__.DialogHeader, {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_0__.DialogTitle, {
+                        children: "Edit Steps"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_0__.DialogDescription, {
+                        children: "Make changes to the steps here. Click save when you're done."
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("form", {
+                      className: "grid gap-4 py-4",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        className: "grid grid-cols-4 items-center gap-4",
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_ui_input__WEBPACK_IMPORTED_MODULE_2__.Input, {
+                          id: "title",
+                          defaultValue: tree === null || tree === void 0 ? void 0 : tree.title,
+                          className: "col-span-4",
+                          placeholder: "e.g. Mohammad Ibrahim"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_ui_input__WEBPACK_IMPORTED_MODULE_2__.Input, {
+                          id: "link",
+                          defaultValue: tree === null || tree === void 0 ? void 0 : tree.link,
+                          className: "col-span-4",
+                          placeholder: "e.g. https://awesomecoder.dev/"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          className: "relative col-span-4",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_ui_textarea__WEBPACK_IMPORTED_MODULE_4__.Textarea, {
+                            name: "description",
+                            id: "description",
+                            placeholder: "e.g. I'm Mohammad Ibrahim. I live in the Future, where I develop the universe. For more details visit https://www.awesomecoder.dev/.",
+                            rows: "10"
+                          })
+                        })]
+                      })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_0__.DialogFooter, {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_ui_button__WEBPACK_IMPORTED_MODULE_1__.Button, {
+                        type: "submit",
+                        children: "Save changes"
+                      })
+                    })]
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
+                  onClick: function onClick(e) {
+                    return addNewDataToLists(e, tree);
+                  },
+                  xmlns: "http://www.w3.org/2000/svg",
+                  fill: "none",
+                  viewBox: "0 0 24 24",
+                  strokeWidth: "1.5",
+                  stroke: "currentColor",
+                  className: "cursor-pointer w-4 h-4",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("path", {
+                    className: "pointer-events-none",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    d: "M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  fill: "none",
+                  viewBox: "0 0 24 24",
+                  strokeWidth: "1.5",
+                  stroke: "currentColor",
+                  className: "cursor-pointer w-4 h-4 text-red-600",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("path", {
+                    className: "pointer-events-none",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    d: "M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  })
+                })]
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
             className: "relative p-2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h1", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              style: {
+                backgroundImage: "url(".concat(_lib_utils__WEBPACK_IMPORTED_MODULE_5__.default_image, ")")
+              },
+              ref: imageRef,
+              className: "relative col-span-4 bg-contain bg-no-repeat bg-center flex justify-center items-center  h-14  gap-4 rounded-md bg-slate-50",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                className: "absolute flex justify-end p-3 gap-3 top-0 left-0 w-full ",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                  onClick: function onClick(e) {
+                    return handleMediaUploader(e, tree);
+                  },
+                  className: "h-4 w-4 cursor-pointer"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                  className: "h-4 w-4 text-red-500 cursor-pointer"
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("h1", {
               className: "text-sm",
-              children: ["ID: ", tree === null || tree === void 0 ? void 0 : tree.id, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Title: ", tree === null || tree === void 0 ? void 0 : tree.title, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Pos: ", position, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "End: ", end]
-            })
+              children: ["ID: ", tree === null || tree === void 0 ? void 0 : tree.id]
+            })]
           })]
-        }), (tree === null || tree === void 0 ? void 0 : (_tree$children = tree.children) === null || _tree$children === void 0 ? void 0 : _tree$children.length) > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-          className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -bottom-10", (tree === null || tree === void 0 ? void 0 : (_tree$children2 = tree.children) === null || _tree$children2 === void 0 ? void 0 : _tree$children2.length) == 1 && "hidden")
+        }), (tree === null || tree === void 0 ? void 0 : (_tree$children = tree.children) === null || _tree$children === void 0 ? void 0 : _tree$children.length) > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+          className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_5__.cn)("absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -bottom-10", (tree === null || tree === void 0 ? void 0 : (_tree$children2 = tree.children) === null || _tree$children2 === void 0 ? void 0 : _tree$children2.length) == 1 && "hidden")
         })]
       }), function () {
         var _tree$children3;
@@ -3047,10 +3104,10 @@ var Card = function Card(_ref) {
 
           var _end = (_tree$children$length = tree === null || tree === void 0 ? void 0 : (_tree$children4 = tree.children) === null || _tree$children4 === void 0 ? void 0 : _tree$children4.length) !== null && _tree$children$length !== void 0 ? _tree$children$length : 0;
 
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("relative border-dashed border-zinc-600  inline-flex justify-between space-x-10", (tree === null || tree === void 0 ? void 0 : (_tree$children5 = tree.children) === null || _tree$children5 === void 0 ? void 0 : _tree$children5.length) != 1 && "border-t", (tree === null || tree === void 0 ? void 0 : (_tree$children6 = tree.children) === null || _tree$children6 === void 0 ? void 0 : _tree$children6.length) > 1 && "py-10", isFirst && "mr-10"),
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_5__.cn)("relative border-dashed border-zinc-600  inline-flex justify-between space-x-10", (tree === null || tree === void 0 ? void 0 : (_tree$children5 = tree.children) === null || _tree$children5 === void 0 ? void 0 : _tree$children5.length) != 1 && "border-t", (tree === null || tree === void 0 ? void 0 : (_tree$children6 = tree.children) === null || _tree$children6 === void 0 ? void 0 : _tree$children6.length) > 1 && "py-10", isFirst && "mr-10"),
             children: tree === null || tree === void 0 ? void 0 : (_tree$children7 = tree.children) === null || _tree$children7 === void 0 ? void 0 : _tree$children7.map(function (steps, i) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Card, {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(Card, {
                 tree: steps,
                 position: i,
                 end: _end - 1
@@ -3160,81 +3217,6 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
-
-/***/ }),
-
-/***/ "./src/components/Dialog.jsx":
-/*!***********************************!*\
-  !*** ./src/components/Dialog.jsx ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "DialogDemo": () => (/* binding */ DialogDemo)
-/* harmony export */ });
-/* harmony import */ var _components_ui_button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/components/ui/button */ "./src/components/ui/button.jsx");
-/* harmony import */ var _components_ui_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/ui/dialog */ "./src/components/ui/dialog.jsx");
-/* harmony import */ var _components_ui_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/ui/input */ "./src/components/ui/input.jsx");
-/* harmony import */ var _components_ui_label__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/ui/label */ "./src/components/ui/label.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-
-function DialogDemo() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_1__.Dialog, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_1__.DialogTrigger, {
-      asChild: true,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_ui_button__WEBPACK_IMPORTED_MODULE_0__.Button, {
-        variant: "outline",
-        children: "Edit Profile"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_1__.DialogContent, {
-      className: "sm:max-w-[425px]",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_1__.DialogHeader, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_1__.DialogTitle, {
-          children: "Edit profile"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_1__.DialogDescription, {
-          children: "Make changes to your profile here. Click save when you're done."
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "grid gap-4 py-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "grid grid-cols-4 items-center gap-4",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_ui_label__WEBPACK_IMPORTED_MODULE_3__.Label, {
-            htmlFor: "name",
-            className: "text-right",
-            children: "Name"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_ui_input__WEBPACK_IMPORTED_MODULE_2__.Input, {
-            id: "name",
-            defaultValue: "Pedro Duarte",
-            className: "col-span-3"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "grid grid-cols-4 items-center gap-4",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_ui_label__WEBPACK_IMPORTED_MODULE_3__.Label, {
-            htmlFor: "username",
-            className: "text-right",
-            children: "Username"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_ui_input__WEBPACK_IMPORTED_MODULE_2__.Input, {
-            id: "username",
-            defaultValue: "@peduarte",
-            className: "col-span-3"
-          })]
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_1__.DialogFooter, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_ui_button__WEBPACK_IMPORTED_MODULE_0__.Button, {
-          type: "submit",
-          children: "Save changes"
-        })
-      })]
-    })]
-  });
-}
 
 /***/ }),
 
@@ -3545,6 +3527,50 @@ Label.displayName = _radix_ui_react_label__WEBPACK_IMPORTED_MODULE_4__.Root.disp
 
 /***/ }),
 
+/***/ "./src/components/ui/textarea.jsx":
+/*!****************************************!*\
+  !*** ./src/components/ui/textarea.jsx ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Textarea": () => (/* binding */ Textarea)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/lib/utils */ "./src/lib/utils.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _excluded = ["className"];
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+var Textarea = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (_ref, ref) {
+  var className = _ref.className,
+      props = _objectWithoutProperties(_ref, _excluded);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("textarea", _objectSpread({
+    className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50", className),
+    ref: ref
+  }, props));
+});
+Textarea.displayName = "Textarea";
+
+
+/***/ }),
+
 /***/ "./src/index.jsx":
 /*!***********************!*\
   !*** ./src/index.jsx ***!
@@ -3584,6 +3610,9 @@ if (document.getElementById("wpcontent") != null) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "cn": () => (/* binding */ cn),
+/* harmony export */   "default_image": () => (/* binding */ default_image),
+/* harmony export */   "endpoint": () => (/* binding */ endpoint),
+/* harmony export */   "site_url": () => (/* binding */ site_url),
 /* harmony export */   "structureData": () => (/* binding */ structureData)
 /* harmony export */ });
 /* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.mjs");
@@ -3621,6 +3650,14 @@ function structureData(data) {
   });
   return result;
 }
+var a = awesomecoder;
+var site_url = typeof a !== "undefined" ? a.url : "/";
+var endpoint = typeof a !== "undefined" ? a.ajaxurl : "/";
+var default_image = typeof a !== "undefined" ? a.image : "/"; // if (typeof wp !== "undefined" && typeof wp.media !== "undefined") {
+// 	console.log("wp.media is loaded");
+// } else {
+// 	console.log("wp.media is not loaded");
+// }
 
 /***/ }),
 
@@ -23018,6 +23055,68 @@ var defaultAttributes = {
 
 
 //# sourceMappingURL=defaultAttributes.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/repeat-1.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/repeat-1.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Repeat1)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * lucide-react v0.288.0 - ISC
+ */
+
+
+
+const Repeat1 = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("Repeat1", [
+  ["path", { d: "m17 2 4 4-4 4", key: "nntrym" }],
+  ["path", { d: "M3 11v-1a4 4 0 0 1 4-4h14", key: "84bu3i" }],
+  ["path", { d: "m7 22-4-4 4-4", key: "1wqhfi" }],
+  ["path", { d: "M21 13v1a4 4 0 0 1-4 4H3", key: "1rx37r" }],
+  ["path", { d: "M11 10h1v4", key: "70cz1p" }]
+]);
+
+
+//# sourceMappingURL=repeat-1.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/x-circle.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/x-circle.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ XCircle)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * lucide-react v0.288.0 - ISC
+ */
+
+
+
+const XCircle = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("XCircle", [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m15 9-6 6", key: "1uzhvr" }],
+  ["path", { d: "m9 9 6 6", key: "z0biqf" }]
+]);
+
+
+//# sourceMappingURL=x-circle.js.map
 
 
 /***/ }),

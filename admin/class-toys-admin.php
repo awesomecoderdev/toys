@@ -112,6 +112,7 @@ class Toys_Admin
 				"website" 	=>	"https://awesomecoder.dev",
 			],
 			"url" 			=> get_bloginfo('url'),
+			"image"			=> AWESOMECODER_URL . "/assets/img/image.svg",
 			"ajaxurl"		=> admin_url("admin-ajax.php?action=awesomecoder_backend"),
 		));
 

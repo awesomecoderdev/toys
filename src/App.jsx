@@ -1,18 +1,27 @@
-import { DialogDemo } from "@/components/Dialog";
-import { cn, structureData } from "@/lib/utils";
+import {
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogFooter,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Repeat1, XCircle } from "lucide-react";
+
+import {
+	cn,
+	structureData,
+	site_url,
+	default_image,
+	endpoint,
+} from "@/lib/utils";
 import React, { Fragment, useRef, useState } from "react";
 import { useDraggable } from "react-use-draggable-scroll";
-
-if (typeof awesomecoder !== "undefined") {
-	console.log("awesomecoder", awesomecoder);
-} else {
-	console.log("awesomecoder is not loaded");
-}
-if (typeof wp !== "undefined" && typeof wp.media !== "undefined") {
-	console.log("wp.media is loaded");
-} else {
-	console.log("wp.media is not loaded");
-}
 
 const App = () => {
 	// Call the recursive function to structure the data starting from the root level
@@ -22,9 +31,9 @@ const App = () => {
 		{
 			id: 2,
 			thumbnail_id: null,
-			title: "One",
+			title: "One Step",
 			image: null,
-			link: null,
+			link: "https://awe.com",
 			parent_id: 1,
 		},
 		{
@@ -150,7 +159,6 @@ const App = () => {
 	]);
 	const structuredData = structureData(nestedData);
 	const [steps, setSteps] = useState(structuredData);
-
 	console.log("steps", steps);
 
 	const ref = useRef(); // We will use React useRef hook to reference the wrapping div:
@@ -158,7 +166,6 @@ const App = () => {
 
 	return (
 		<Fragment>
-			<DialogDemo />
 			<div
 				className="relative bg-white awesomecoder w-full h-full max-h-screen overflow-scroll mx-auto no-scrollbar "
 				{...events}
@@ -185,10 +192,12 @@ export default App;
 
 const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 	let frame;
+	const imageRef = useRef(null);
 
 	console.log("wp.media", wp.media);
 	const handleMediaUploader = (e, step) => {
 		try {
+			console.log("imageRef", imageRef.current);
 			// Uploading files
 			e.preventDefault();
 			e.stopPropagation();
@@ -280,92 +289,150 @@ const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 					{/* content */}
 					<div className="relative space-y-2">
 						<div className="relative border-b border-dashed border-zinc-600 p-2">
-							<div className="flex justify-end space-x-2">
-								{/* <svg
-									onClick={(e) =>
-										handleMediaUploader(e, tree)
-									}
-									xmlns="http://www.w3.org/2000/svg"
-									fill="none"
-									viewBox="0 0 24 24"
-									strokeWidth="1.5"
-									stroke="currentColor"
-									className="cursor-pointer w-4 h-4"
-								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										className="pointer-events-none"
-										d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-									/>
-								</svg> */}
+							<div className="flex justify-between space-x-2">
+								<p className="truncate w-40">
+									{tree?.title} Lorem, ipsum dolor sit amet
+									consectetur adipisicing elit. Nemo eveniet
+									deleniti explicabo quasi consequuntur
+									numquam voluptates maxime laborum, eius nam,
+									incidunt, amet possimus aut facere autem
+									vero in excepturi. Optio.
+								</p>
 
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									fill="none"
-									viewBox="0 0 24 24"
-									strokeWidth="1.5"
-									stroke="currentColor"
-									className="cursor-pointer w-4 h-4"
-								>
-									{/* <path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										className="pointer-events-none"
-										d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"
-									/> */}
+								<div className="relative flex space-x-2">
+									<Dialog>
+										<DialogTrigger asChild>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												fill="none"
+												viewBox="0 0 24 24"
+												strokeWidth="1.5"
+												stroke="currentColor"
+												className="cursor-pointer w-4 h-4"
+											>
+												<path
+													strokeLinecap="round"
+													strokeLinejoin="round"
+													className="pointer-events-none"
+													d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+												/>
+											</svg>
+										</DialogTrigger>
+										<DialogContent className="sm:max-w-[525px]">
+											<DialogHeader>
+												<DialogTitle>
+													Edit Steps
+												</DialogTitle>
+												<DialogDescription>
+													Make changes to the steps
+													here. Click save when you're
+													done.
+												</DialogDescription>
+											</DialogHeader>
+											<form className="grid gap-4 py-4">
+												<div className="grid grid-cols-4 items-center gap-4">
+													<Input
+														id="title"
+														defaultValue={
+															tree?.title
+														}
+														className="col-span-4"
+														placeholder="e.g. Mohammad Ibrahim"
+													/>
 
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										className="pointer-events-none"
-										d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
-									/>
-								</svg>
+													<Input
+														id="link"
+														defaultValue={
+															tree?.link
+														}
+														className="col-span-4"
+														placeholder={
+															"e.g. https://awesomecoder.dev/"
+														}
+													/>
+													<div className="relative col-span-4">
+														<Textarea
+															name="description"
+															id="description"
+															placeholder={
+																"e.g. I'm Mohammad Ibrahim. I live in the Future, where I develop the universe. For more details visit https://www.awesomecoder.dev/."
+															}
+															rows="10"
+														/>
+													</div>
+												</div>
+											</form>
+											<DialogFooter>
+												<Button type="submit">
+													Save changes
+												</Button>
+											</DialogFooter>
+										</DialogContent>
+									</Dialog>
 
-								<svg
-									onClick={(e) => addNewDataToLists(e, tree)}
-									xmlns="http://www.w3.org/2000/svg"
-									fill="none"
-									viewBox="0 0 24 24"
-									strokeWidth="1.5"
-									stroke="currentColor"
-									className="cursor-pointer w-4 h-4"
-								>
-									<path
-										className="pointer-events-none"
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-									/>
-								</svg>
+									<svg
+										onClick={(e) =>
+											addNewDataToLists(e, tree)
+										}
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										strokeWidth="1.5"
+										stroke="currentColor"
+										className="cursor-pointer w-4 h-4"
+									>
+										<path
+											className="pointer-events-none"
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+										/>
+									</svg>
 
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									fill="none"
-									viewBox="0 0 24 24"
-									strokeWidth="1.5"
-									stroke="currentColor"
-									className="cursor-pointer w-4 h-4 text-red-600"
-								>
-									<path
-										className="pointer-events-none"
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-									/>
-								</svg>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										strokeWidth="1.5"
+										stroke="currentColor"
+										className="cursor-pointer w-4 h-4 text-red-600"
+									>
+										<path
+											className="pointer-events-none"
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+										/>
+									</svg>
+								</div>
 							</div>
 						</div>
 						<div className="relative p-2">
+							<div
+								style={{
+									backgroundImage: `url(${default_image})`,
+								}}
+								ref={imageRef}
+								className="relative col-span-4 bg-contain bg-no-repeat bg-center flex justify-center items-center  h-14  gap-4 rounded-md bg-slate-50"
+							>
+								<div className="absolute flex justify-end p-3 gap-3 top-0 left-0 w-full ">
+									<Repeat1
+										onClick={(e) =>
+											handleMediaUploader(e, tree)
+										}
+										className="h-4 w-4 cursor-pointer"
+									/>
+									<XCircle className="h-4 w-4 text-red-500 cursor-pointer" />
+								</div>
+							</div>
 							<h1 className="text-sm">
 								ID: {tree?.id}
-								<br />
+								{/* <br />
 								Title: {tree?.title}
 								<br />
 								Pos: {position}
 								<br />
-								End: {end}
+								End: {end} */}
 							</h1>
 						</div>
 					</div>

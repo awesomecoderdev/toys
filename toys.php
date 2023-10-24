@@ -23,12 +23,29 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       toys
  * Domain Path:       /languages
+ *
+ *																__
+ *	                                                           |  |
+ *	  __ ___      _____  ___  ___  _ __ ___   ___  ___ ___   __|  | ___ _ ____
+ *	 / _` \ \ /\ / / _ \/ __|/ _ \| '_ ` _ \ / _ \/ __/ _ \ / _`  |/ _ \ ' __|
+ *	| (_| |\ V  V /  __/\__ \ (_) | | | | | |  __/ (_| (_) | (_|  |  __/  |
+ *	\__,_| \_/\_/ \___||___/\___/|_| |_| |_|\___|\___\___/ \__,___|\___|__|
+ *
  */
 
 // If this file is called directly, abort.
 if (!defined('WPINC')) {
 	die;
 }
+
+/**
+ * Currently plugin version.
+ * Start at version 1.0.0 and use SemVer - https://semver.org
+ * Rename this for your plugin and update it as you release new versions.
+ */
+define('AWESOMECODER_URL', plugin_dir_url(__FILE__));
+define('AWESOMECODER_PATH', plugin_dir_path(__FILE__));
+define('AWESOMECODER_BASENAME', plugin_basename(__FILE__));
 
 /**
  * Currently plugin version.
