@@ -34,15 +34,19 @@ const App = () => {
 
 	const ref = useRef(); // We will use React useRef hook to reference the wrapping div:
 	const { events } = useDraggable(ref); // Now we pass the reference to the useDraggable hook:
+	console.log("steps[0].children.length", steps[0].children.length);
 
 	return (
 		<Fragment>
 			<div
-				className="relative bg-white awesomecoder w-full h-full max-h-screen overflow-scroll mx-auto no-scrollbar "
+				className={cn(
+					"relative bg-white awesomecoder w-full h-full max-h-screen overflow-scroll mx-auto no-scrollbar ",
+					steps[0]?.children?.length < 4 && "flex justify-center"
+				)}
 				{...events}
 				ref={ref} // add reference and events to the wrapping div
 			>
-				<div className="relative p-10 no-scrollbar">
+				<div className="relative border-zinc-600 inline-flex justify-between space-x-10 border-t py-10 mr-10 p-10 no-scrollbar">
 					{steps.map((step, i) => (
 						<Fragment key={step.id + i}>
 							<Card

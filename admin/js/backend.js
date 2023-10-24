@@ -2705,7 +2705,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var App = function App() {
-  var _console;
+  var _console, _console2, _steps$, _steps$$children;
 
   // Call the recursive function to structure the data starting from the root level
   // Sample array of data (replace this with your data)
@@ -2723,22 +2723,26 @@ var App = function App() {
   /* eslint-disable */
 
 
-  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("498727794_0", "steps", steps)));
+  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("3805008132_0", "steps", steps)));
 
   var ref = (0,react__WEBPACK_IMPORTED_MODULE_6__.useRef)(); // We will use React useRef hook to reference the wrapping div:
 
   var _useDraggable = (0,react_use_draggable_scroll__WEBPACK_IMPORTED_MODULE_7__.useDraggable)(ref),
       events = _useDraggable.events; // Now we pass the reference to the useDraggable hook:
 
+  /* eslint-disable */
+
+
+  (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("3805008132_1", "steps[0].children.length", steps[0].children.length)));
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", _objectSpread(_objectSpread({
-      className: "relative bg-white awesomecoder w-full h-full max-h-screen overflow-scroll mx-auto no-scrollbar "
+      className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_5__.cn)("relative bg-white awesomecoder w-full h-full max-h-screen overflow-scroll mx-auto no-scrollbar ", ((_steps$ = steps[0]) === null || _steps$ === void 0 ? void 0 : (_steps$$children = _steps$.children) === null || _steps$$children === void 0 ? void 0 : _steps$$children.length) < 4 && "flex justify-center")
     }, events), {}, {
       ref: ref // add reference and events to the wrapping div
       ,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-        className: "relative p-10 no-scrollbar",
+        className: "relative border-zinc-600 inline-flex justify-between space-x-10 border-t py-10 mr-10 p-10 no-scrollbar",
         children: steps.map(function (step, i) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(Card, {
@@ -2757,7 +2761,7 @@ var App = function App() {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
 var Card = function Card(_ref) {
-  var _console2, _tree$children, _tree$children2;
+  var _console3, _tree$children, _tree$children2;
 
   var tree = _ref.tree,
       step = _ref.step,
@@ -2769,21 +2773,21 @@ var Card = function Card(_ref) {
   var imageRef = (0,react__WEBPACK_IMPORTED_MODULE_6__.useRef)(null);
   /* eslint-disable */
 
-  (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("498727794_1", "wp.media", wp.media)));
+  (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("3805008132_2", "wp.media", wp.media)));
 
   var handleMediaUploader = function handleMediaUploader(e, step) {
     try {
-      var _console3, _console4;
+      var _console4, _console5;
 
       /* eslint-disable */
-      (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("498727794_2", "imageRef", imageRef.current))); // Uploading files
+      (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("3805008132_3", "imageRef", imageRef.current))); // Uploading files
 
 
       e.preventDefault();
       e.stopPropagation();
       /* eslint-disable */
 
-      (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("498727794_3", "step", step))); // If the media frame already exists, reopen it.
+      (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("3805008132_4", "step", step))); // If the media frame already exists, reopen it.
 
 
       if (frame) {
@@ -2801,25 +2805,25 @@ var Card = function Card(_ref) {
       }); // When an image is selected, run a callback.
 
       frame.on("select", function () {
-        var _console5, _console6;
+        var _console6, _console7;
 
         var attachment = frame.state().get("selection").first().toJSON();
         var image = attachment.sizes.thumbnail || attachment.sizes.full;
         /* eslint-disable */
 
-        (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("498727794_4", "attachment", attachment.id, attachment)));
+        (_console6 = console).log.apply(_console6, _toConsumableArray(oo_oo("3805008132_5", "attachment", attachment.id, attachment)));
         /* eslint-disable */
 
 
-        (_console6 = console).log.apply(_console6, _toConsumableArray(oo_oo("498727794_5", "image", image, image.url)));
+        (_console7 = console).log.apply(_console7, _toConsumableArray(oo_oo("3805008132_6", "image", image, image.url)));
       }); // Finally, open the modal.
 
       frame.open();
     } catch (error) {
-      var _console7;
+      var _console8;
 
       /* eslint-disable */
-      (_console7 = console).log.apply(_console7, _toConsumableArray(oo_oo("498727794_6", "error", error)));
+      (_console8 = console).log.apply(_console8, _toConsumableArray(oo_oo("3805008132_7", "error", error)));
     }
   };
 
