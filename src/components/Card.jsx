@@ -10,6 +10,17 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "@/components/ui/dialog";
+import {
+	AlertDialog,
+	AlertDialogAction,
+	AlertDialogCancel,
+	AlertDialogContent,
+	AlertDialogDescription,
+	AlertDialogFooter,
+	AlertDialogHeader,
+	AlertDialogTitle,
+	AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -129,7 +140,7 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 			});
 	};
 
-	const delteDataFromLists = (e, step) => {
+	const deleteDataFromLists = (e, step) => {
 		axios
 			.post(
 				endpoint,
@@ -308,21 +319,57 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 										/>
 									</svg>
 
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										strokeWidth="1.5"
-										stroke="currentColor"
-										className="cursor-pointer w-4 h-4 text-red-600"
-									>
-										<path
-											className="pointer-events-none"
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-										/>
-									</svg>
+									{!isFirst && (
+										<AlertDialog>
+											<AlertDialogTrigger asChild>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													fill="none"
+													viewBox="0 0 24 24"
+													strokeWidth="1.5"
+													stroke="currentColor"
+													className="cursor-pointer w-4 h-4 text-red-600"
+												>
+													<path
+														className="pointer-events-none"
+														strokeLinecap="round"
+														strokeLinejoin="round"
+														d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+													/>
+												</svg>
+											</AlertDialogTrigger>
+											<AlertDialogContent>
+												<AlertDialogHeader>
+													<AlertDialogTitle>
+														Are you absolutely sure?
+													</AlertDialogTitle>
+													<AlertDialogDescription>
+														This action cannot be
+														undo. This will
+														permanently delete
+														current steps with all
+														child steps from
+														database.
+													</AlertDialogDescription>
+												</AlertDialogHeader>
+												<AlertDialogFooter>
+													<AlertDialogCancel>
+														Cancel
+													</AlertDialogCancel>
+													<AlertDialogAction
+														onClick={(e) =>
+															deleteDataFromLists(
+																e,
+																tree
+															)
+														}
+													>
+														Continue
+													</AlertDialogAction>
+												</AlertDialogFooter>
+											</AlertDialogContent>
+										</AlertDialog>
+									)}
 								</div>
 							</div>
 						</div>
@@ -428,6 +475,7 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 										tree={steps}
 										position={i}
 										end={end - 1}
+										setSteps={setSteps}
 									/>
 								))}
 							</div>

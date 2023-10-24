@@ -224,9 +224,10 @@ class Toys_Admin
 	 */
 	public function create($request)
 	{
+		$id = isset($request["id"]) ? $request["id"] : null;
 		$result = $this->wpdb->insert($this->table, [
-			"parent_id" => isset($request["id"]) ? $request["id"] : null,
-			"title" => "New Step",
+			"parent_id" => $id,
+			"title" => "New Step $id",
 		]);
 
 		if (!is_wp_error($result)) {
@@ -268,8 +269,51 @@ class Toys_Admin
 			$steps = $this->wpdb->get_results($this->wpdb->prepare("SELECT * FROM $this->table"), ARRAY_A);
 			wp_send_json_success([
 				"success" => true,
-				"status"  => 201,
-				"message" => __("Successfully Created", "toys"),
+				"status"  => 200,
+				"message" => __("Successfully Deleted", "toys"),
+				"data" => [
+					"steps" => $steps
+				]
+			]);
+		} else {
+			wp_send_json_error([
+				"success" => false,
+				"status"  => 403,
+				"message" => __("Something went wrong.", "toys"),
+			]);
+		}
+	}
+
+
+
+	/**
+	 * Register the JavaScript for the admin area.
+	 *
+	 * @since    1.0.0
+	 */
+	public function update($request)
+	{
+		$data = [];
+		if (isset($request["title"]) && !empty($request["title"])) {
+			$data["title"] = $request["title"];
+		}
+		if (isset($request["link"]) && !empty($request["link"])) {
+			$data["link"] = $request["link"];
+		}
+		if (isset($request["description"]) && !empty($request["link"])) {
+		}
+		$data["link"] = isset($request["description"]) ? $request["description"] : null;
+
+		$update = $this->wpdb->update($this->table, $data, [
+			"id" => $request["id"],
+		]);
+
+		if (!is_wp_error($update)) {
+			$steps = $this->wpdb->get_results($this->wpdb->prepare("SELECT * FROM $this->table"), ARRAY_A);
+			wp_send_json_success([
+				"success" => true,
+				"status"  => 200,
+				"message" => __("Successfully Updated", "toys"),
 				"data" => [
 					"steps" => $steps
 				]

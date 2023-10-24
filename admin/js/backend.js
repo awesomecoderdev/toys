@@ -2856,16 +2856,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var sonner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sonner */ "./node_modules/sonner/dist/index.mjs");
 /* harmony import */ var _components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/ui/dialog */ "./src/components/ui/dialog.jsx");
-/* harmony import */ var _components_ui_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/ui/button */ "./src/components/ui/button.jsx");
-/* harmony import */ var _components_ui_input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/ui/input */ "./src/components/ui/input.jsx");
-/* harmony import */ var _components_ui_label__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/components/ui/label */ "./src/components/ui/label.jsx");
-/* harmony import */ var _components_ui_textarea__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/components/ui/textarea */ "./src/components/ui/textarea.jsx");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/repeat-1.js");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/x-circle.js");
-/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/lib/utils */ "./src/lib/utils.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_ui_alert_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/ui/alert-dialog */ "./src/components/ui/alert-dialog.jsx");
+/* harmony import */ var _components_ui_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/ui/button */ "./src/components/ui/button.jsx");
+/* harmony import */ var _components_ui_input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/components/ui/input */ "./src/components/ui/input.jsx");
+/* harmony import */ var _components_ui_label__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/components/ui/label */ "./src/components/ui/label.jsx");
+/* harmony import */ var _components_ui_textarea__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/components/ui/textarea */ "./src/components/ui/textarea.jsx");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/repeat-1.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/x-circle.js");
+/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/lib/utils */ "./src/lib/utils.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -2877,6 +2878,7 @@ function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symb
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 
 
 
@@ -2903,21 +2905,21 @@ var Card = function Card(_ref) {
   var imageRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   /* eslint-disable */
 
-  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("4264635971_0", "wp.media", wp.media)));
+  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("599215984_0", "wp.media", wp.media)));
 
   var handleMediaUploader = function handleMediaUploader(e, step) {
     try {
       var _console2, _console3;
 
       /* eslint-disable */
-      (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("4264635971_1", "imageRef", imageRef.current))); // Uploading files
+      (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("599215984_1", "imageRef", imageRef.current))); // Uploading files
 
 
       e.preventDefault();
       e.stopPropagation();
       /* eslint-disable */
 
-      (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("4264635971_2", "step", step))); // If the media frame already exists, reopen it.
+      (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("599215984_2", "step", step))); // If the media frame already exists, reopen it.
 
 
       if (frame) {
@@ -2941,11 +2943,11 @@ var Card = function Card(_ref) {
         var image = attachment.sizes.thumbnail || attachment.sizes.full;
         /* eslint-disable */
 
-        (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("4264635971_3", "attachment", attachment.id, attachment)));
+        (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("599215984_3", "attachment", attachment.id, attachment)));
         /* eslint-disable */
 
 
-        (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("4264635971_4", "image", image, image.url)));
+        (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("599215984_4", "image", image, image.url)));
       }); // Finally, open the modal.
 
       frame.open();
@@ -2953,7 +2955,7 @@ var Card = function Card(_ref) {
       var _console6;
 
       /* eslint-disable */
-      (_console6 = console).log.apply(_console6, _toConsumableArray(oo_oo("4264635971_5", "error", error)));
+      (_console6 = console).log.apply(_console6, _toConsumableArray(oo_oo("599215984_5", "error", error)));
     }
   };
 
@@ -2964,7 +2966,7 @@ var Card = function Card(_ref) {
       title: "New Item",
       children: []
     };
-    axios__WEBPACK_IMPORTED_MODULE_8___default().post(_lib_utils__WEBPACK_IMPORTED_MODULE_7__.endpoint, {
+    axios__WEBPACK_IMPORTED_MODULE_9___default().post(_lib_utils__WEBPACK_IMPORTED_MODULE_8__.endpoint, {
       "do": "create",
       id: step.id
     }, {
@@ -2980,7 +2982,7 @@ var Card = function Card(_ref) {
       var response = data;
       /* eslint-disable */
 
-      (_console7 = console).log.apply(_console7, _toConsumableArray(oo_oo("4264635971_6", "res", data)));
+      (_console7 = console).log.apply(_console7, _toConsumableArray(oo_oo("599215984_6", "res", data)));
 
       if (response.success) {
         sonner__WEBPACK_IMPORTED_MODULE_1__.toast.success(response.message);
@@ -2989,15 +2991,15 @@ var Card = function Card(_ref) {
           var _console8;
 
           /* eslint-disable */
-          (_console8 = console).log.apply(_console8, _toConsumableArray(oo_oo("4264635971_7", "steps", (0,_lib_utils__WEBPACK_IMPORTED_MODULE_7__.structureData)(response.data.steps))));
+          (_console8 = console).log.apply(_console8, _toConsumableArray(oo_oo("599215984_7", "steps", (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps))));
 
           try {
-            setSteps((0,_lib_utils__WEBPACK_IMPORTED_MODULE_7__.structureData)(response.data.steps));
+            setSteps((0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps));
           } catch (error) {
             var _console9;
 
             /* eslint-disable */
-            (_console9 = console).log.apply(_console9, _toConsumableArray(oo_oo("4264635971_8", "error", error)));
+            (_console9 = console).log.apply(_console9, _toConsumableArray(oo_oo("599215984_8", "error", error)));
           }
         }
       } else {
@@ -3007,7 +3009,7 @@ var Card = function Card(_ref) {
       var _console10;
 
       /* eslint-disable */
-      (_console10 = console).log.apply(_console10, _toConsumableArray(oo_oo("4264635971_9", "err", err)));
+      (_console10 = console).log.apply(_console10, _toConsumableArray(oo_oo("599215984_9", "err", err)));
 
       if (err.message) {
         sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
@@ -3017,8 +3019,8 @@ var Card = function Card(_ref) {
     });
   };
 
-  var delteDataFromLists = function delteDataFromLists(e, step) {
-    axios__WEBPACK_IMPORTED_MODULE_8___default().post(_lib_utils__WEBPACK_IMPORTED_MODULE_7__.endpoint, {
+  var deleteDataFromLists = function deleteDataFromLists(e, step) {
+    axios__WEBPACK_IMPORTED_MODULE_9___default().post(_lib_utils__WEBPACK_IMPORTED_MODULE_8__.endpoint, {
       "do": "delete",
       id: step.id
     }, {
@@ -3034,7 +3036,7 @@ var Card = function Card(_ref) {
       var response = data;
       /* eslint-disable */
 
-      (_console11 = console).log.apply(_console11, _toConsumableArray(oo_oo("4264635971_10", "res", data)));
+      (_console11 = console).log.apply(_console11, _toConsumableArray(oo_oo("599215984_10", "res", data)));
 
       if (response.success) {
         sonner__WEBPACK_IMPORTED_MODULE_1__.toast.success(response.message);
@@ -3043,15 +3045,15 @@ var Card = function Card(_ref) {
           var _console12;
 
           /* eslint-disable */
-          (_console12 = console).log.apply(_console12, _toConsumableArray(oo_oo("4264635971_11", "steps", (0,_lib_utils__WEBPACK_IMPORTED_MODULE_7__.structureData)(response.data.steps))));
+          (_console12 = console).log.apply(_console12, _toConsumableArray(oo_oo("599215984_11", "steps", (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps))));
 
           try {
-            setSteps((0,_lib_utils__WEBPACK_IMPORTED_MODULE_7__.structureData)(response.data.steps));
+            setSteps((0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps));
           } catch (error) {
             var _console13;
 
             /* eslint-disable */
-            (_console13 = console).log.apply(_console13, _toConsumableArray(oo_oo("4264635971_12", "error", error)));
+            (_console13 = console).log.apply(_console13, _toConsumableArray(oo_oo("599215984_12", "error", error)));
           }
         }
       } else {
@@ -3061,7 +3063,7 @@ var Card = function Card(_ref) {
       var _console14;
 
       /* eslint-disable */
-      (_console14 = console).log.apply(_console14, _toConsumableArray(oo_oo("4264635971_13", "err", err)));
+      (_console14 = console).log.apply(_console14, _toConsumableArray(oo_oo("599215984_13", "err", err)));
 
       if (err.message) {
         sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
@@ -3071,71 +3073,71 @@ var Card = function Card(_ref) {
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-      className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_7__.cn)("relative"),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-        className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_7__.cn)("pointer-events-none", position == 0 && "absolute w-1/2 bg-white h-5 -top-11", step == null && end == position && "absolute w-1/2 bg-white h-5 -top-11 -right-[1px]")
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-        className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_7__.cn)("relative mx-auto bg-white mb-10 z-10 shadow-xl drop-shadow-2xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600", position === 0 ? "" // "-translate-x-20"
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+      className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.cn)("relative"),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.cn)("pointer-events-none", position == 0 && "absolute w-1/2 bg-white h-5 -top-11", step == null && end == position && "absolute w-1/2 bg-white h-5 -top-11 -right-[1px]")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+        className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.cn)("relative mx-auto bg-white mb-10 z-10 shadow-xl drop-shadow-2xl rounded-md w-56 min-h-[10rem] border border-dashed border-zinc-600", position === 0 ? "" // "-translate-x-20"
         : "", step == null && end == position ? //  "translate-x-20"
         "" : ""),
-        children: [step == null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-          className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_7__.cn)("absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -top-10" // tree?.children?.length < 1 && "hidden"
+        children: [step == null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
+          className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.cn)("absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -top-10" // tree?.children?.length < 1 && "hidden"
           )
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
           className: "relative space-y-2",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
             className: "relative border-b border-dashed border-zinc-600 p-2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
               className: "flex justify-between space-x-2",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("p", {
                 className: "truncate w-40",
                 children: tree === null || tree === void 0 ? void 0 : tree.title
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
                 className: "relative flex space-x-2",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.Dialog, {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.DialogTrigger, {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.Dialog, {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.DialogTrigger, {
                     asChild: true,
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("svg", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("svg", {
                       xmlns: "http://www.w3.org/2000/svg",
                       fill: "none",
                       viewBox: "0 0 24 24",
                       strokeWidth: "1.5",
                       stroke: "currentColor",
                       className: "cursor-pointer w-4 h-4",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("path", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("path", {
                         strokeLinecap: "round",
                         strokeLinejoin: "round",
                         className: "pointer-events-none",
                         d: "M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
                       })
                     })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.DialogContent, {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.DialogContent, {
                     className: "sm:max-w-[525px]",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.DialogHeader, {
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.DialogTitle, {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.DialogHeader, {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.DialogTitle, {
                         children: "Edit Steps"
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.DialogDescription, {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.DialogDescription, {
                         children: "Make changes to the steps here. Click save when you're done."
                       })]
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("form", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("form", {
                       className: "grid gap-4 py-4",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
                         className: "grid grid-cols-4 items-center gap-4",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_ui_input__WEBPACK_IMPORTED_MODULE_4__.Input, {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_input__WEBPACK_IMPORTED_MODULE_5__.Input, {
                           id: "title",
                           defaultValue: tree === null || tree === void 0 ? void 0 : tree.title,
                           className: "col-span-4",
                           placeholder: "e.g. Mohammad Ibrahim"
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_ui_input__WEBPACK_IMPORTED_MODULE_4__.Input, {
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_input__WEBPACK_IMPORTED_MODULE_5__.Input, {
                           id: "link",
                           defaultValue: tree === null || tree === void 0 ? void 0 : tree.link,
                           className: "col-span-4",
                           placeholder: "e.g. https://awesomecoder.dev/"
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
                           className: "relative col-span-4",
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_ui_textarea__WEBPACK_IMPORTED_MODULE_6__.Textarea, {
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_textarea__WEBPACK_IMPORTED_MODULE_7__.Textarea, {
                             name: "description",
                             id: "description",
                             placeholder: "e.g. I'm Mohammad Ibrahim. I live in the Future, where I develop the universe. For more details visit https://www.awesomecoder.dev/.",
@@ -3145,14 +3147,14 @@ var Card = function Card(_ref) {
                           })
                         })]
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.DialogFooter, {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_ui_button__WEBPACK_IMPORTED_MODULE_3__.Button, {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.DialogFooter, {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_button__WEBPACK_IMPORTED_MODULE_4__.Button, {
                         type: "submit",
                         children: "Save changes"
                       })
                     })]
                   })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("svg", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("svg", {
                   onClick: function onClick(e) {
                     return addNewDataToLists(e, tree);
                   },
@@ -3162,89 +3164,111 @@ var Card = function Card(_ref) {
                   strokeWidth: "1.5",
                   stroke: "currentColor",
                   className: "cursor-pointer w-4 h-4",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("path", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("path", {
                     className: "pointer-events-none",
                     strokeLinecap: "round",
                     strokeLinejoin: "round",
                     d: "M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
                   })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("svg", {
-                  xmlns: "http://www.w3.org/2000/svg",
-                  fill: "none",
-                  viewBox: "0 0 24 24",
-                  strokeWidth: "1.5",
-                  stroke: "currentColor",
-                  className: "cursor-pointer w-4 h-4 text-red-600",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("path", {
-                    className: "pointer-events-none",
-                    strokeLinecap: "round",
-                    strokeLinejoin: "round",
-                    d: "M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  })
+                }), !isFirst && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_components_ui_alert_dialog__WEBPACK_IMPORTED_MODULE_3__.AlertDialog, {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_alert_dialog__WEBPACK_IMPORTED_MODULE_3__.AlertDialogTrigger, {
+                    asChild: true,
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("svg", {
+                      xmlns: "http://www.w3.org/2000/svg",
+                      fill: "none",
+                      viewBox: "0 0 24 24",
+                      strokeWidth: "1.5",
+                      stroke: "currentColor",
+                      className: "cursor-pointer w-4 h-4 text-red-600",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("path", {
+                        className: "pointer-events-none",
+                        strokeLinecap: "round",
+                        strokeLinejoin: "round",
+                        d: "M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      })
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_components_ui_alert_dialog__WEBPACK_IMPORTED_MODULE_3__.AlertDialogContent, {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_components_ui_alert_dialog__WEBPACK_IMPORTED_MODULE_3__.AlertDialogHeader, {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_alert_dialog__WEBPACK_IMPORTED_MODULE_3__.AlertDialogTitle, {
+                        children: "Are you absolutely sure?"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_alert_dialog__WEBPACK_IMPORTED_MODULE_3__.AlertDialogDescription, {
+                        children: "This action cannot be undo. This will permanently delete current steps with all child steps from database."
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_components_ui_alert_dialog__WEBPACK_IMPORTED_MODULE_3__.AlertDialogFooter, {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_alert_dialog__WEBPACK_IMPORTED_MODULE_3__.AlertDialogCancel, {
+                        children: "Cancel"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_alert_dialog__WEBPACK_IMPORTED_MODULE_3__.AlertDialogAction, {
+                        onClick: function onClick(e) {
+                          return deleteDataFromLists(e, tree);
+                        },
+                        children: "Continue"
+                      })]
+                    })]
+                  })]
                 })]
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
             className: "relative",
-            children: [tree !== null && tree !== void 0 && tree.image ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+            children: [tree !== null && tree !== void 0 && tree.image ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
                 style: {
-                  backgroundImage: tree !== null && tree !== void 0 && tree.image && tree.thumbnail_id ? "url(".concat(tree.image, ")") : "url(".concat(_lib_utils__WEBPACK_IMPORTED_MODULE_7__.default_image, ")")
+                  backgroundImage: tree !== null && tree !== void 0 && tree.image && tree.thumbnail_id ? "url(".concat(tree.image, ")") : "url(".concat(_lib_utils__WEBPACK_IMPORTED_MODULE_8__.default_image, ")")
                 },
                 ref: imageRef,
                 className: "relative mx-2 col-span-4 bg-contain bg-no-repeat bg-center flex justify-center items-center aspect-[8/4] rounded-md bg-slate-50",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
                   className: "absolute flex justify-end p-3 gap-3 top-0 left-0 w-full ",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_11__["default"], {
                     onClick: function onClick(e) {
                       return handleMediaUploader(e, tree);
                     },
                     className: "h-4 w-4 cursor-pointer"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_11__["default"], {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_12__["default"], {
                     className: "h-4 w-4 text-red-500 cursor-pointer"
                   })]
                 })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("p", {
                 className: "lead capitalize px-2 py-1 line-clamp-3",
                 children: tree.description
               })]
-            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
                 className: "relative",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
                   onClick: function onClick(e) {
                     return handleMediaUploader(e, tree);
                   },
                   className: "relative cursor-pointer pb-2 border-b border-dashed border-zinc-600 w-full flex items-center justify-end",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("p", {
                     className: "pointer-events-none text-[10px]",
                     children: "Choose Image"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("svg", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("svg", {
                     xmlns: "http://www.w3.org/2000/svg",
                     fill: "none",
                     viewBox: "0 0 24 24",
                     strokeWidth: "1.5",
                     stroke: "currentColor",
                     className: "pointer-events-none w-4 h-4 mx-2",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("path", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("path", {
                       className: "pointer-events-none",
                       strokeLinecap: "round",
                       strokeLinejoin: "round",
                       d: "M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
                     })
                   })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("p", {
                   className: "lead capitalize px-2 py-1 line-clamp-6",
                   children: tree.description
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("h1", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("h1", {
               className: "text-sm hidden",
               children: ["ID: ", tree === null || tree === void 0 ? void 0 : tree.id]
             })]
           })]
-        }), (tree === null || tree === void 0 ? void 0 : (_tree$children = tree.children) === null || _tree$children === void 0 ? void 0 : _tree$children.length) > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-          className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_7__.cn)("absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -bottom-10", (tree === null || tree === void 0 ? void 0 : (_tree$children2 = tree.children) === null || _tree$children2 === void 0 ? void 0 : _tree$children2.length) == 1 && "hidden")
+        }), (tree === null || tree === void 0 ? void 0 : (_tree$children = tree.children) === null || _tree$children === void 0 ? void 0 : _tree$children.length) > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
+          className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.cn)("absolute w-0.5 h-10 border-r border-dashed border-zinc-600 left-1/2 translate-x-[-50%] -bottom-10", (tree === null || tree === void 0 ? void 0 : (_tree$children2 = tree.children) === null || _tree$children2 === void 0 ? void 0 : _tree$children2.length) == 1 && "hidden")
         })]
       }), function () {
         var _tree$children3;
@@ -3254,13 +3278,14 @@ var Card = function Card(_ref) {
 
           var _end = (_tree$children$length = tree === null || tree === void 0 ? void 0 : (_tree$children4 = tree.children) === null || _tree$children4 === void 0 ? void 0 : _tree$children4.length) !== null && _tree$children$length !== void 0 ? _tree$children$length : 0;
 
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-            className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_7__.cn)("relative border-dashed border-zinc-600  inline-flex justify-between space-x-10", (tree === null || tree === void 0 ? void 0 : (_tree$children5 = tree.children) === null || _tree$children5 === void 0 ? void 0 : _tree$children5.length) != 1 && "border-t", (tree === null || tree === void 0 ? void 0 : (_tree$children6 = tree.children) === null || _tree$children6 === void 0 ? void 0 : _tree$children6.length) > 1 && "py-10", isFirst && "mr-10"),
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+            className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.cn)("relative border-dashed border-zinc-600  inline-flex justify-between space-x-10", (tree === null || tree === void 0 ? void 0 : (_tree$children5 = tree.children) === null || _tree$children5 === void 0 ? void 0 : _tree$children5.length) != 1 && "border-t", (tree === null || tree === void 0 ? void 0 : (_tree$children6 = tree.children) === null || _tree$children6 === void 0 ? void 0 : _tree$children6.length) > 1 && "py-10", isFirst && "mr-10"),
             children: tree === null || tree === void 0 ? void 0 : (_tree$children7 = tree.children) === null || _tree$children7 === void 0 ? void 0 : _tree$children7.map(function (steps, i) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(Card, {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(Card, {
                 tree: steps,
                 position: i,
-                end: _end - 1
+                end: _end - 1,
+                setSteps: setSteps
               }, "".concat(tree === null || tree === void 0 ? void 0 : tree.id, ".").concat(steps === null || steps === void 0 ? void 0 : steps.length, ".").concat(i));
             })
           });
@@ -3326,6 +3351,153 @@ function oo_te() {
 
 ;
 /*eslint unicorn/no-abusive-eslint-disable:,eslint-comments/disable-enable-pair:,eslint-comments/no-unlimited-disable:,eslint-comments/no-aggregating-enable:,eslint-comments/no-duplicate-disable:,eslint-comments/no-unused-disable:,eslint-comments/no-unused-enable:,*/
+
+/***/ }),
+
+/***/ "./src/components/ui/alert-dialog.jsx":
+/*!********************************************!*\
+  !*** ./src/components/ui/alert-dialog.jsx ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AlertDialog": () => (/* binding */ AlertDialog),
+/* harmony export */   "AlertDialogAction": () => (/* binding */ AlertDialogAction),
+/* harmony export */   "AlertDialogCancel": () => (/* binding */ AlertDialogCancel),
+/* harmony export */   "AlertDialogContent": () => (/* binding */ AlertDialogContent),
+/* harmony export */   "AlertDialogDescription": () => (/* binding */ AlertDialogDescription),
+/* harmony export */   "AlertDialogFooter": () => (/* binding */ AlertDialogFooter),
+/* harmony export */   "AlertDialogHeader": () => (/* binding */ AlertDialogHeader),
+/* harmony export */   "AlertDialogOverlay": () => (/* binding */ AlertDialogOverlay),
+/* harmony export */   "AlertDialogPortal": () => (/* binding */ AlertDialogPortal),
+/* harmony export */   "AlertDialogTitle": () => (/* binding */ AlertDialogTitle),
+/* harmony export */   "AlertDialogTrigger": () => (/* binding */ AlertDialogTrigger)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _radix_ui_react_alert_dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @radix-ui/react-alert-dialog */ "./node_modules/@radix-ui/react-alert-dialog/dist/index.mjs");
+/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/lib/utils */ "./src/lib/utils.js");
+/* harmony import */ var _components_ui_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/ui/button */ "./src/components/ui/button.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _excluded = ["className", "children"],
+    _excluded2 = ["className"],
+    _excluded3 = ["className"],
+    _excluded4 = ["className"],
+    _excluded5 = ["className"],
+    _excluded6 = ["className"],
+    _excluded7 = ["className"],
+    _excluded8 = ["className"];
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+
+var AlertDialog = _radix_ui_react_alert_dialog__WEBPACK_IMPORTED_MODULE_4__.Root;
+var AlertDialogTrigger = _radix_ui_react_alert_dialog__WEBPACK_IMPORTED_MODULE_4__.Trigger;
+var AlertDialogPortal = _radix_ui_react_alert_dialog__WEBPACK_IMPORTED_MODULE_4__.Portal;
+var AlertDialogOverlay = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (_ref, ref) {
+  var className = _ref.className,
+      children = _ref.children,
+      props = _objectWithoutProperties(_ref, _excluded);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_radix_ui_react_alert_dialog__WEBPACK_IMPORTED_MODULE_4__.Overlay, _objectSpread(_objectSpread({
+    className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className)
+  }, props), {}, {
+    ref: ref
+  }));
+});
+AlertDialogOverlay.displayName = _radix_ui_react_alert_dialog__WEBPACK_IMPORTED_MODULE_4__.Overlay.displayName;
+var AlertDialogContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (_ref2, ref) {
+  var className = _ref2.className,
+      props = _objectWithoutProperties(_ref2, _excluded2);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(AlertDialogPortal, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(AlertDialogOverlay, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_radix_ui_react_alert_dialog__WEBPACK_IMPORTED_MODULE_4__.Content, _objectSpread({
+      ref: ref,
+      className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg md:w-full", className)
+    }, props))]
+  });
+});
+AlertDialogContent.displayName = _radix_ui_react_alert_dialog__WEBPACK_IMPORTED_MODULE_4__.Content.displayName;
+
+var AlertDialogHeader = function AlertDialogHeader(_ref3) {
+  var className = _ref3.className,
+      props = _objectWithoutProperties(_ref3, _excluded3);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", _objectSpread({
+    className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("flex flex-col space-y-2 text-center sm:text-left", className)
+  }, props));
+};
+
+AlertDialogHeader.displayName = "AlertDialogHeader";
+
+var AlertDialogFooter = function AlertDialogFooter(_ref4) {
+  var className = _ref4.className,
+      props = _objectWithoutProperties(_ref4, _excluded4);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", _objectSpread({
+    className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className)
+  }, props));
+};
+
+AlertDialogFooter.displayName = "AlertDialogFooter";
+var AlertDialogTitle = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (_ref5, ref) {
+  var className = _ref5.className,
+      props = _objectWithoutProperties(_ref5, _excluded5);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_radix_ui_react_alert_dialog__WEBPACK_IMPORTED_MODULE_4__.Title, _objectSpread({
+    ref: ref,
+    className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("text-lg font-semibold", className)
+  }, props));
+});
+AlertDialogTitle.displayName = _radix_ui_react_alert_dialog__WEBPACK_IMPORTED_MODULE_4__.Title.displayName;
+var AlertDialogDescription = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (_ref6, ref) {
+  var className = _ref6.className,
+      props = _objectWithoutProperties(_ref6, _excluded6);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_radix_ui_react_alert_dialog__WEBPACK_IMPORTED_MODULE_4__.Description, _objectSpread({
+    ref: ref,
+    className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("text-sm text-muted-foreground", className)
+  }, props));
+});
+AlertDialogDescription.displayName = _radix_ui_react_alert_dialog__WEBPACK_IMPORTED_MODULE_4__.Description.displayName;
+var AlertDialogAction = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (_ref7, ref) {
+  var className = _ref7.className,
+      props = _objectWithoutProperties(_ref7, _excluded7);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_radix_ui_react_alert_dialog__WEBPACK_IMPORTED_MODULE_4__.Action, _objectSpread({
+    ref: ref,
+    className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)((0,_components_ui_button__WEBPACK_IMPORTED_MODULE_2__.buttonVariants)(), className)
+  }, props));
+});
+AlertDialogAction.displayName = _radix_ui_react_alert_dialog__WEBPACK_IMPORTED_MODULE_4__.Action.displayName;
+var AlertDialogCancel = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (_ref8, ref) {
+  var className = _ref8.className,
+      props = _objectWithoutProperties(_ref8, _excluded8);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_radix_ui_react_alert_dialog__WEBPACK_IMPORTED_MODULE_4__.Cancel, _objectSpread({
+    ref: ref,
+    className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)((0,_components_ui_button__WEBPACK_IMPORTED_MODULE_2__.buttonVariants)({
+      variant: "outline"
+    }), "mt-2 sm:mt-0", className)
+  }, props));
+});
+AlertDialogCancel.displayName = _radix_ui_react_alert_dialog__WEBPACK_IMPORTED_MODULE_4__.Cancel.displayName;
+
 
 /***/ }),
 
@@ -59904,6 +60076,239 @@ function $e42e1063c40fb3ef$export$b9ecd428b558ff10(originalEventHandler, ourEven
         if (checkForDefaultPrevented === false || !event.defaultPrevented) return ourEventHandler === null || ourEventHandler === void 0 ? void 0 : ourEventHandler(event);
     };
 }
+
+
+
+
+
+//# sourceMappingURL=index.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@radix-ui/react-alert-dialog/dist/index.mjs":
+/*!******************************************************************!*\
+  !*** ./node_modules/@radix-ui/react-alert-dialog/dist/index.mjs ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Action": () => (/* binding */ $905f4ae918aab1aa$export$e19cd5f9376f8cee),
+/* harmony export */   "AlertDialog": () => (/* binding */ $905f4ae918aab1aa$export$de466dd8317b0b75),
+/* harmony export */   "AlertDialogAction": () => (/* binding */ $905f4ae918aab1aa$export$b454f818c58ee85d),
+/* harmony export */   "AlertDialogCancel": () => (/* binding */ $905f4ae918aab1aa$export$2f67a923571aaea0),
+/* harmony export */   "AlertDialogContent": () => (/* binding */ $905f4ae918aab1aa$export$94e6af45f0af4efd),
+/* harmony export */   "AlertDialogDescription": () => (/* binding */ $905f4ae918aab1aa$export$a23b55cde55ad9a5),
+/* harmony export */   "AlertDialogOverlay": () => (/* binding */ $905f4ae918aab1aa$export$a707a4895ce23256),
+/* harmony export */   "AlertDialogPortal": () => (/* binding */ $905f4ae918aab1aa$export$660f2bfdb986706c),
+/* harmony export */   "AlertDialogTitle": () => (/* binding */ $905f4ae918aab1aa$export$225e0da62d314b7),
+/* harmony export */   "AlertDialogTrigger": () => (/* binding */ $905f4ae918aab1aa$export$6edd7a623ef0f40b),
+/* harmony export */   "Cancel": () => (/* binding */ $905f4ae918aab1aa$export$848c9b7ead0df967),
+/* harmony export */   "Content": () => (/* binding */ $905f4ae918aab1aa$export$7c6e2c02157bb7d2),
+/* harmony export */   "Description": () => (/* binding */ $905f4ae918aab1aa$export$393edc798c47379d),
+/* harmony export */   "Overlay": () => (/* binding */ $905f4ae918aab1aa$export$c6fdb837b070b4ff),
+/* harmony export */   "Portal": () => (/* binding */ $905f4ae918aab1aa$export$602eac185826482c),
+/* harmony export */   "Root": () => (/* binding */ $905f4ae918aab1aa$export$be92b6f5f03c0fe9),
+/* harmony export */   "Title": () => (/* binding */ $905f4ae918aab1aa$export$f99233281efd08a0),
+/* harmony export */   "Trigger": () => (/* binding */ $905f4ae918aab1aa$export$41fb9f06171c75f4),
+/* harmony export */   "createAlertDialogScope": () => (/* binding */ $905f4ae918aab1aa$export$b8891880751c2c5b)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _radix_ui_react_context__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @radix-ui/react-context */ "./node_modules/@radix-ui/react-context/dist/index.mjs");
+/* harmony import */ var _radix_ui_react_compose_refs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @radix-ui/react-compose-refs */ "./node_modules/@radix-ui/react-compose-refs/dist/index.mjs");
+/* harmony import */ var _radix_ui_react_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @radix-ui/react-dialog */ "./node_modules/@radix-ui/react-dialog/dist/index.mjs");
+/* harmony import */ var _radix_ui_primitive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @radix-ui/primitive */ "./node_modules/@radix-ui/primitive/dist/index.mjs");
+/* harmony import */ var _radix_ui_react_slot__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @radix-ui/react-slot */ "./node_modules/@radix-ui/react-slot/dist/index.mjs");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------------
+ * AlertDialog
+ * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$ROOT_NAME = 'AlertDialog';
+const [$905f4ae918aab1aa$var$createAlertDialogContext, $905f4ae918aab1aa$export$b8891880751c2c5b] = (0,_radix_ui_react_context__WEBPACK_IMPORTED_MODULE_2__.createContextScope)($905f4ae918aab1aa$var$ROOT_NAME, [
+    _radix_ui_react_dialog__WEBPACK_IMPORTED_MODULE_3__.createDialogScope
+]);
+const $905f4ae918aab1aa$var$useDialogScope = (0,_radix_ui_react_dialog__WEBPACK_IMPORTED_MODULE_3__.createDialogScope)();
+const $905f4ae918aab1aa$export$de466dd8317b0b75 = (props)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...alertDialogProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(_radix_ui_react_dialog__WEBPACK_IMPORTED_MODULE_3__.Root, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, dialogScope, alertDialogProps, {
+        modal: true
+    }));
+};
+/*#__PURE__*/ Object.assign($905f4ae918aab1aa$export$de466dd8317b0b75, {
+    displayName: $905f4ae918aab1aa$var$ROOT_NAME
+});
+/* -------------------------------------------------------------------------------------------------
+ * AlertDialogTrigger
+ * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$TRIGGER_NAME = 'AlertDialogTrigger';
+const $905f4ae918aab1aa$export$6edd7a623ef0f40b = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...triggerProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(_radix_ui_react_dialog__WEBPACK_IMPORTED_MODULE_3__.Trigger, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, dialogScope, triggerProps, {
+        ref: forwardedRef
+    }));
+});
+/*#__PURE__*/ Object.assign($905f4ae918aab1aa$export$6edd7a623ef0f40b, {
+    displayName: $905f4ae918aab1aa$var$TRIGGER_NAME
+});
+/* -------------------------------------------------------------------------------------------------
+ * AlertDialogPortal
+ * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$PORTAL_NAME = 'AlertDialogPortal';
+const $905f4ae918aab1aa$export$660f2bfdb986706c = (props)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...portalProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(_radix_ui_react_dialog__WEBPACK_IMPORTED_MODULE_3__.Portal, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, dialogScope, portalProps));
+};
+/*#__PURE__*/ Object.assign($905f4ae918aab1aa$export$660f2bfdb986706c, {
+    displayName: $905f4ae918aab1aa$var$PORTAL_NAME
+});
+/* -------------------------------------------------------------------------------------------------
+ * AlertDialogOverlay
+ * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$OVERLAY_NAME = 'AlertDialogOverlay';
+const $905f4ae918aab1aa$export$a707a4895ce23256 = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...overlayProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(_radix_ui_react_dialog__WEBPACK_IMPORTED_MODULE_3__.Overlay, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, dialogScope, overlayProps, {
+        ref: forwardedRef
+    }));
+});
+/*#__PURE__*/ Object.assign($905f4ae918aab1aa$export$a707a4895ce23256, {
+    displayName: $905f4ae918aab1aa$var$OVERLAY_NAME
+});
+/* -------------------------------------------------------------------------------------------------
+ * AlertDialogContent
+ * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$CONTENT_NAME = 'AlertDialogContent';
+const [$905f4ae918aab1aa$var$AlertDialogContentProvider, $905f4ae918aab1aa$var$useAlertDialogContentContext] = $905f4ae918aab1aa$var$createAlertDialogContext($905f4ae918aab1aa$var$CONTENT_NAME);
+const $905f4ae918aab1aa$export$94e6af45f0af4efd = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , children: children , ...contentProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    const contentRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
+    const composedRefs = (0,_radix_ui_react_compose_refs__WEBPACK_IMPORTED_MODULE_4__.useComposedRefs)(forwardedRef, contentRef);
+    const cancelRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
+    return /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(_radix_ui_react_dialog__WEBPACK_IMPORTED_MODULE_3__.WarningProvider, {
+        contentName: $905f4ae918aab1aa$var$CONTENT_NAME,
+        titleName: $905f4ae918aab1aa$var$TITLE_NAME,
+        docsSlug: "alert-dialog"
+    }, /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)($905f4ae918aab1aa$var$AlertDialogContentProvider, {
+        scope: __scopeAlertDialog,
+        cancelRef: cancelRef
+    }, /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(_radix_ui_react_dialog__WEBPACK_IMPORTED_MODULE_3__.Content, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+        role: "alertdialog"
+    }, dialogScope, contentProps, {
+        ref: composedRefs,
+        onOpenAutoFocus: (0,_radix_ui_primitive__WEBPACK_IMPORTED_MODULE_5__.composeEventHandlers)(contentProps.onOpenAutoFocus, (event)=>{
+            var _cancelRef$current;
+            event.preventDefault();
+            (_cancelRef$current = cancelRef.current) === null || _cancelRef$current === void 0 || _cancelRef$current.focus({
+                preventScroll: true
+            });
+        }),
+        onPointerDownOutside: (event)=>event.preventDefault()
+        ,
+        onInteractOutside: (event)=>event.preventDefault()
+    }), /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(_radix_ui_react_slot__WEBPACK_IMPORTED_MODULE_6__.Slottable, null, children), false)));
+});
+/*#__PURE__*/ Object.assign($905f4ae918aab1aa$export$94e6af45f0af4efd, {
+    displayName: $905f4ae918aab1aa$var$CONTENT_NAME
+});
+/* -------------------------------------------------------------------------------------------------
+ * AlertDialogTitle
+ * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$TITLE_NAME = 'AlertDialogTitle';
+const $905f4ae918aab1aa$export$225e0da62d314b7 = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...titleProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(_radix_ui_react_dialog__WEBPACK_IMPORTED_MODULE_3__.Title, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, dialogScope, titleProps, {
+        ref: forwardedRef
+    }));
+});
+/*#__PURE__*/ Object.assign($905f4ae918aab1aa$export$225e0da62d314b7, {
+    displayName: $905f4ae918aab1aa$var$TITLE_NAME
+});
+/* -------------------------------------------------------------------------------------------------
+ * AlertDialogDescription
+ * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$DESCRIPTION_NAME = 'AlertDialogDescription';
+const $905f4ae918aab1aa$export$a23b55cde55ad9a5 = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...descriptionProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(_radix_ui_react_dialog__WEBPACK_IMPORTED_MODULE_3__.Description, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, dialogScope, descriptionProps, {
+        ref: forwardedRef
+    }));
+});
+/*#__PURE__*/ Object.assign($905f4ae918aab1aa$export$a23b55cde55ad9a5, {
+    displayName: $905f4ae918aab1aa$var$DESCRIPTION_NAME
+});
+/* -------------------------------------------------------------------------------------------------
+ * AlertDialogAction
+ * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$ACTION_NAME = 'AlertDialogAction';
+const $905f4ae918aab1aa$export$b454f818c58ee85d = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...actionProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(_radix_ui_react_dialog__WEBPACK_IMPORTED_MODULE_3__.Close, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, dialogScope, actionProps, {
+        ref: forwardedRef
+    }));
+});
+/*#__PURE__*/ Object.assign($905f4ae918aab1aa$export$b454f818c58ee85d, {
+    displayName: $905f4ae918aab1aa$var$ACTION_NAME
+});
+/* -------------------------------------------------------------------------------------------------
+ * AlertDialogCancel
+ * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$CANCEL_NAME = 'AlertDialogCancel';
+const $905f4ae918aab1aa$export$2f67a923571aaea0 = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...cancelProps } = props;
+    const { cancelRef: cancelRef  } = $905f4ae918aab1aa$var$useAlertDialogContentContext($905f4ae918aab1aa$var$CANCEL_NAME, __scopeAlertDialog);
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    const ref = (0,_radix_ui_react_compose_refs__WEBPACK_IMPORTED_MODULE_4__.useComposedRefs)(forwardedRef, cancelRef);
+    return /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(_radix_ui_react_dialog__WEBPACK_IMPORTED_MODULE_3__.Close, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, dialogScope, cancelProps, {
+        ref: ref
+    }));
+});
+/*#__PURE__*/ Object.assign($905f4ae918aab1aa$export$2f67a923571aaea0, {
+    displayName: $905f4ae918aab1aa$var$CANCEL_NAME
+});
+/* ---------------------------------------------------------------------------------------------- */ const $905f4ae918aab1aa$var$DescriptionWarning = ({ contentRef: contentRef  })=>{
+    const MESSAGE = `\`${$905f4ae918aab1aa$var$CONTENT_NAME}\` requires a description for the component to be accessible for screen reader users.
+
+You can add a description to the \`${$905f4ae918aab1aa$var$CONTENT_NAME}\` by passing a \`${$905f4ae918aab1aa$var$DESCRIPTION_NAME}\` component as a child, which also benefits sighted users by adding visible context to the dialog.
+
+Alternatively, you can use your own component as a description by assigning it an \`id\` and passing the same value to the \`aria-describedby\` prop in \`${$905f4ae918aab1aa$var$CONTENT_NAME}\`. If the description is confusing or duplicative for sighted users, you can use the \`@radix-ui/react-visually-hidden\` primitive as a wrapper around your description component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/alert-dialog`;
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
+        var _contentRef$current;
+        const hasDescription = document.getElementById((_contentRef$current = contentRef.current) === null || _contentRef$current === void 0 ? void 0 : _contentRef$current.getAttribute('aria-describedby'));
+        if (!hasDescription) console.warn(MESSAGE);
+    }, [
+        MESSAGE,
+        contentRef
+    ]);
+    return null;
+};
+const $905f4ae918aab1aa$export$be92b6f5f03c0fe9 = $905f4ae918aab1aa$export$de466dd8317b0b75;
+const $905f4ae918aab1aa$export$41fb9f06171c75f4 = $905f4ae918aab1aa$export$6edd7a623ef0f40b;
+const $905f4ae918aab1aa$export$602eac185826482c = $905f4ae918aab1aa$export$660f2bfdb986706c;
+const $905f4ae918aab1aa$export$c6fdb837b070b4ff = $905f4ae918aab1aa$export$a707a4895ce23256;
+const $905f4ae918aab1aa$export$7c6e2c02157bb7d2 = $905f4ae918aab1aa$export$94e6af45f0af4efd;
+const $905f4ae918aab1aa$export$e19cd5f9376f8cee = $905f4ae918aab1aa$export$b454f818c58ee85d;
+const $905f4ae918aab1aa$export$848c9b7ead0df967 = $905f4ae918aab1aa$export$2f67a923571aaea0;
+const $905f4ae918aab1aa$export$f99233281efd08a0 = $905f4ae918aab1aa$export$225e0da62d314b7;
+const $905f4ae918aab1aa$export$393edc798c47379d = $905f4ae918aab1aa$export$a23b55cde55ad9a5;
 
 
 
