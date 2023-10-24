@@ -2705,7 +2705,7 @@ var App = function App() {
   /* eslint-disable */
 
 
-  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("3473313949_0", "steps", steps)));
+  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("4079045744_0", "steps", steps)));
 
   var canvas = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(); // We will use React useRef hook to reference the wrapping div:
 
@@ -2731,7 +2731,7 @@ var App = function App() {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Card__WEBPACK_IMPORTED_MODULE_4__.Card, {
               tree: step,
               step: i,
-              isFirst: true,
+              isFirst: i == 0,
               setSteps: setSteps
             })
           }, step.id + i);

@@ -33,7 +33,7 @@ const App = () => {
 							<Card
 								tree={step}
 								step={i}
-								isFirst={true}
+								isFirst={i == 0}
 								setSteps={setSteps}
 							/>
 						</Fragment>
