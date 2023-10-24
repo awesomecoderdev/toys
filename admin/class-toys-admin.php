@@ -37,9 +37,27 @@ class Toys_Admin
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $version    The current version of this plugin.
+	 * @var      string    $version    The db instance.
 	 */
 	private $version;
+
+	/**
+	 * The version of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $version    The db instance.
+	 */
+	private $wpdb;
+
+	/**
+	 * The version of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $table    The current table of this plugin.
+	 */
+	private $table;
 
 	/**
 	 * Initialize the class and set its properties.
@@ -50,6 +68,9 @@ class Toys_Admin
 	 */
 	public function __construct($plugin_name, $version)
 	{
+		global $wpdb;
+		$this->wpdb = $wpdb;
+		$this->table = "{$wpdb->prefix}toys";
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
@@ -117,7 +138,7 @@ class Toys_Admin
 			"url" 			=> get_bloginfo('url'),
 			"data" 			=> $data,
 			"image"			=> AWESOMECODER_URL . "/assets/img/image.svg",
-			"ajaxurl"		=> admin_url("admin-ajax.php?action=awesomecoder_backend"),
+			"ajaxurl"		=> admin_url("admin-ajax.php?action="),
 		));
 
 		if ($hook == "toplevel_page_toys") {
@@ -166,5 +187,99 @@ class Toys_Admin
 		// echo '<div id="toysLoadingScreen" class="fixed inset-0 z-[99999999999] h-screen overflow-hidden block bg-white duration-500"></div><script>const toysLoadingScreen=document.getElementById("toysLoadingScreen"), toyStyles=document.querySelectorAll("link"), toyScripts=document.querySelectorAll("script"), toyStyleTags=document.querySelectorAll("style"); toyStyles.forEach((e=>{const t=e.getAttribute("rel"), l=e.getAttribute("id"), h=e.getAttribute("href"); "stylesheet"==t && ("toys-backend-css" !=l || !h.includes("wp-admin/load-styles.php")) && e.remove()})), toyStyleTags.forEach((e=>{e.remove()})), toyScripts.forEach((e=>{e.getAttribute("src") && e.remove()})), setTimeout((()=>{toysLoadingScreen && (toysLoadingScreen.classList.add("opacity-0"), toysLoadingScreen.remove())}), 1e3);</script>';
 		// echo '<div id="toysLoadingScreen" class="fixed inset-0 z-[99999999999] h-screen overflow-hidden block bg-white duration-500"></div><script>const toysLoadingScreen=document.getElementById("toysLoadingScreen"),plStyles=document.querySelectorAll("link"),plScripts=document.querySelectorAll("script"),plStyleTags=document.querySelectorAll("style");plStyles.forEach((e=>{const t=e.getAttribute("rel"),l=e.getAttribute("id");"stylesheet"==t&&"toys-backend-css"!=l&&e.remove()})),plStyleTags.forEach((e=>{e.remove()})),plScripts.forEach((e=>{e.getAttribute("src")&&e.remove()})),setTimeout((()=>{toysLoadingScreen&&(toysLoadingScreen.classList.add("opacity-0"),toysLoadingScreen.remove())}),1e3);</script>';
 		// echo '<div id="toysLoadingScreen" class="fixed inset-0 z-[99999999999] h-screen overflow-hidden block bg-white duration-500"></div><script>const toysLoadingScreen=document.getElementById("toysLoadingScreen"),plStyles=document.querySelectorAll("link"),plScripts=document.querySelectorAll("script"),plStyleTags=document.querySelectorAll("style");plStyles.forEach((e=>{const t=e.getAttribute("rel"),l=e.getAttribute("id");"stylesheet"==t&&"toys-backend-css"!=l&&e.remove()})),plStyleTags.forEach((e=>{e.remove()})),plScripts.forEach((e=>{e.getAttribute("src")&&e.remove()})),setTimeout((()=>{toysLoadingScreen&&(toysLoadingScreen.classList.add("opacity-0"))}),1e3);</script>';
+	}
+
+	/**
+	 * Register the JavaScript for the admin area.
+	 *
+	 * @since    1.0.0
+	 */
+	public function handle()
+	{
+		$action = isset($_REQUEST["do"]) ? strtolower($_REQUEST["do"]) : null;
+
+		if ($action) {
+			if (method_exists($this, $action)) {
+				call_user_func([$this, $action], $_REQUEST);
+				wp_die();
+			}
+		}
+
+		wp_send_json_error([
+			"success" => false,
+			"status"  => 403,
+			"message" => __("Something wend wrong", "toys"),
+			"data" => [
+				"request" => $_REQUEST,
+			]
+		]);
+
+		wp_die();
+	}
+
+	/**
+	 * Register the JavaScript for the admin area.
+	 *
+	 * @since    1.0.0
+	 */
+	public function create($request)
+	{
+		$result = $this->wpdb->insert($this->table, [
+			"parent_id" => isset($request["id"]) ? $request["id"] : null,
+			"title" => "New Step",
+		]);
+
+		if (!is_wp_error($result)) {
+			$steps = $this->wpdb->get_results($this->wpdb->prepare("SELECT * FROM $this->table"), ARRAY_A);
+			wp_send_json_success([
+				"success" => true,
+				"status"  => 201,
+				"message" => __("Successfully Created", "toys"),
+				"data" => [
+					"steps" => $steps
+				]
+			]);
+		} else {
+			wp_send_json_error([
+				"success" => false,
+				"status"  => 403,
+				"message" => __("Something went wrong.", "toys"),
+			]);
+		}
+	}
+
+
+	/**
+	 * Register the JavaScript for the admin area.
+	 *
+	 * @since    1.0.0
+	 */
+	public function delete($request)
+	{
+		$deleteByID = $this->wpdb->delete($this->table, [
+			"id" => $request["id"],
+		]);
+
+		$deleteByParentID = $this->wpdb->delete($this->table, [
+			"parent_id" => $request["id"],
+		]);
+
+		if (!is_wp_error($deleteByParentID || $deleteByID)) {
+			$steps = $this->wpdb->get_results($this->wpdb->prepare("SELECT * FROM $this->table"), ARRAY_A);
+			wp_send_json_success([
+				"success" => true,
+				"status"  => 201,
+				"message" => __("Successfully Created", "toys"),
+				"data" => [
+					"steps" => $steps
+				]
+			]);
+		} else {
+			wp_send_json_error([
+				"success" => false,
+				"status"  => 403,
+				"message" => __("Something went wrong.", "toys"),
+			]);
+		}
 	}
 }
