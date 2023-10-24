@@ -235,7 +235,7 @@ class Toys_Admin
 			wp_send_json_success([
 				"success" => true,
 				"status"  => 201,
-				"message" => __("Successfully Created", "toys"),
+				"message" => __("Steps Created Successfully", "toys"),
 				"data" => [
 					"steps" => $steps
 				]
@@ -270,7 +270,7 @@ class Toys_Admin
 			wp_send_json_success([
 				"success" => true,
 				"status"  => 200,
-				"message" => __("Successfully Deleted", "toys"),
+				"message" => __("Step Deleted Successfully.", "toys"),
 				"data" => [
 					"steps" => $steps
 				]
@@ -313,7 +313,7 @@ class Toys_Admin
 			wp_send_json_success([
 				"success" => true,
 				"status"  => 200,
-				"message" => __("Successfully Updated", "toys"),
+				"message" => __("Step Updated Successfully.", "toys"),
 				"data" => [
 					"steps" => $steps
 				]

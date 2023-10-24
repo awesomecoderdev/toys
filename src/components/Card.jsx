@@ -82,6 +82,7 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 			frame.open();
 		} catch (error) {
 			console.log("error", error);
+			toast.error(error?.message ?? "Wordpress media is not enabled.");
 		}
 	};
 

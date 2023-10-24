@@ -2905,21 +2905,21 @@ var Card = function Card(_ref) {
   var imageRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   /* eslint-disable */
 
-  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("599215984_0", "wp.media", wp.media)));
+  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("1919953918_0", "wp.media", wp.media)));
 
   var handleMediaUploader = function handleMediaUploader(e, step) {
     try {
       var _console2, _console3;
 
       /* eslint-disable */
-      (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("599215984_1", "imageRef", imageRef.current))); // Uploading files
+      (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("1919953918_1", "imageRef", imageRef.current))); // Uploading files
 
 
       e.preventDefault();
       e.stopPropagation();
       /* eslint-disable */
 
-      (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("599215984_2", "step", step))); // If the media frame already exists, reopen it.
+      (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("1919953918_2", "step", step))); // If the media frame already exists, reopen it.
 
 
       if (frame) {
@@ -2943,19 +2943,21 @@ var Card = function Card(_ref) {
         var image = attachment.sizes.thumbnail || attachment.sizes.full;
         /* eslint-disable */
 
-        (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("599215984_3", "attachment", attachment.id, attachment)));
+        (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("1919953918_3", "attachment", attachment.id, attachment)));
         /* eslint-disable */
 
 
-        (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("599215984_4", "image", image, image.url)));
+        (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("1919953918_4", "image", image, image.url)));
       }); // Finally, open the modal.
 
       frame.open();
     } catch (error) {
-      var _console6;
+      var _console6, _error$message;
 
       /* eslint-disable */
-      (_console6 = console).log.apply(_console6, _toConsumableArray(oo_oo("599215984_5", "error", error)));
+      (_console6 = console).log.apply(_console6, _toConsumableArray(oo_oo("1919953918_5", "error", error)));
+
+      sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error((_error$message = error === null || error === void 0 ? void 0 : error.message) !== null && _error$message !== void 0 ? _error$message : "Wordpress media is not enabled.");
     }
   };
 
@@ -2982,7 +2984,7 @@ var Card = function Card(_ref) {
       var response = data;
       /* eslint-disable */
 
-      (_console7 = console).log.apply(_console7, _toConsumableArray(oo_oo("599215984_6", "res", data)));
+      (_console7 = console).log.apply(_console7, _toConsumableArray(oo_oo("1919953918_6", "res", data)));
 
       if (response.success) {
         sonner__WEBPACK_IMPORTED_MODULE_1__.toast.success(response.message);
@@ -2991,7 +2993,7 @@ var Card = function Card(_ref) {
           var _console8;
 
           /* eslint-disable */
-          (_console8 = console).log.apply(_console8, _toConsumableArray(oo_oo("599215984_7", "steps", (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps))));
+          (_console8 = console).log.apply(_console8, _toConsumableArray(oo_oo("1919953918_7", "steps", (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps))));
 
           try {
             setSteps((0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps));
@@ -2999,7 +3001,7 @@ var Card = function Card(_ref) {
             var _console9;
 
             /* eslint-disable */
-            (_console9 = console).log.apply(_console9, _toConsumableArray(oo_oo("599215984_8", "error", error)));
+            (_console9 = console).log.apply(_console9, _toConsumableArray(oo_oo("1919953918_8", "error", error)));
           }
         }
       } else {
@@ -3009,7 +3011,7 @@ var Card = function Card(_ref) {
       var _console10;
 
       /* eslint-disable */
-      (_console10 = console).log.apply(_console10, _toConsumableArray(oo_oo("599215984_9", "err", err)));
+      (_console10 = console).log.apply(_console10, _toConsumableArray(oo_oo("1919953918_9", "err", err)));
 
       if (err.message) {
         sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
@@ -3036,7 +3038,7 @@ var Card = function Card(_ref) {
       var response = data;
       /* eslint-disable */
 
-      (_console11 = console).log.apply(_console11, _toConsumableArray(oo_oo("599215984_10", "res", data)));
+      (_console11 = console).log.apply(_console11, _toConsumableArray(oo_oo("1919953918_10", "res", data)));
 
       if (response.success) {
         sonner__WEBPACK_IMPORTED_MODULE_1__.toast.success(response.message);
@@ -3045,7 +3047,7 @@ var Card = function Card(_ref) {
           var _console12;
 
           /* eslint-disable */
-          (_console12 = console).log.apply(_console12, _toConsumableArray(oo_oo("599215984_11", "steps", (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps))));
+          (_console12 = console).log.apply(_console12, _toConsumableArray(oo_oo("1919953918_11", "steps", (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps))));
 
           try {
             setSteps((0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps));
@@ -3053,7 +3055,7 @@ var Card = function Card(_ref) {
             var _console13;
 
             /* eslint-disable */
-            (_console13 = console).log.apply(_console13, _toConsumableArray(oo_oo("599215984_12", "error", error)));
+            (_console13 = console).log.apply(_console13, _toConsumableArray(oo_oo("1919953918_12", "error", error)));
           }
         }
       } else {
@@ -3063,7 +3065,7 @@ var Card = function Card(_ref) {
       var _console14;
 
       /* eslint-disable */
-      (_console14 = console).log.apply(_console14, _toConsumableArray(oo_oo("599215984_13", "err", err)));
+      (_console14 = console).log.apply(_console14, _toConsumableArray(oo_oo("1919953918_13", "err", err)));
 
       if (err.message) {
         sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
