@@ -39,9 +39,12 @@ import axios from "axios";
 
 export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 	let frame;
+	const [open, setOpen] = useState(false);
 	const imageRef = useRef(null);
+	const [title, setTitle] = useState(null);
+	const [link, setLink] = useState(null);
+	const [description, setDescription] = useState(null);
 
-	console.log("wp.media", wp.media);
 	const handleMediaUploader = (e, step) => {
 		try {
 			console.log("imageRef", imageRef.current);
@@ -57,9 +60,9 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 
 			// Create the media frame.
 			frame = wp.media.frames.downloadable_file = wp.media({
-				title: "Choose an image",
+				title: "Choose step image",
 				button: {
-					text: "Select an image",
+					text: "Save Changes",
 				},
 				multiple: false,
 			});
@@ -76,6 +79,62 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 
 				console.log("attachment", attachment.id, attachment);
 				console.log("image", image, image.url);
+
+				if (attachment?.id && image?.url) {
+					axios
+						.post(
+							endpoint,
+							{
+								do: "update",
+								id: step.id,
+								thumbnail_id: attachment.id,
+								image: image.url,
+							},
+							{
+								headers: {
+									"X-Requested-With": "XMLHttpRequest",
+									"Content-type": "multipart/form-data",
+									// "Keep-Alive": "timeout=5, max=1000",
+								},
+							}
+						)
+						.then(({ data: { data } }) => {
+							const response = data;
+							console.log("res", data);
+							if (response.success) {
+								toast.success(response.message);
+								if (response.data.steps) {
+									try {
+										setSteps(
+											structureData(response.data.steps)
+										);
+									} catch (err) {
+										console.log("err", err);
+
+										if (err.message) {
+											toast.error(err.message);
+										} else {
+											toast.error(
+												"Something went wrong."
+											);
+										}
+									}
+								}
+							} else {
+								toast.error(response.message);
+							}
+						})
+						.catch((err) => {
+							console.log("err", err);
+							if (err.message) {
+								toast.error(err.message);
+							} else {
+								toast.error("Something went wrong.");
+							}
+						});
+				} else {
+					toast.error("Invalid attachment, select different image.");
+				}
 			});
 
 			// Finally, open the modal.
@@ -87,106 +146,240 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 	};
 
 	const addNewDataToLists = (e, step) => {
-		const newItem = {
-			id: step.id + Math.ceil(Math.random(1, 1000)),
-			parent_id: step.id,
-			title: "New Item",
-			children: [],
-		};
-
-		axios
-			.post(
-				endpoint,
-				{
-					do: "create",
-					id: step.id,
-				},
-				{
-					headers: {
-						"X-Requested-With": "XMLHttpRequest",
-						"Content-type": "multipart/form-data",
-						// "Keep-Alive": "timeout=5, max=1000",
+		try {
+			axios
+				.post(
+					endpoint,
+					{
+						do: "create",
+						id: step.id,
 					},
-				}
-			)
-			.then(({ data: { data } }) => {
-				const response = data;
-				console.log("res", data);
-				if (response.success) {
-					toast.success(response.message);
-
-					if (response.data.steps) {
-						console.log(
-							"steps",
-							structureData(response.data.steps)
-						);
-						try {
-							setSteps(structureData(response.data.steps));
-						} catch (error) {
-							console.log("error", error);
-						}
+					{
+						headers: {
+							"X-Requested-With": "XMLHttpRequest",
+							"Content-type": "multipart/form-data",
+							// "Keep-Alive": "timeout=5, max=1000",
+						},
 					}
-				} else {
-					toast.error(response.message);
-				}
-			})
-			.catch((err) => {
-				console.log("err", err);
+				)
+				.then(({ data: { data } }) => {
+					const response = data;
+					console.log("res", data);
+					if (response.success) {
+						toast.success(response.message);
 
-				if (err.message) {
-					toast.error(err.message);
-				} else {
-					toast.error("Something went wrong.");
-				}
-			});
+						if (response.data.steps) {
+							console.log(
+								"steps",
+								structureData(response.data.steps)
+							);
+							try {
+								setSteps(structureData(response.data.steps));
+							} catch (error) {
+								console.log("error", error);
+							}
+						}
+					} else {
+						toast.error(response.message);
+					}
+				})
+				.catch((err) => {
+					console.log("err", err);
+
+					if (err.message) {
+						toast.error(err.message);
+					} else {
+						toast.error("Something went wrong.");
+					}
+				});
+		} catch (err) {
+			console.log("err", err);
+
+			if (err.message) {
+				toast.error(err.message);
+			} else {
+				toast.error("Something went wrong.");
+			}
+		}
 	};
 
 	const deleteDataFromLists = (e, step) => {
-		axios
-			.post(
-				endpoint,
-				{
-					do: "delete",
-					id: step.id,
-				},
-				{
-					headers: {
-						"X-Requested-With": "XMLHttpRequest",
-						"Content-type": "multipart/form-data",
-						// "Keep-Alive": "timeout=5, max=1000",
+		try {
+			axios
+				.post(
+					endpoint,
+					{
+						do: "delete",
+						id: step.id,
 					},
-				}
-			)
-			.then(({ data: { data } }) => {
-				const response = data;
-				console.log("res", data);
-				if (response.success) {
-					toast.success(response.message);
-
-					if (response.data.steps) {
-						console.log(
-							"steps",
-							structureData(response.data.steps)
-						);
-						try {
-							setSteps(structureData(response.data.steps));
-						} catch (error) {
-							console.log("error", error);
-						}
+					{
+						headers: {
+							"X-Requested-With": "XMLHttpRequest",
+							"Content-type": "multipart/form-data",
+							// "Keep-Alive": "timeout=5, max=1000",
+						},
 					}
-				} else {
-					toast.error(response.message);
-				}
-			})
-			.catch((err) => {
-				console.log("err", err);
+				)
+				.then(({ data: { data } }) => {
+					const response = data;
+					console.log("res", data);
+					if (response.success) {
+						toast.success(response.message);
 
-				if (err.message) {
-					toast.error(err.message);
-				} else {
-					toast.error("Something went wrong.");
-				}
-			});
+						if (response.data.steps) {
+							console.log(
+								"steps",
+								structureData(response.data.steps)
+							);
+							try {
+								setSteps(structureData(response.data.steps));
+							} catch (err) {
+								console.log("err", err);
+
+								if (err.message) {
+									toast.error(err.message);
+								} else {
+									toast.error("Something went wrong.");
+								}
+							}
+						}
+					} else {
+						toast.error(response.message);
+					}
+				})
+				.catch((err) => {
+					console.log("err", err);
+
+					if (err.message) {
+						toast.error(err.message);
+					} else {
+						toast.error("Something went wrong.");
+					}
+				});
+		} catch (err) {
+			console.log("err", err);
+
+			if (err.message) {
+				toast.error(err.message);
+			} else {
+				toast.error("Something went wrong.");
+			}
+		}
+	};
+
+	const updateDataToLists = (e, step) => {
+		e.preventDefault();
+		try {
+			axios
+				.post(
+					endpoint,
+					{
+						do: "update",
+						id: step.id,
+						title,
+						link,
+						description,
+					},
+					{
+						headers: {
+							"X-Requested-With": "XMLHttpRequest",
+							"Content-type": "multipart/form-data",
+							// "Keep-Alive": "timeout=5, max=1000",
+						},
+					}
+				)
+				.then(({ data: { data } }) => {
+					const response = data;
+					console.log("res", data);
+					if (response.success) {
+						toast.success(response.message);
+						if (response.data.steps) {
+							try {
+								setSteps(structureData(response.data.steps));
+							} catch (err) {
+								console.log("err", err);
+								console.log("err", err);
+
+								if (err.message) {
+									toast.error(err.message);
+								} else {
+									toast.error("Something went wrong.");
+								}
+							}
+						}
+					} else {
+						toast.error(response.message);
+					}
+
+					setTimeout(() => {
+						setOpen(false);
+					}, 800);
+				})
+				.catch((err) => {
+					console.log("err", err);
+					if (err.message) {
+						toast.error(err.message);
+					} else {
+						toast.error("Something went wrong.");
+					}
+				});
+		} catch (error) {
+			toast.error(error.message);
+		}
+	};
+
+	const removeImageFromDataLists = (e, step) => {
+		e.preventDefault();
+		try {
+			axios
+				.post(
+					endpoint,
+					{
+						do: "remove",
+						id: step.id,
+					},
+					{
+						headers: {
+							"X-Requested-With": "XMLHttpRequest",
+							"Content-type": "multipart/form-data",
+							// "Keep-Alive": "timeout=5, max=1000",
+						},
+					}
+				)
+				.then(({ data: { data } }) => {
+					const response = data;
+					console.log("res", data);
+					if (response.success) {
+						toast.success(response.message);
+						if (response.data.steps) {
+							try {
+								setSteps(structureData(response.data.steps));
+							} catch (err) {
+								console.log("err", err);
+								console.log("err", err);
+
+								if (err.message) {
+									toast.error(err.message);
+								} else {
+									toast.error("Something went wrong.");
+								}
+							}
+						}
+					} else {
+						toast.error(response.message);
+					}
+				})
+				.catch((err) => {
+					console.log("err", err);
+					if (err.message) {
+						toast.error(err.message);
+					} else {
+						toast.error("Something went wrong.");
+					}
+				});
+		} catch (error) {
+			toast.error(error.message);
+		}
 	};
 
 	return (
@@ -228,7 +421,7 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 								<p className="truncate w-40">{tree?.title}</p>
 
 								<div className="relative flex space-x-2">
-									<Dialog>
+									<Dialog open={open} onOpenChange={setOpen}>
 										<DialogTrigger asChild>
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
@@ -257,25 +450,44 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 													done.
 												</DialogDescription>
 											</DialogHeader>
-											<form className="grid gap-4 py-4">
+											<form
+												onSubmit={(e) =>
+													e.preventDefault()
+												}
+												className="grid gap-4 pt-4"
+											>
 												<div className="grid grid-cols-4 items-center gap-4">
 													<Input
 														id="title"
 														defaultValue={
-															tree?.title
+															title
+																? title
+																: tree?.title
 														}
 														className="col-span-4"
 														placeholder="e.g. Mohammad Ibrahim"
+														onChange={(e) =>
+															setTitle(
+																e.target.value
+															)
+														}
 													/>
 
 													<Input
 														id="link"
 														defaultValue={
-															tree?.link
+															link
+																? link
+																: tree?.link
 														}
 														className="col-span-4"
 														placeholder={
 															"e.g. https://awesomecoder.dev/"
+														}
+														onChange={(e) =>
+															setLink(
+																e.target.value
+															)
 														}
 													/>
 													<div className="relative col-span-4">
@@ -287,17 +499,34 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 															}
 															rows="10"
 															className="capitalize"
+															onChange={(e) =>
+																setDescription(
+																	e.target
+																		.value
+																)
+															}
 														>
-															{tree?.description}
+															{description
+																? description
+																: tree?.description}
 														</Textarea>
 													</div>
 												</div>
+
+												<DialogFooter>
+													<Button
+														type="submit"
+														onClick={(e) =>
+															updateDataToLists(
+																e,
+																tree
+															)
+														}
+													>
+														Save changes
+													</Button>
+												</DialogFooter>
 											</form>
-											<DialogFooter>
-												<Button type="submit">
-													Save changes
-												</Button>
-											</DialogFooter>
 										</DialogContent>
 									</Dialog>
 
@@ -374,7 +603,7 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 								</div>
 							</div>
 						</div>
-						<div className="relative">
+						<div className="relative overflow-hidden">
 							{tree?.image ? (
 								<Fragment>
 									<div
@@ -385,16 +614,24 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 													: `url(${default_image})`,
 										}}
 										ref={imageRef}
-										className="relative mx-2 col-span-4 bg-contain bg-no-repeat bg-center flex justify-center items-center aspect-[8/4] rounded-md bg-slate-50"
+										className="relative mx-2 col-span-4 bg-cover bg-no-repeat bg-top flex justify-center items-center aspect-[8/5] rounded-md bg-slate-50"
 									>
-										<div className="absolute flex justify-end p-3 gap-3 top-0 left-0 w-full ">
+										<div className="absolute bg-gradient-to-b from-white to-transparent bg-blend-soft-light flex justify-end p-3 gap-3 top-0 left-0 w-full ">
 											<Repeat1
 												onClick={(e) =>
 													handleMediaUploader(e, tree)
 												}
-												className="h-4 w-4 cursor-pointer"
+												className="h-4 w-4 text-indigo-600 cursor-pointer"
 											/>
-											<XCircle className="h-4 w-4 text-red-500 cursor-pointer" />
+											<XCircle
+												onClick={(e) =>
+													removeImageFromDataLists(
+														e,
+														tree
+													)
+												}
+												className="h-4 w-4 text-red-500 cursor-pointer"
+											/>
 										</div>
 									</div>
 									<p className="lead capitalize px-2 py-1 line-clamp-3">

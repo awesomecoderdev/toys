@@ -284,8 +284,6 @@ class Toys_Admin
 		}
 	}
 
-
-
 	/**
 	 * Register the JavaScript for the admin area.
 	 *
@@ -300,9 +298,13 @@ class Toys_Admin
 		if (isset($request["link"]) && !empty($request["link"])) {
 			$data["link"] = $request["link"];
 		}
-		if (isset($request["description"]) && !empty($request["link"])) {
+		if (isset($request["thumbnail_id"], $request["image"]) && !empty($request["thumbnail_id"])) {
+			$data["thumbnail_id"] = $request["thumbnail_id"];
+			$data["image"] = $request["image"];
 		}
-		$data["link"] = isset($request["description"]) ? $request["description"] : null;
+		if (isset($request["description"]) && !empty($request["description"])) {
+			$data["description"] = sanitize_text_field($request["description"]);
+		}
 
 		$update = $this->wpdb->update($this->table, $data, [
 			"id" => $request["id"],
@@ -314,6 +316,39 @@ class Toys_Admin
 				"success" => true,
 				"status"  => 200,
 				"message" => __("Step Updated Successfully.", "toys"),
+				"data" => [
+					"steps" => $steps
+				]
+			]);
+		} else {
+			wp_send_json_error([
+				"success" => false,
+				"status"  => 403,
+				"message" => __("Something went wrong.", "toys"),
+			]);
+		}
+	}
+
+	/**
+	 * Register the JavaScript for the admin area.
+	 *
+	 * @since    1.0.0
+	 */
+	public function remove($request)
+	{
+		$update = $this->wpdb->update($this->table, [
+			"thumbnail_id" => null,
+			"image" => null,
+		], [
+			"id" => $request["id"],
+		]);
+
+		if (!is_wp_error($update)) {
+			$steps = $this->wpdb->get_results($this->wpdb->prepare("SELECT * FROM $this->table"), ARRAY_A);
+			wp_send_json_success([
+				"success" => true,
+				"status"  => 200,
+				"message" => __("Image Removed Successfully.", "toys"),
 				"data" => [
 					"steps" => $steps
 				]

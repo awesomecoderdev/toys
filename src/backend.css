@@ -68,12 +68,33 @@
 	}
 }
 
+html {
+	scroll-behavior: smooth;
+	height: 100%;
+}
+
 @layer base {
 	* {
 		@apply border-border;
 	}
 	body {
 		@apply bg-background text-foreground;
+	}
+}
+
+@layer utilities {
+	/* Chrome, Safari and Opera */
+	.no-scrollbar::-webkit-scrollbar {
+		display: none !important;
+	}
+
+	.no-scrollbar {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+
+	.text-balance {
+		text-wrap: balance;
 	}
 }
 

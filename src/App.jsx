@@ -20,9 +20,9 @@ const App = () => {
 			/>
 			<div
 				className={cn(
-					"relative bg-white awesomecoder w-full h-full max-h-screen overflow-scroll mx-auto no-scrollbar ",
-					(steps[0]?.children?.length ?? 0) < 4 &&
-						"flex justify-center"
+					"relative bg-white awesomecoder w-full h-full max-h-screen overflow-scroll mx-auto no-scrollbar "
+					// (steps[0]?.children?.length ?? 0) < 4 &&
+					// 	"flex justify-center"
 				)}
 				{...events}
 				ref={canvas}

@@ -2696,7 +2696,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var App = function App() {
-  var _console, _steps$0$children$len, _steps$, _steps$$children;
+  var _console;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)((0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.structureData)(_lib_utils__WEBPACK_IMPORTED_MODULE_3__.defaultSteps)),
       _useState2 = _slicedToArray(_useState, 2),
@@ -2705,7 +2705,7 @@ var App = function App() {
   /* eslint-disable */
 
 
-  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("1976913639_0", "steps", steps)));
+  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("3473313949_0", "steps", steps)));
 
   var canvas = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(); // We will use React useRef hook to reference the wrapping div:
 
@@ -2719,7 +2719,9 @@ var App = function App() {
       duration: 4000,
       expand: true
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", _objectSpread(_objectSpread({
-      className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("relative bg-white awesomecoder w-full h-full max-h-screen overflow-scroll mx-auto no-scrollbar ", ((_steps$0$children$len = (_steps$ = steps[0]) === null || _steps$ === void 0 ? void 0 : (_steps$$children = _steps$.children) === null || _steps$$children === void 0 ? void 0 : _steps$$children.length) !== null && _steps$0$children$len !== void 0 ? _steps$0$children$len : 0) < 4 && "flex justify-center")
+      className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("relative bg-white awesomecoder w-full h-full max-h-screen overflow-scroll mx-auto no-scrollbar " // (steps[0]?.children?.length ?? 0) < 4 &&
+      // 	"flex justify-center"
+      )
     }, events), {}, {
       ref: canvas,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
@@ -2871,13 +2873,21 @@ function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableTo
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
 function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
@@ -2893,7 +2903,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 var Card = function Card(_ref) {
-  var _console, _tree$children, _tree$children2;
+  var _tree$children, _tree$children2;
 
   var tree = _ref.tree,
       step = _ref.step,
@@ -2902,24 +2912,42 @@ var Card = function Card(_ref) {
       setSteps = _ref.setSteps,
       isFirst = _ref.isFirst;
   var frame;
-  var imageRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  /* eslint-disable */
 
-  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("1919953918_0", "wp.media", wp.media)));
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      open = _useState2[0],
+      setOpen = _useState2[1];
+
+  var imageRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      title = _useState4[0],
+      setTitle = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+      _useState6 = _slicedToArray(_useState5, 2),
+      link = _useState6[0],
+      setLink = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+      _useState8 = _slicedToArray(_useState7, 2),
+      description = _useState8[0],
+      setDescription = _useState8[1];
 
   var handleMediaUploader = function handleMediaUploader(e, step) {
     try {
-      var _console2, _console3;
+      var _console, _console2;
 
       /* eslint-disable */
-      (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("1919953918_1", "imageRef", imageRef.current))); // Uploading files
+      (_console = console).log.apply(_console, _toConsumableArray(oo_oo("2221332817_0", "imageRef", imageRef.current))); // Uploading files
 
 
       e.preventDefault();
       e.stopPropagation();
       /* eslint-disable */
 
-      (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("1919953918_2", "step", step))); // If the media frame already exists, reopen it.
+      (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("2221332817_1", "step", step))); // If the media frame already exists, reopen it.
 
 
       if (frame) {
@@ -2929,150 +2957,372 @@ var Card = function Card(_ref) {
 
 
       frame = wp.media.frames.downloadable_file = wp.media({
-        title: "Choose an image",
+        title: "Choose step image",
         button: {
-          text: "Select an image"
+          text: "Save Changes"
         },
         multiple: false
       }); // When an image is selected, run a callback.
 
       frame.on("select", function () {
-        var _console4, _console5;
+        var _console3, _console4;
 
         var attachment = frame.state().get("selection").first().toJSON();
         var image = attachment.sizes.thumbnail || attachment.sizes.full;
         /* eslint-disable */
 
-        (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("1919953918_3", "attachment", attachment.id, attachment)));
+        (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("2221332817_2", "attachment", attachment.id, attachment)));
         /* eslint-disable */
 
 
-        (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("1919953918_4", "image", image, image.url)));
+        (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("2221332817_3", "image", image, image.url)));
+
+        if (attachment !== null && attachment !== void 0 && attachment.id && image !== null && image !== void 0 && image.url) {
+          axios__WEBPACK_IMPORTED_MODULE_9___default().post(_lib_utils__WEBPACK_IMPORTED_MODULE_8__.endpoint, {
+            "do": "update",
+            id: step.id,
+            thumbnail_id: attachment.id,
+            image: image.url
+          }, {
+            headers: {
+              "X-Requested-With": "XMLHttpRequest",
+              "Content-type": "multipart/form-data" // "Keep-Alive": "timeout=5, max=1000",
+
+            }
+          }).then(function (_ref2) {
+            var _console5;
+
+            var data = _ref2.data.data;
+            var response = data;
+            /* eslint-disable */
+
+            (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("2221332817_4", "res", data)));
+
+            if (response.success) {
+              sonner__WEBPACK_IMPORTED_MODULE_1__.toast.success(response.message);
+
+              if (response.data.steps) {
+                try {
+                  setSteps((0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps));
+                } catch (err) {
+                  var _console6;
+
+                  /* eslint-disable */
+                  (_console6 = console).log.apply(_console6, _toConsumableArray(oo_oo("2221332817_5", "err", err)));
+
+                  if (err.message) {
+                    sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
+                  } else {
+                    sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error("Something went wrong.");
+                  }
+                }
+              }
+            } else {
+              sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(response.message);
+            }
+          })["catch"](function (err) {
+            var _console7;
+
+            /* eslint-disable */
+            (_console7 = console).log.apply(_console7, _toConsumableArray(oo_oo("2221332817_6", "err", err)));
+
+            if (err.message) {
+              sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
+            } else {
+              sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error("Something went wrong.");
+            }
+          });
+        } else {
+          sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error("Invalid attachment, select different image.");
+        }
       }); // Finally, open the modal.
 
       frame.open();
     } catch (error) {
-      var _console6, _error$message;
+      var _console8, _error$message;
 
       /* eslint-disable */
-      (_console6 = console).log.apply(_console6, _toConsumableArray(oo_oo("1919953918_5", "error", error)));
+      (_console8 = console).log.apply(_console8, _toConsumableArray(oo_oo("2221332817_7", "error", error)));
 
       sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error((_error$message = error === null || error === void 0 ? void 0 : error.message) !== null && _error$message !== void 0 ? _error$message : "Wordpress media is not enabled.");
     }
   };
 
   var addNewDataToLists = function addNewDataToLists(e, step) {
-    var newItem = {
-      id: step.id + Math.ceil(Math.random(1, 1000)),
-      parent_id: step.id,
-      title: "New Item",
-      children: []
-    };
-    axios__WEBPACK_IMPORTED_MODULE_9___default().post(_lib_utils__WEBPACK_IMPORTED_MODULE_8__.endpoint, {
-      "do": "create",
-      id: step.id
-    }, {
-      headers: {
-        "X-Requested-With": "XMLHttpRequest",
-        "Content-type": "multipart/form-data" // "Keep-Alive": "timeout=5, max=1000",
+    try {
+      axios__WEBPACK_IMPORTED_MODULE_9___default().post(_lib_utils__WEBPACK_IMPORTED_MODULE_8__.endpoint, {
+        "do": "create",
+        id: step.id
+      }, {
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+          "Content-type": "multipart/form-data" // "Keep-Alive": "timeout=5, max=1000",
 
-      }
-    }).then(function (_ref2) {
-      var _console7;
+        }
+      }).then(function (_ref3) {
+        var _console9;
 
-      var data = _ref2.data.data;
-      var response = data;
-      /* eslint-disable */
+        var data = _ref3.data.data;
+        var response = data;
+        /* eslint-disable */
 
-      (_console7 = console).log.apply(_console7, _toConsumableArray(oo_oo("1919953918_6", "res", data)));
+        (_console9 = console).log.apply(_console9, _toConsumableArray(oo_oo("2221332817_8", "res", data)));
 
-      if (response.success) {
-        sonner__WEBPACK_IMPORTED_MODULE_1__.toast.success(response.message);
+        if (response.success) {
+          sonner__WEBPACK_IMPORTED_MODULE_1__.toast.success(response.message);
 
-        if (response.data.steps) {
-          var _console8;
-
-          /* eslint-disable */
-          (_console8 = console).log.apply(_console8, _toConsumableArray(oo_oo("1919953918_7", "steps", (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps))));
-
-          try {
-            setSteps((0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps));
-          } catch (error) {
-            var _console9;
+          if (response.data.steps) {
+            var _console10;
 
             /* eslint-disable */
-            (_console9 = console).log.apply(_console9, _toConsumableArray(oo_oo("1919953918_8", "error", error)));
+            (_console10 = console).log.apply(_console10, _toConsumableArray(oo_oo("2221332817_9", "steps", (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps))));
+
+            try {
+              setSteps((0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps));
+            } catch (error) {
+              var _console11;
+
+              /* eslint-disable */
+              (_console11 = console).log.apply(_console11, _toConsumableArray(oo_oo("2221332817_10", "error", error)));
+            }
           }
+        } else {
+          sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(response.message);
         }
-      } else {
-        sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(response.message);
-      }
-    })["catch"](function (err) {
-      var _console10;
+      })["catch"](function (err) {
+        var _console12;
+
+        /* eslint-disable */
+        (_console12 = console).log.apply(_console12, _toConsumableArray(oo_oo("2221332817_11", "err", err)));
+
+        if (err.message) {
+          sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
+        } else {
+          sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error("Something went wrong.");
+        }
+      });
+    } catch (err) {
+      var _console13;
 
       /* eslint-disable */
-      (_console10 = console).log.apply(_console10, _toConsumableArray(oo_oo("1919953918_9", "err", err)));
+      (_console13 = console).log.apply(_console13, _toConsumableArray(oo_oo("2221332817_12", "err", err)));
 
       if (err.message) {
         sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
       } else {
         sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error("Something went wrong.");
       }
-    });
+    }
   };
 
   var deleteDataFromLists = function deleteDataFromLists(e, step) {
-    axios__WEBPACK_IMPORTED_MODULE_9___default().post(_lib_utils__WEBPACK_IMPORTED_MODULE_8__.endpoint, {
-      "do": "delete",
-      id: step.id
-    }, {
-      headers: {
-        "X-Requested-With": "XMLHttpRequest",
-        "Content-type": "multipart/form-data" // "Keep-Alive": "timeout=5, max=1000",
+    try {
+      axios__WEBPACK_IMPORTED_MODULE_9___default().post(_lib_utils__WEBPACK_IMPORTED_MODULE_8__.endpoint, {
+        "do": "delete",
+        id: step.id
+      }, {
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+          "Content-type": "multipart/form-data" // "Keep-Alive": "timeout=5, max=1000",
 
-      }
-    }).then(function (_ref3) {
-      var _console11;
+        }
+      }).then(function (_ref4) {
+        var _console14;
 
-      var data = _ref3.data.data;
-      var response = data;
-      /* eslint-disable */
+        var data = _ref4.data.data;
+        var response = data;
+        /* eslint-disable */
 
-      (_console11 = console).log.apply(_console11, _toConsumableArray(oo_oo("1919953918_10", "res", data)));
+        (_console14 = console).log.apply(_console14, _toConsumableArray(oo_oo("2221332817_13", "res", data)));
 
-      if (response.success) {
-        sonner__WEBPACK_IMPORTED_MODULE_1__.toast.success(response.message);
+        if (response.success) {
+          sonner__WEBPACK_IMPORTED_MODULE_1__.toast.success(response.message);
 
-        if (response.data.steps) {
-          var _console12;
-
-          /* eslint-disable */
-          (_console12 = console).log.apply(_console12, _toConsumableArray(oo_oo("1919953918_11", "steps", (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps))));
-
-          try {
-            setSteps((0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps));
-          } catch (error) {
-            var _console13;
+          if (response.data.steps) {
+            var _console15;
 
             /* eslint-disable */
-            (_console13 = console).log.apply(_console13, _toConsumableArray(oo_oo("1919953918_12", "error", error)));
+            (_console15 = console).log.apply(_console15, _toConsumableArray(oo_oo("2221332817_14", "steps", (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps))));
+
+            try {
+              setSteps((0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps));
+            } catch (err) {
+              var _console16;
+
+              /* eslint-disable */
+              (_console16 = console).log.apply(_console16, _toConsumableArray(oo_oo("2221332817_15", "err", err)));
+
+              if (err.message) {
+                sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
+              } else {
+                sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error("Something went wrong.");
+              }
+            }
           }
+        } else {
+          sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(response.message);
         }
-      } else {
-        sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(response.message);
-      }
-    })["catch"](function (err) {
-      var _console14;
+      })["catch"](function (err) {
+        var _console17;
+
+        /* eslint-disable */
+        (_console17 = console).log.apply(_console17, _toConsumableArray(oo_oo("2221332817_16", "err", err)));
+
+        if (err.message) {
+          sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
+        } else {
+          sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error("Something went wrong.");
+        }
+      });
+    } catch (err) {
+      var _console18;
 
       /* eslint-disable */
-      (_console14 = console).log.apply(_console14, _toConsumableArray(oo_oo("1919953918_13", "err", err)));
+      (_console18 = console).log.apply(_console18, _toConsumableArray(oo_oo("2221332817_17", "err", err)));
 
       if (err.message) {
         sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
       } else {
         sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error("Something went wrong.");
       }
-    });
+    }
+  };
+
+  var updateDataToLists = function updateDataToLists(e, step) {
+    e.preventDefault();
+
+    try {
+      axios__WEBPACK_IMPORTED_MODULE_9___default().post(_lib_utils__WEBPACK_IMPORTED_MODULE_8__.endpoint, {
+        "do": "update",
+        id: step.id,
+        title: title,
+        link: link,
+        description: description
+      }, {
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+          "Content-type": "multipart/form-data" // "Keep-Alive": "timeout=5, max=1000",
+
+        }
+      }).then(function (_ref5) {
+        var _console19;
+
+        var data = _ref5.data.data;
+        var response = data;
+        /* eslint-disable */
+
+        (_console19 = console).log.apply(_console19, _toConsumableArray(oo_oo("2221332817_18", "res", data)));
+
+        if (response.success) {
+          sonner__WEBPACK_IMPORTED_MODULE_1__.toast.success(response.message);
+
+          if (response.data.steps) {
+            try {
+              setSteps((0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps));
+            } catch (err) {
+              var _console20, _console21;
+
+              /* eslint-disable */
+              (_console20 = console).log.apply(_console20, _toConsumableArray(oo_oo("2221332817_19", "err", err)));
+              /* eslint-disable */
+
+
+              (_console21 = console).log.apply(_console21, _toConsumableArray(oo_oo("2221332817_20", "err", err)));
+
+              if (err.message) {
+                sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
+              } else {
+                sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error("Something went wrong.");
+              }
+            }
+          }
+        } else {
+          sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(response.message);
+        }
+
+        setTimeout(function () {
+          setOpen(false);
+        }, 800);
+      })["catch"](function (err) {
+        var _console22;
+
+        /* eslint-disable */
+        (_console22 = console).log.apply(_console22, _toConsumableArray(oo_oo("2221332817_21", "err", err)));
+
+        if (err.message) {
+          sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
+        } else {
+          sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error("Something went wrong.");
+        }
+      });
+    } catch (error) {
+      sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(error.message);
+    }
+  };
+
+  var removeImageFromDataLists = function removeImageFromDataLists(e, step) {
+    e.preventDefault();
+
+    try {
+      axios__WEBPACK_IMPORTED_MODULE_9___default().post(_lib_utils__WEBPACK_IMPORTED_MODULE_8__.endpoint, {
+        "do": "remove",
+        id: step.id
+      }, {
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+          "Content-type": "multipart/form-data" // "Keep-Alive": "timeout=5, max=1000",
+
+        }
+      }).then(function (_ref6) {
+        var _console23;
+
+        var data = _ref6.data.data;
+        var response = data;
+        /* eslint-disable */
+
+        (_console23 = console).log.apply(_console23, _toConsumableArray(oo_oo("2221332817_22", "res", data)));
+
+        if (response.success) {
+          sonner__WEBPACK_IMPORTED_MODULE_1__.toast.success(response.message);
+
+          if (response.data.steps) {
+            try {
+              setSteps((0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps));
+            } catch (err) {
+              var _console24, _console25;
+
+              /* eslint-disable */
+              (_console24 = console).log.apply(_console24, _toConsumableArray(oo_oo("2221332817_23", "err", err)));
+              /* eslint-disable */
+
+
+              (_console25 = console).log.apply(_console25, _toConsumableArray(oo_oo("2221332817_24", "err", err)));
+
+              if (err.message) {
+                sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
+              } else {
+                sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error("Something went wrong.");
+              }
+            }
+          }
+        } else {
+          sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(response.message);
+        }
+      })["catch"](function (err) {
+        var _console26;
+
+        /* eslint-disable */
+        (_console26 = console).log.apply(_console26, _toConsumableArray(oo_oo("2221332817_25", "err", err)));
+
+        if (err.message) {
+          sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
+        } else {
+          sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error("Something went wrong.");
+        }
+      });
+    } catch (error) {
+      sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(error.message);
+    }
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
@@ -3099,6 +3349,8 @@ var Card = function Card(_ref) {
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
                 className: "relative flex space-x-2",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.Dialog, {
+                  open: open,
+                  onOpenChange: setOpen,
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.DialogTrigger, {
                     asChild: true,
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("svg", {
@@ -3123,20 +3375,29 @@ var Card = function Card(_ref) {
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.DialogDescription, {
                         children: "Make changes to the steps here. Click save when you're done."
                       })]
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("form", {
-                      className: "grid gap-4 py-4",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("form", {
+                      onSubmit: function onSubmit(e) {
+                        return e.preventDefault();
+                      },
+                      className: "grid gap-4 pt-4",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
                         className: "grid grid-cols-4 items-center gap-4",
                         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_input__WEBPACK_IMPORTED_MODULE_5__.Input, {
                           id: "title",
-                          defaultValue: tree === null || tree === void 0 ? void 0 : tree.title,
+                          defaultValue: title ? title : tree === null || tree === void 0 ? void 0 : tree.title,
                           className: "col-span-4",
-                          placeholder: "e.g. Mohammad Ibrahim"
+                          placeholder: "e.g. Mohammad Ibrahim",
+                          onChange: function onChange(e) {
+                            return setTitle(e.target.value);
+                          }
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_input__WEBPACK_IMPORTED_MODULE_5__.Input, {
                           id: "link",
-                          defaultValue: tree === null || tree === void 0 ? void 0 : tree.link,
+                          defaultValue: link ? link : tree === null || tree === void 0 ? void 0 : tree.link,
                           className: "col-span-4",
-                          placeholder: "e.g. https://awesomecoder.dev/"
+                          placeholder: "e.g. https://awesomecoder.dev/",
+                          onChange: function onChange(e) {
+                            return setLink(e.target.value);
+                          }
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
                           className: "relative col-span-4",
                           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_textarea__WEBPACK_IMPORTED_MODULE_7__.Textarea, {
@@ -3145,15 +3406,21 @@ var Card = function Card(_ref) {
                             placeholder: "e.g. I'm Mohammad Ibrahim. I live in the Future, where I develop the universe. For more details visit https://www.awesomecoder.dev/.",
                             rows: "10",
                             className: "capitalize",
-                            children: tree === null || tree === void 0 ? void 0 : tree.description
+                            onChange: function onChange(e) {
+                              return setDescription(e.target.value);
+                            },
+                            children: description ? description : tree === null || tree === void 0 ? void 0 : tree.description
                           })
                         })]
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.DialogFooter, {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_button__WEBPACK_IMPORTED_MODULE_4__.Button, {
-                        type: "submit",
-                        children: "Save changes"
-                      })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_2__.DialogFooter, {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ui_button__WEBPACK_IMPORTED_MODULE_4__.Button, {
+                          type: "submit",
+                          onClick: function onClick(e) {
+                            return updateDataToLists(e, tree);
+                          },
+                          children: "Save changes"
+                        })
+                      })]
                     })]
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("svg", {
@@ -3211,22 +3478,25 @@ var Card = function Card(_ref) {
               })]
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-            className: "relative",
+            className: "relative overflow-hidden",
             children: [tree !== null && tree !== void 0 && tree.image ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
                 style: {
                   backgroundImage: tree !== null && tree !== void 0 && tree.image && tree.thumbnail_id ? "url(".concat(tree.image, ")") : "url(".concat(_lib_utils__WEBPACK_IMPORTED_MODULE_8__.default_image, ")")
                 },
                 ref: imageRef,
-                className: "relative mx-2 col-span-4 bg-contain bg-no-repeat bg-center flex justify-center items-center aspect-[8/4] rounded-md bg-slate-50",
+                className: "relative mx-2 col-span-4 bg-cover bg-no-repeat bg-top flex justify-center items-center aspect-[8/5] rounded-md bg-slate-50",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-                  className: "absolute flex justify-end p-3 gap-3 top-0 left-0 w-full ",
+                  className: "absolute bg-gradient-to-b from-white to-transparent bg-blend-soft-light flex justify-end p-3 gap-3 top-0 left-0 w-full ",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_11__["default"], {
                     onClick: function onClick(e) {
                       return handleMediaUploader(e, tree);
                     },
-                    className: "h-4 w-4 cursor-pointer"
+                    className: "h-4 w-4 text-indigo-600 cursor-pointer"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                    onClick: function onClick(e) {
+                      return removeImageFromDataLists(e, tree);
+                    },
                     className: "h-4 w-4 text-red-500 cursor-pointer"
                   })]
                 })
