@@ -290,14 +290,7 @@ const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 					<div className="relative space-y-2">
 						<div className="relative border-b border-dashed border-zinc-600 p-2">
 							<div className="flex justify-between space-x-2">
-								<p className="truncate w-40">
-									{tree?.title} Lorem, ipsum dolor sit amet
-									consectetur adipisicing elit. Nemo eveniet
-									deleniti explicabo quasi consequuntur
-									numquam voluptates maxime laborum, eius nam,
-									incidunt, amet possimus aut facere autem
-									vero in excepturi. Optio.
-								</p>
+								<p className="truncate w-40">{tree?.title}</p>
 
 								<div className="relative flex space-x-2">
 									<Dialog>

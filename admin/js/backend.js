@@ -2841,7 +2841,7 @@ var App = function App() {
   /* eslint-disable */
 
 
-  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("1959170030_0", "steps", steps)));
+  (_console = console).log.apply(_console, _toConsumableArray(oo_oo("1564837996_0", "steps", steps)));
 
   var ref = (0,react__WEBPACK_IMPORTED_MODULE_6__.useRef)(); // We will use React useRef hook to reference the wrapping div:
 
@@ -2887,21 +2887,21 @@ var Card = function Card(_ref) {
   var imageRef = (0,react__WEBPACK_IMPORTED_MODULE_6__.useRef)(null);
   /* eslint-disable */
 
-  (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("1959170030_1", "wp.media", wp.media)));
+  (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("1564837996_1", "wp.media", wp.media)));
 
   var handleMediaUploader = function handleMediaUploader(e, step) {
     try {
       var _console3, _console4;
 
       /* eslint-disable */
-      (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("1959170030_2", "imageRef", imageRef.current))); // Uploading files
+      (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("1564837996_2", "imageRef", imageRef.current))); // Uploading files
 
 
       e.preventDefault();
       e.stopPropagation();
       /* eslint-disable */
 
-      (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("1959170030_3", "step", step))); // If the media frame already exists, reopen it.
+      (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("1564837996_3", "step", step))); // If the media frame already exists, reopen it.
 
 
       if (frame) {
@@ -2925,11 +2925,11 @@ var Card = function Card(_ref) {
         var image = attachment.sizes.thumbnail || attachment.sizes.full;
         /* eslint-disable */
 
-        (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("1959170030_4", "attachment", attachment.id, attachment)));
+        (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("1564837996_4", "attachment", attachment.id, attachment)));
         /* eslint-disable */
 
 
-        (_console6 = console).log.apply(_console6, _toConsumableArray(oo_oo("1959170030_5", "image", image, image.url)));
+        (_console6 = console).log.apply(_console6, _toConsumableArray(oo_oo("1564837996_5", "image", image, image.url)));
       }); // Finally, open the modal.
 
       frame.open();
@@ -2937,7 +2937,7 @@ var Card = function Card(_ref) {
       var _console7;
 
       /* eslint-disable */
-      (_console7 = console).log.apply(_console7, _toConsumableArray(oo_oo("1959170030_6", "error", error)));
+      (_console7 = console).log.apply(_console7, _toConsumableArray(oo_oo("1564837996_6", "error", error)));
     }
   };
 
@@ -2976,9 +2976,9 @@ var Card = function Card(_ref) {
             className: "relative border-b border-dashed border-zinc-600 p-2",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
               className: "flex justify-between space-x-2",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("p", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
                 className: "truncate w-40",
-                children: [tree === null || tree === void 0 ? void 0 : tree.title, " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo eveniet deleniti explicabo quasi consequuntur numquam voluptates maxime laborum, eius nam, incidunt, amet possimus aut facere autem vero in excepturi. Optio."]
+                children: tree === null || tree === void 0 ? void 0 : tree.title
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                 className: "relative flex space-x-2",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_components_ui_dialog__WEBPACK_IMPORTED_MODULE_0__.Dialog, {
