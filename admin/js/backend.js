@@ -2940,14 +2940,14 @@ var Card = function Card(_ref) {
       var _console, _console2;
 
       /* eslint-disable */
-      (_console = console).log.apply(_console, _toConsumableArray(oo_oo("2221332817_0", "imageRef", imageRef.current))); // Uploading files
+      (_console = console).log.apply(_console, _toConsumableArray(oo_oo("926897266_0", "imageRef", imageRef.current))); // Uploading files
 
 
       e.preventDefault();
       e.stopPropagation();
       /* eslint-disable */
 
-      (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("2221332817_1", "step", step))); // If the media frame already exists, reopen it.
+      (_console2 = console).log.apply(_console2, _toConsumableArray(oo_oo("926897266_1", "step", step))); // If the media frame already exists, reopen it.
 
 
       if (frame) {
@@ -2971,11 +2971,11 @@ var Card = function Card(_ref) {
         var image = attachment.sizes.thumbnail || attachment.sizes.full;
         /* eslint-disable */
 
-        (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("2221332817_2", "attachment", attachment.id, attachment)));
+        (_console3 = console).log.apply(_console3, _toConsumableArray(oo_oo("926897266_2", "attachment", attachment.id, attachment)));
         /* eslint-disable */
 
 
-        (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("2221332817_3", "image", image, image.url)));
+        (_console4 = console).log.apply(_console4, _toConsumableArray(oo_oo("926897266_3", "image", image, image.url)));
 
         if (attachment !== null && attachment !== void 0 && attachment.id && image !== null && image !== void 0 && image.url) {
           axios__WEBPACK_IMPORTED_MODULE_9___default().post(_lib_utils__WEBPACK_IMPORTED_MODULE_8__.endpoint, {
@@ -2996,7 +2996,7 @@ var Card = function Card(_ref) {
             var response = data;
             /* eslint-disable */
 
-            (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("2221332817_4", "res", data)));
+            (_console5 = console).log.apply(_console5, _toConsumableArray(oo_oo("926897266_4", "res", data)));
 
             if (response.success) {
               sonner__WEBPACK_IMPORTED_MODULE_1__.toast.success(response.message);
@@ -3008,7 +3008,7 @@ var Card = function Card(_ref) {
                   var _console6;
 
                   /* eslint-disable */
-                  (_console6 = console).log.apply(_console6, _toConsumableArray(oo_oo("2221332817_5", "err", err)));
+                  (_console6 = console).log.apply(_console6, _toConsumableArray(oo_oo("926897266_5", "err", err)));
 
                   if (err.message) {
                     sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
@@ -3024,7 +3024,7 @@ var Card = function Card(_ref) {
             var _console7;
 
             /* eslint-disable */
-            (_console7 = console).log.apply(_console7, _toConsumableArray(oo_oo("2221332817_6", "err", err)));
+            (_console7 = console).log.apply(_console7, _toConsumableArray(oo_oo("926897266_6", "err", err)));
 
             if (err.message) {
               sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
@@ -3042,7 +3042,7 @@ var Card = function Card(_ref) {
       var _console8, _error$message;
 
       /* eslint-disable */
-      (_console8 = console).log.apply(_console8, _toConsumableArray(oo_oo("2221332817_7", "error", error)));
+      (_console8 = console).log.apply(_console8, _toConsumableArray(oo_oo("926897266_7", "error", error)));
 
       sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error((_error$message = error === null || error === void 0 ? void 0 : error.message) !== null && _error$message !== void 0 ? _error$message : "Wordpress media is not enabled.");
     }
@@ -3066,7 +3066,7 @@ var Card = function Card(_ref) {
         var response = data;
         /* eslint-disable */
 
-        (_console9 = console).log.apply(_console9, _toConsumableArray(oo_oo("2221332817_8", "res", data)));
+        (_console9 = console).log.apply(_console9, _toConsumableArray(oo_oo("926897266_8", "res", data)));
 
         if (response.success) {
           sonner__WEBPACK_IMPORTED_MODULE_1__.toast.success(response.message);
@@ -3075,7 +3075,7 @@ var Card = function Card(_ref) {
             var _console10;
 
             /* eslint-disable */
-            (_console10 = console).log.apply(_console10, _toConsumableArray(oo_oo("2221332817_9", "steps", (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps))));
+            (_console10 = console).log.apply(_console10, _toConsumableArray(oo_oo("926897266_9", "steps", (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps))));
 
             try {
               setSteps((0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps));
@@ -3083,7 +3083,7 @@ var Card = function Card(_ref) {
               var _console11;
 
               /* eslint-disable */
-              (_console11 = console).log.apply(_console11, _toConsumableArray(oo_oo("2221332817_10", "error", error)));
+              (_console11 = console).log.apply(_console11, _toConsumableArray(oo_oo("926897266_10", "error", error)));
             }
           }
         } else {
@@ -3093,7 +3093,7 @@ var Card = function Card(_ref) {
         var _console12;
 
         /* eslint-disable */
-        (_console12 = console).log.apply(_console12, _toConsumableArray(oo_oo("2221332817_11", "err", err)));
+        (_console12 = console).log.apply(_console12, _toConsumableArray(oo_oo("926897266_11", "err", err)));
 
         if (err.message) {
           sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
@@ -3105,7 +3105,7 @@ var Card = function Card(_ref) {
       var _console13;
 
       /* eslint-disable */
-      (_console13 = console).log.apply(_console13, _toConsumableArray(oo_oo("2221332817_12", "err", err)));
+      (_console13 = console).log.apply(_console13, _toConsumableArray(oo_oo("926897266_12", "err", err)));
 
       if (err.message) {
         sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
@@ -3133,7 +3133,7 @@ var Card = function Card(_ref) {
         var response = data;
         /* eslint-disable */
 
-        (_console14 = console).log.apply(_console14, _toConsumableArray(oo_oo("2221332817_13", "res", data)));
+        (_console14 = console).log.apply(_console14, _toConsumableArray(oo_oo("926897266_13", "res", data)));
 
         if (response.success) {
           sonner__WEBPACK_IMPORTED_MODULE_1__.toast.success(response.message);
@@ -3142,7 +3142,7 @@ var Card = function Card(_ref) {
             var _console15;
 
             /* eslint-disable */
-            (_console15 = console).log.apply(_console15, _toConsumableArray(oo_oo("2221332817_14", "steps", (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps))));
+            (_console15 = console).log.apply(_console15, _toConsumableArray(oo_oo("926897266_14", "steps", (0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps))));
 
             try {
               setSteps((0,_lib_utils__WEBPACK_IMPORTED_MODULE_8__.structureData)(response.data.steps));
@@ -3150,7 +3150,7 @@ var Card = function Card(_ref) {
               var _console16;
 
               /* eslint-disable */
-              (_console16 = console).log.apply(_console16, _toConsumableArray(oo_oo("2221332817_15", "err", err)));
+              (_console16 = console).log.apply(_console16, _toConsumableArray(oo_oo("926897266_15", "err", err)));
 
               if (err.message) {
                 sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
@@ -3166,7 +3166,7 @@ var Card = function Card(_ref) {
         var _console17;
 
         /* eslint-disable */
-        (_console17 = console).log.apply(_console17, _toConsumableArray(oo_oo("2221332817_16", "err", err)));
+        (_console17 = console).log.apply(_console17, _toConsumableArray(oo_oo("926897266_16", "err", err)));
 
         if (err.message) {
           sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
@@ -3178,7 +3178,7 @@ var Card = function Card(_ref) {
       var _console18;
 
       /* eslint-disable */
-      (_console18 = console).log.apply(_console18, _toConsumableArray(oo_oo("2221332817_17", "err", err)));
+      (_console18 = console).log.apply(_console18, _toConsumableArray(oo_oo("926897266_17", "err", err)));
 
       if (err.message) {
         sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
@@ -3211,7 +3211,7 @@ var Card = function Card(_ref) {
         var response = data;
         /* eslint-disable */
 
-        (_console19 = console).log.apply(_console19, _toConsumableArray(oo_oo("2221332817_18", "res", data)));
+        (_console19 = console).log.apply(_console19, _toConsumableArray(oo_oo("926897266_18", "res", data)));
 
         if (response.success) {
           sonner__WEBPACK_IMPORTED_MODULE_1__.toast.success(response.message);
@@ -3223,11 +3223,11 @@ var Card = function Card(_ref) {
               var _console20, _console21;
 
               /* eslint-disable */
-              (_console20 = console).log.apply(_console20, _toConsumableArray(oo_oo("2221332817_19", "err", err)));
+              (_console20 = console).log.apply(_console20, _toConsumableArray(oo_oo("926897266_19", "err", err)));
               /* eslint-disable */
 
 
-              (_console21 = console).log.apply(_console21, _toConsumableArray(oo_oo("2221332817_20", "err", err)));
+              (_console21 = console).log.apply(_console21, _toConsumableArray(oo_oo("926897266_20", "err", err)));
 
               if (err.message) {
                 sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
@@ -3247,7 +3247,7 @@ var Card = function Card(_ref) {
         var _console22;
 
         /* eslint-disable */
-        (_console22 = console).log.apply(_console22, _toConsumableArray(oo_oo("2221332817_21", "err", err)));
+        (_console22 = console).log.apply(_console22, _toConsumableArray(oo_oo("926897266_21", "err", err)));
 
         if (err.message) {
           sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
@@ -3280,7 +3280,7 @@ var Card = function Card(_ref) {
         var response = data;
         /* eslint-disable */
 
-        (_console23 = console).log.apply(_console23, _toConsumableArray(oo_oo("2221332817_22", "res", data)));
+        (_console23 = console).log.apply(_console23, _toConsumableArray(oo_oo("926897266_22", "res", data)));
 
         if (response.success) {
           sonner__WEBPACK_IMPORTED_MODULE_1__.toast.success(response.message);
@@ -3292,11 +3292,11 @@ var Card = function Card(_ref) {
               var _console24, _console25;
 
               /* eslint-disable */
-              (_console24 = console).log.apply(_console24, _toConsumableArray(oo_oo("2221332817_23", "err", err)));
+              (_console24 = console).log.apply(_console24, _toConsumableArray(oo_oo("926897266_23", "err", err)));
               /* eslint-disable */
 
 
-              (_console25 = console).log.apply(_console25, _toConsumableArray(oo_oo("2221332817_24", "err", err)));
+              (_console25 = console).log.apply(_console25, _toConsumableArray(oo_oo("926897266_24", "err", err)));
 
               if (err.message) {
                 sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
@@ -3312,7 +3312,7 @@ var Card = function Card(_ref) {
         var _console26;
 
         /* eslint-disable */
-        (_console26 = console).log.apply(_console26, _toConsumableArray(oo_oo("2221332817_25", "err", err)));
+        (_console26 = console).log.apply(_console26, _toConsumableArray(oo_oo("926897266_25", "err", err)));
 
         if (err.message) {
           sonner__WEBPACK_IMPORTED_MODULE_1__.toast.error(err.message);
@@ -3501,7 +3501,7 @@ var Card = function Card(_ref) {
                   })]
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("p", {
-                className: "lead capitalize px-2 py-1 line-clamp-3",
+                className: "lead text-xs capitalize px-2 py-1 line-clamp-3",
                 children: tree.description
               })]
             }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
@@ -3530,7 +3530,7 @@ var Card = function Card(_ref) {
                     })
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("p", {
-                  className: "lead capitalize px-2 py-1 line-clamp-6",
+                  className: "lead text-xs capitalize px-2 py-1 line-clamp-6",
                   children: tree.description
                 })]
               })

@@ -634,7 +634,7 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 											/>
 										</div>
 									</div>
-									<p className="lead capitalize px-2 py-1 line-clamp-3">
+									<p className="lead text-xs capitalize px-2 py-1 line-clamp-3">
 										{tree.description}
 									</p>
 								</Fragment>
@@ -666,7 +666,7 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 												/>
 											</svg>
 										</div>
-										<p className="lead capitalize px-2 py-1 line-clamp-6">
+										<p className="lead text-xs capitalize px-2 py-1 line-clamp-6">
 											{tree.description}
 										</p>
 									</div>
