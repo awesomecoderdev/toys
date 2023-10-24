@@ -40,6 +40,7 @@ class Toys_Activator
 			parent_id INT,
 			thumbnail_id INT,
 			title VARCHAR(255) NOT NULL,
+			description TEXT,
 			image VARCHAR(255),
 			link VARCHAR(255),
 			PRIMARY KEY (id)

@@ -27,6 +27,9 @@ export function structureData(data) {
 	return result;
 }
 const a = awesomecoder;
+console.log("awesomecoder", awesomecoder.data);
+
+export const defaultSteps = typeof a !== "undefined" ? a.data : [];
 export const site_url = typeof a !== "undefined" ? a.url : "/";
 export const endpoint = typeof a !== "undefined" ? a.ajaxurl : "/";
 export const default_image = typeof a !== "undefined" ? a.image : "/";

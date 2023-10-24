@@ -19,6 +19,7 @@ import {
 	site_url,
 	default_image,
 	endpoint,
+	defaultSteps,
 } from "@/lib/utils";
 import React, { Fragment, useRef, useState } from "react";
 import { useDraggable } from "react-use-draggable-scroll";
@@ -26,137 +27,7 @@ import { useDraggable } from "react-use-draggable-scroll";
 const App = () => {
 	// Call the recursive function to structure the data starting from the root level
 	// Sample array of data (replace this with your data)
-	const [nestedData, setNestedData] = useState([
-		{ id: 1, thumbnail_id: null, title: "Start", image: null, link: null },
-		{
-			id: 2,
-			thumbnail_id: null,
-			title: "One Step",
-			image: null,
-			link: "https://awe.com",
-			parent_id: 1,
-		},
-		{
-			id: 3,
-			thumbnail_id: null,
-			title: "Two",
-			image: null,
-			link: null,
-			parent_id: 1,
-		},
-		{
-			id: 4,
-			thumbnail_id: null,
-			title: "One",
-			image: null,
-			link: null,
-			parent_id: 2,
-		},
-		{
-			id: 5,
-			thumbnail_id: null,
-			title: "Two",
-			image: null,
-			link: null,
-			parent_id: 2,
-		},
-		{
-			id: 6,
-			thumbnail_id: null,
-			title: "Three",
-			image: null,
-			link: null,
-			parent_id: 2,
-		},
-		{
-			id: 2,
-			thumbnail_id: null,
-			title: "One",
-			image: null,
-			link: null,
-			parent_id: 4,
-		},
-		{
-			id: 3,
-			thumbnail_id: null,
-			title: "Two",
-			image: null,
-			link: null,
-			parent_id: 5,
-		},
-		{
-			id: 4,
-			thumbnail_id: null,
-			title: "One",
-			image: null,
-			link: null,
-			parent_id: 6,
-		},
-		{
-			id: 5,
-			thumbnail_id: null,
-			title: "Two",
-			image: null,
-			link: null,
-			parent_id: 2,
-		},
-		{
-			id: 6,
-			thumbnail_id: null,
-			title: "Three",
-			image: null,
-			link: null,
-			parent_id: 2,
-		},
-		{
-			id: 6,
-			thumbnail_id: null,
-			title: "Three",
-			image: null,
-			link: null,
-			parent_id: 2,
-		},
-		{
-			id: 2,
-			thumbnail_id: null,
-			title: "One",
-			image: null,
-			link: null,
-			parent_id: 1,
-		},
-		{
-			id: 3,
-			thumbnail_id: null,
-			title: "Two",
-			image: null,
-			link: null,
-			parent_id: 1,
-		},
-		{
-			id: 4,
-			thumbnail_id: null,
-			title: "One",
-			image: null,
-			link: null,
-			parent_id: 2,
-		},
-		{
-			id: 5,
-			thumbnail_id: null,
-			title: "Two",
-			image: null,
-			link: null,
-			parent_id: 2,
-		},
-		{
-			id: 6,
-			thumbnail_id: null,
-			title: "Three",
-			image: null,
-			link: null,
-			parent_id: 2,
-		},
-	]);
+	const [nestedData, setNestedData] = useState(defaultSteps);
 	const structuredData = structureData(nestedData);
 	const [steps, setSteps] = useState(structuredData);
 	console.log("steps", steps);
@@ -351,7 +222,9 @@ const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 																"e.g. I'm Mohammad Ibrahim. I live in the Future, where I develop the universe. For more details visit https://www.awesomecoder.dev/."
 															}
 															rows="10"
-														/>
+														>
+															{tree?.description}
+														</Textarea>
 													</div>
 												</div>
 											</form>
@@ -406,7 +279,7 @@ const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 									backgroundImage: `url(${default_image})`,
 								}}
 								ref={imageRef}
-								className="relative col-span-4 bg-contain bg-no-repeat bg-center flex justify-center items-center  h-14  gap-4 rounded-md bg-slate-50"
+								className="relative col-span-4 bg-contain bg-no-repeat bg-center flex justify-center items-center aspect-[8/4] rounded-md bg-slate-50"
 							>
 								<div className="absolute flex justify-end p-3 gap-3 top-0 left-0 w-full ">
 									<Repeat1
@@ -418,7 +291,7 @@ const Card = ({ tree, step, position, end, setNestedData, isFirst }) => {
 									<XCircle className="h-4 w-4 text-red-500 cursor-pointer" />
 								</div>
 							</div>
-							<h1 className="text-sm">
+							<h1 className="text-sm hidden">
 								ID: {tree?.id}
 								{/* <br />
 								Title: {tree?.title}

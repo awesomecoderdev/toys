@@ -89,6 +89,9 @@ class Toys_Admin
 	 */
 	public function enqueue_scripts($hook)
 	{
+		global $wpdb;
+		$table = "{$wpdb->prefix}toys";
+		$data = $wpdb->get_results($wpdb->prepare("SELECT * FROM $table"), ARRAY_A);
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -112,6 +115,7 @@ class Toys_Admin
 				"website" 	=>	"https://awesomecoder.dev",
 			],
 			"url" 			=> get_bloginfo('url'),
+			"data" 			=> $data,
 			"image"			=> AWESOMECODER_URL . "/assets/img/image.svg",
 			"ajaxurl"		=> admin_url("admin-ajax.php?action=awesomecoder_backend"),
 		));
