@@ -73,7 +73,8 @@ class Toys_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/toys-public.css', array(), $this->version, 'all' );
+		 wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/toys-public.min.css', array(), md5(time()) ?? $this->version, 'all' );
+		 wp_enqueue_style( "{$this->plugin_name}-selector", plugin_dir_url( __FILE__ ) . 'css/selector.css', array(), md5(time()) ?? $this->version, 'all' );
 
 	}
 
@@ -96,7 +97,7 @@ class Toys_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/toys-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/toys-public.js', array( 'jquery' ), md5(time()) ?? $this->version, false );
 
 	}
 

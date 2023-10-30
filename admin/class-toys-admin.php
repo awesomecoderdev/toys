@@ -95,7 +95,7 @@ class Toys_Admin
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		// wp_enqueue_media();
+		wp_enqueue_media();
 
 		if ($hook == "toplevel_page_toys") {
 			wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/toys-admin.css', array(), md5(time()) ?? $this->version, 'all');

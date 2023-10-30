@@ -29,6 +29,11 @@ mix.webpackConfig({
 		require("tailwindcss"),
 		require("autoprefixer"),
 	])
+	// .postCss("src/backend.css", "public/css/toys-public.css", [
+	// 	require("postcss-import"),
+	// 	require("tailwindcss"),
+	// 	require("autoprefixer"),
+	// ])
 	// .postCss("src/frontend/css/frontend.css", "frontend/css", [
 	//   require("postcss-import"),
 	//   require("tailwindcss"),
