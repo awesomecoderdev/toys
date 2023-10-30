@@ -59,7 +59,7 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 			}
 
 			// Create the media frame.
-			frame = wp.media.frames.downloadable_file = wp.media({
+			frame = wp.media({
 				title: "Choose step image",
 				button: {
 					text: "Save Changes",
@@ -74,13 +74,13 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 					.get("selection")
 					.first()
 					.toJSON();
-				const image =
-					attachment.sizes.thumbnail || attachment.sizes.full;
+				// const image =
+				// 	attachment.sizes.thumbnail || attachment.sizes.full;
+				// const image = attachment.url;
+				// console.log("attachment", attachment.id, attachment);
+				// console.log("image", image);
 
-				console.log("attachment", attachment.id, attachment);
-				console.log("image", image, image.url);
-
-				if (attachment?.id && image?.url) {
+				if (attachment?.id && attachment?.url) {
 					axios
 						.post(
 							endpoint,
@@ -88,7 +88,7 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 								do: "update",
 								id: step.id,
 								thumbnail_id: attachment.id,
-								image: image.url,
+								image: attachment.url,
 							},
 							{
 								headers: {
