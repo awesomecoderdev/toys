@@ -10,16 +10,52 @@
  *	| (_| |\ V  V /  __/\__ \ (_) | | | | | |  __/ (_| (_) | (_|  |  __/  |
  *	\__,_| \_/\_/ \___||___/\___/|_| |_| |_|\___|\___\___/ \__,___|\___|__|
 */
+// Define your breakpoint variables
+$phone: 576px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1200px;
+
+// Media query mixin
+@mixin device($breakpoint) {
+	@if $breakpoint == phone {
+		@media (max-width: $phone) {
+			@content;
+		}
+	} @else if $breakpoint == tablet {
+		@media (min-width: $phone) and (max-width: $tablet) {
+			@content;
+		}
+	} @else if $breakpoint == laptop {
+		@media (min-width: $tablet) and (max-width: $laptop) {
+			@content;
+		}
+	} @else if $breakpoint == desktop {
+		@media (min-width: $laptop) and (max-width: $desktop) {
+			@content;
+		}
+	}
+}
 
 .toys-container {
 	position: relative;
 	// overflow: hidden;
 	padding: 0 4rem;
+	@include device(tablet) {
+		// padding: 0 1rem;
+		padding: 0;
+	}
+	@include device(phone) {
+		padding: 0;
+	}
 
 	.toys-grid {
 		display: grid;
-		// gap: 1.5rem;
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		@include device(tablet) {
+			grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+			// gap: 1.5rem;
+		}
 		// grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
 		// 285px
 		.toys-grid-item {
@@ -28,11 +64,32 @@
 			padding: 0.6rem;
 			// background-color: #ef4444;
 			// background-color: #f07037;
+			@include device(tablet) {
+				padding: 0;
+
+				&.toys-grid-item-odd {
+					margin-right: 1rem;
+				}
+
+				&.toys-grid-item-even {
+					margin-left: 1rem;
+				}
+			}
+
+			@include device(phone) {
+				padding: 0;
+			}
 
 			.toys-grid-content {
 				position: relative;
 				display: flex;
 				justify-content: end;
+				@include device(tablet) {
+					justify-content: start;
+				}
+				@include device(phone) {
+					justify-content: center;
+				}
 
 				.toys-grid-box {
 					overflow: hidden;
@@ -44,29 +101,109 @@
 					width: 265px;
 					height: 150px;
 					transform: skewX(-30deg);
-					background-repeat: no-repeat;
-					background-position: center;
-					background-size: cover;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					@include device(tablet) {
+						width: 100%;
+						transform: skewX(0deg);
+						border: 1px solid transparent;
+						height: 180px;
+					}
+
+					@include device(phone) {
+						width: 100%;
+						transform: skewX(0deg);
+						border: 1px solid transparent;
+						height: 180px;
+					}
 
 					.toys-item-image {
 						position: absolute;
-						top: -2px;
-						left: -45px;
 						transform: skewX(30deg);
-						width: 355px;
-						height: auto;
+						left: -45px;
+						width: 350px;
+						height: 100%;
+						background-repeat: no-repeat;
+						background-position: center;
+						background-size: cover;
+
+						@include device(tablet) {
+							left: 0;
+							transform: skewX(0deg);
+							width: 100%;
+						}
+
+						@include device(phone) {
+							left: 0;
+							transform: skewX(0deg);
+							width: 100%;
+						}
 					}
 
+					.toys-item-description {
+						transform: skewX(30deg);
+						text-align: center;
+						padding: 0 35px;
+						z-index: 1;
+
+						@include device(tablet) {
+							transform: skewX(0deg);
+						}
+
+						@include device(phone) {
+							transform: skewX(0deg);
+						}
+
+						p.toys-item-description-text {
+							display: flex;
+							font-size: 12px !important;
+							color: #111111;
+							line-height: 24px;
+							letter-spacing: 0.6px;
+							font-weight: 400;
+							margin: 0 !important;
+							padding: 0 !important;
+						}
+					}
+					.toys-item-image-background {
+						background-color: #f07037;
+						opacity: 0;
+						position: absolute;
+						transition: all 150ms ease-in-out;
+						top: 0;
+						width: 100%;
+						height: 150px;
+						@include device(tablet) {
+							height: 100%;
+						}
+
+						@include device(phone) {
+							height: 100%;
+						}
+					}
 					.toys-item-image-overlay {
 						background-color: #f07037;
 						opacity: 0;
-						transition: opacity 0.6s;
+						transition: opacity 0.3s;
 						position: absolute;
 						top: 0;
-						left: -2px;
-						width: 270px;
+						width: 100%;
 						height: 150px;
+						@include device(tablet) {
+							height: 100%;
+						}
+
+						@include device(phone) {
+							height: 100%;
+						}
 					}
+				}
+
+				.toys-grid-content-box {
+					border: 1px solid #aaaaaa;
+					margin-bottom: 2rem;
 				}
 			}
 
@@ -85,15 +222,49 @@
 					font-size: 16px !important;
 					letter-spacing: 0.6px;
 					max-width: 285px;
+
+					@include device(tablet) {
+						text-align: center;
+						max-width: 100%;
+					}
+
+					@include device(phone) {
+						text-align: center;
+						max-width: 100%;
+					}
+				}
+
+				@include device(laptop) {
+					margin-left: -40px;
+				}
+
+				@include device(tablet) {
+					margin-left: 0px;
+					margin-top: 10px;
+				}
+
+				@include device(phone) {
+					margin-left: 0px;
+					margin-top: 10px;
 				}
 			}
 
 			&:hover {
 				.toys-grid-content {
 					.toys-grid-box {
+						.toys-item-description {
+							p.toys-item-description-text {
+								color: #fff;
+							}
+						}
+
 						.toys-item-image-overlay {
 							opacity: 1;
 							mix-blend-mode: multiply;
+						}
+
+						.toys-item-image-background {
+							opacity: 1;
 						}
 					}
 				}

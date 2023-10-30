@@ -21,7 +21,7 @@
 <div class="toys-container">
     <div class="toys-grid">
         <?php foreach ($steps as $key => $step) : ?>
-            <div class="toys-grid-item">
+            <div class="toys-grid-item <?php echo $key % 2 == 1 ? 'toys-grid-item-even' : 'toys-grid-item-odd' ?>" id="toys-item-<?php echo $step["id"] ?>">
                 <?php
                 // echo "<pre>";
                 // print_r($step);
@@ -30,22 +30,28 @@
 
                 <div class="toys-grid-content">
                     <?php if (isset($step["image"]) && !empty($step["image"])) : ?>
-                        <div class="toys-grid-box" styles="background-image: url(<?php echo $step["image"] ?>);">
-                            <img src="<?php echo $step["image"] ?>" class="toys-item-image" alt="<?php echo $step["title"] ?>">
+                        <div class="toys-grid-box">
+                            <div class="toys-item-image" style="background-image: url(<?php echo $step["image"] ?>);"></div>
                             <div class="toys-item-image-overlay"></div>
                         </div>
                     <?php else : ?>
-                        <div class="toys-grid-box">
-
-
-                            <div class="toys-item-image-overlay"></div>
+                        <div class="toys-grid-box toys-grid-content-box ">
+                            <div class="toys-item-description">
+                                <p class="toys-item-description-text"><?php echo strlen($step["description"]) > 100 ? substr($step["description"], 0, 100) . "..." : substr($step["description"], 0, 50) ?></p>
+                            </div>
+                            <div class="toys-item-image-background"></div>
                         </div>
                     <?php endif; ?>
                 </div>
 
-                <div class="toys-grid-footer">
-                    <h2 class="toys-grid-item-heading"><?php echo $step["title"]; ?></h2>
-                </div>
+                <?php if (isset($step["image"]) && !empty($step["image"])) : ?>
+                    <div class="toys-grid-footer">
+                        <h2 class="toys-grid-item-heading"><?php echo $step["title"]; ?></h2>
+                    </div>
+                <?php else : ?>
+
+                <?php endif; ?>
+
             </div>
 
         <?php endforeach; ?>
