@@ -35,6 +35,7 @@
 	$(document).on("click", "#toys-start-btn", function (e) {
 		e.stopPropagation();
 		$("#toys-reset-btn").show();
+		$(".toys-grid-item").hide();
 		$(this).hide();
 		steps[0]?.children?.map((item) => $(`#toys-item-${item.id}`).show());
 	});
@@ -51,6 +52,8 @@
 	// next steps
 	$(document).on("click", ".toys-grid-item", function (e) {
 		e.stopPropagation();
+		$("#toys-start-btn").hide();
+		$("#toys-reset-btn").show();
 		let next = $(this).attr("data-id");
 		let hasChild =
 			data?.filter((i) => i?.parent_id == next)?.length > 0 ?? false;
