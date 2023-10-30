@@ -22,7 +22,7 @@
     <div class="toys-grid">
         <?php foreach ($steps as $key => $step) : ?>
             <?php if ($key != 0) : ?>
-                <div class="toys-grid-item <?php echo $key % 2 == 1 ? 'toys-grid-item-even' : 'toys-grid-item-odd' ?>" id="toys-item-<?php echo $step["id"] ?>" data-id="<?php echo $step["id"] ?>" style="display: none;">
+                <div class="toys-grid-item" id="toys-item-<?php echo $step["id"] ?>" data-id="<?php echo $step["id"] ?>" style="display: none;">
                     <?php
                     // echo "<pre>";
                     // print_r($step);
@@ -50,24 +50,28 @@
                             <h2 class="toys-grid-item-heading"><?php echo $step["title"]; ?></h2>
                         </div>
                     <?php else : ?>
+                        <div class="toys-grid-footer">
+                            <h2 class="toys-grid-item-heading"><?php echo $step["title"]; ?></h2>
+                        </div>
+                    <?php endif; ?>
 
+                    <?php if (!isset($step["children"])) : ?>
+                        <div class="toys-grid-selection" id="toys-item-select-<?php echo $step["id"] ?>">
+                            <div class="toys-wrap">
+                                <p class="toys-item-selection-text"><?php echo $step["description"]; ?></p>
+                                <a href="<?php echo !empty($step["link"]) ? $step["link"] : "javascript:void(0);" ?>" class="toys-select-btn">
+                                    <?php _e("Select", "toys") ?>
+                                    <svg style="height: 18px;width:18px; margin-left:15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
+                                        <path d="M5 12h14" />
+                                        <path d="m12 5 7 7-7 7" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
                     <?php endif; ?>
 
 
 
-                    <div class="toys-grid-selection" id="toys-item-select-<?php echo $step["id"] ?>" style="display: none;">
-                        <div class="toys-wrap">
-                            <p class="toys-item-selection-text"><?php echo $step["description"]; ?></p>
-
-                            <a href="<?php echo !empty($step["link"]) ? $step["link"] : "javascript:void(0);" ?>" class="toys-btn">
-                                <?php echo isset($step["title"]) ? substr($step["title"], 0, 10) : _("Select", "toys") ?>
-                                <svg style="height: 18px;width:18px; margin-left:15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
-                                    <path d="M5 12h14" />
-                                    <path d="m12 5 7 7-7 7" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
 
                 </div>
             <?php endif; ?>

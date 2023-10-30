@@ -21,7 +21,8 @@
  * @subpackage Toys/includes
  * @author     Mohammad Ibrahim <awesomecoder.dev@gmail.com>
  */
-class Toys_ShortCode {
+class Toys_ShortCode
+{
 
 	/**
 	 * The array of actions registered with WordPress.
@@ -46,8 +47,9 @@ class Toys_ShortCode {
 	 *
 	 * @since    1.0.0
 	 */
-	public function __construct() {
-		add_shortcode("toys", [$this,"toys"]);
+	public function __construct()
+	{
+		add_shortcode("toys", [$this, "toys"]);
 		global $wpdb;
 		$this->wpdb = $wpdb;
 		$table = "{$this->wpdb->prefix}toys";
@@ -69,8 +71,17 @@ class Toys_ShortCode {
 		$args = shortcode_atts(array(
 			[]
 		), $atts);
-		$maps = current($this->steps());
+		// $steps = current($this->steps());
 		$steps = $this->data;
+		$steps = [];
+
+		foreach ($this->data as $key => $item) {
+			$hasChildren = $this->hasChildren($item['id']);
+			if ($hasChildren) {
+				$item['children'] = $hasChildren;
+			}
+			$steps[] = $item;
+		}
 
 		ob_start();
 		include_once AWESOMECODER_PATH . 'public/partials/toys-public-display.php';
@@ -97,5 +108,21 @@ class Toys_ShortCode {
 			}
 		}
 		return $results;
+	}
+
+
+	/**
+	 * Register the JavaScript for the public-facing side of the site.
+	 *
+	 * @since    1.0.0
+	 */
+	public function hasChildren($parentId = false)
+	{
+		foreach ($this->data as $item) {
+			if ($item['parent_id'] == $parentId) {
+				return true; // Found at least one child
+			}
+		}
+		return false; // No children with the given parent_id found
 	}
 }

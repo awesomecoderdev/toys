@@ -52,25 +52,17 @@
 	$(document).on("click", ".toys-grid-item", function (e) {
 		e.stopPropagation();
 		let next = $(this).attr("data-id");
-		let hasChildren = data?.filter((i) => i?.parent_id == next)?.length > 0;
-		console.log("data", data);
-		if (hasChildren) {
+		let hasChild =
+			data?.filter((i) => i?.parent_id == next)?.length > 0 ?? false;
+		console.log("hasChild", hasChild);
+		if (hasChild) {
 			$(".toys-grid-item").hide();
+
 			data?.map((item) => {
 				if (item?.parent_id == next) {
 					$(`#toys-item-${item.id}`).show();
 				}
 			});
-		} else {
-			$(".toys-grid-selection").hide();
 		}
-
-		console.log("hasChildren", hasChildren);
-
-		console.log("id", next);
-
-		// $("#toys-start-btn").show();
-		// $(".toys-grid-item").hide();
-		// $(this).hide();
 	});
 })(jQuery);

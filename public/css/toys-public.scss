@@ -51,10 +51,12 @@ $desktop: 1200px;
 
 	.toys-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
 		@include device(tablet) {
-			grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
-			// gap: 1.5rem;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 50%));
+		}
+		@include device(phone) {
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 		}
 		// grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
 		// 285px
@@ -66,12 +68,13 @@ $desktop: 1200px;
 			// background-color: #f07037;
 			@include device(tablet) {
 				padding: 0;
+				margin-bottom: 1.5rem;
 
-				&.toys-grid-item-odd {
+				&:nth-of-type(odd) {
 					margin-right: 1rem;
 				}
 
-				&.toys-grid-item-even {
+				&:nth-of-type(even) {
 					margin-left: 1rem;
 				}
 			}
@@ -203,7 +206,7 @@ $desktop: 1200px;
 
 				.toys-grid-content-box {
 					border: 1px solid #aaaaaa;
-					margin-bottom: 2rem;
+					// margin-bottom: 2rem;
 				}
 			}
 
@@ -255,6 +258,14 @@ $desktop: 1200px;
 				margin-top: -20px;
 				width: 100%;
 
+				@include device(tablet) {
+					margin-left: 0px;
+				}
+
+				@include device(phone) {
+					margin-left: 0px;
+				}
+
 				p.toys-item-selection-text {
 					display: flex;
 					font-size: 12px !important;
@@ -291,7 +302,81 @@ $desktop: 1200px;
 		}
 	}
 
-	.toys-grid-selection,
+	.toys-grid-selection {
+		.toys-select-btn {
+			line-height: 20px;
+			position: relative;
+			font-family: industrybold, "Open Sans Bold", sans-serif;
+			font-weight: 700;
+			font-size: 16px;
+			color: white;
+			letter-spacing: 0.6px;
+			background-color: #f07037;
+			height: 50px !important;
+			border: 0 !important;
+			padding: 18px 32px 18px 48px !important;
+			display: inline-block;
+			text-decoration: none !important;
+			transition: border-color 0.4s;
+			display: inline-flex;
+			align-items: center;
+
+			// @include device(tablet) {
+			// 	background-color: transparent;
+			// 	color: #f07037;
+			// }
+
+			// @include device(phone) {
+			// 	background-color: transparent;
+			// 	color: #f07037;
+			// }
+
+			&:hover {
+				background-color: black;
+				transition: background-color 0.4s;
+			}
+			&:hover::after {
+				border-color: black transparent transparent transparent;
+				transition: border-color 0.4s;
+			}
+			&:active {
+				background-color: rgb(41, 41, 41);
+				transition: background-color 0s;
+			}
+			&:active::after {
+				border-color: rgb(41, 41, 41) transparent transparent
+					transparent;
+				transition: border-color 0s;
+			}
+			&:focus {
+				outline: 0;
+			}
+
+			&::after {
+				position: absolute;
+				content: "";
+				top: 0;
+				left: 100%;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 50px 33px 0 0;
+				border-color: #f07037 transparent transparent transparent;
+				cursor: pointer;
+				// @include device(tablet) {
+				// 	display: none;
+				// }
+
+				// @include device(phone) {
+				// 	display: none;
+				// }
+			}
+
+			&:hover::after {
+				border-color: black transparent transparent transparent;
+			}
+		}
+	}
 	.toys-flex {
 		position: relative;
 		display: flex;
