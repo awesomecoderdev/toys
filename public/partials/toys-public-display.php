@@ -13,7 +13,6 @@
  */
 ?>
 
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
 <pre>
     <?php //print_r($steps)
     ?>
@@ -23,12 +22,6 @@
         <?php foreach ($steps as $key => $step) : ?>
             <?php if ($key != 0) : ?>
                 <div class="toys-grid-item" id="toys-item-<?php echo $step["id"] ?>" data-id="<?php echo $step["id"] ?>" style="display: none;">
-                    <?php
-                    // echo "<pre>";
-                    // print_r($step);
-                    // echo "</pre>";
-                    ?>
-
                     <div class="toys-grid-content">
                         <?php if (isset($step["image"]) && !empty($step["image"])) : ?>
                             <div class="toys-grid-box">
@@ -78,14 +71,14 @@
         <?php endforeach; ?>
     </div>
     <div class="toys-flex">
-        <a href="javascript:void(0);" class="toys-btn" id="toys-start-btn">
+        <a href="javascript:void(0);" class="toys-start-btn" id="toys-start-btn">
             <?php echo isset($steps[0]["title"]) ? $steps[0]["title"] : _("Start", "toys") ?>
             <svg style="height: 18px;width:18px; margin-left:15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
                 <path d="M5 12h14" />
                 <path d="m12 5 7 7-7 7" />
             </svg>
         </a>
-        <a href="javascript:void(0);" class="toys-btn" id="toys-reset-btn" style="display: none;">
+        <a href="javascript:void(0);" class="toys-reset-btn" id="toys-reset-btn" style="display: none;">
             <?php _e("Start Over", "toys") ?>
             <svg style="height: 18px;width:18px; margin-left:15px; transform: rotate(180deg);" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw">
                 <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
