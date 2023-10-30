@@ -20,7 +20,8 @@
  * @subpackage Toys/public
  * @author     Mohammad Ibrahim <awesomecoder.dev@gmail.com>
  */
-class Toys_Public {
+class Toys_Public
+{
 
 	/**
 	 * The ID of this plugin.
@@ -47,11 +48,11 @@ class Toys_Public {
 	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	public function __construct($plugin_name, $version)
+	{
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-
 	}
 
 	/**
@@ -59,7 +60,8 @@ class Toys_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_styles() {
+	public function enqueue_styles()
+	{
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -73,9 +75,8 @@ class Toys_Public {
 		 * class.
 		 */
 
-		 wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/toys-public.min.css', array(), md5(time()) ?? $this->version, 'all' );
-		 wp_enqueue_style( "{$this->plugin_name}-selector", plugin_dir_url( __FILE__ ) . 'css/selector.css', array(), md5(time()) ?? $this->version, 'all' );
-
+		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/toys-public.min.css', array(), md5(time()) ?? $this->version, 'all');
+		wp_enqueue_style("{$this->plugin_name}-selector", plugin_dir_url(__FILE__) . 'css/selector.css', array(), md5(time()) ?? $this->version, 'all');
 	}
 
 	/**
@@ -83,7 +84,18 @@ class Toys_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_scripts() {
+	public function enqueue_scripts()
+	{
+		global $wpdb;
+		$table = "{$wpdb->prefix}toys";
+		$data = $wpdb->get_results($wpdb->prepare("SELECT id,parent_id FROM $table"), ARRAY_A);
+		$steps = [];
+
+		foreach ($data as $key => $item) {
+			$hasChildren = $this->hasChildren($data, $item['id']);
+			$item['has_children'] = $hasChildren;
+			$steps[] = $item;
+		}
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -97,8 +109,37 @@ class Toys_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/toys-public.js', array( 'jquery' ), md5(time()) ?? $this->version, false );
 
+
+		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/toys-init.js', array('jquery'), md5(time()) ?? $this->version, false);
+		wp_enqueue_script("{$this->plugin_name}-public", plugin_dir_url(__FILE__) . 'js/toys-public.js', array('jquery'), md5(time()) ?? $this->version, true);
+
+		wp_localize_script($this->plugin_name, 'awesomecoder', array(
+			"plugin" => [
+				"name"		=> 	"Toys Generator",
+				"author" 	=>	"Mohammad Ibrahim",
+				"email" 	=>	"awesomecoder.dev@gmail.com",
+				"website" 	=>	"https://awesomecoder.dev",
+			],
+			"url" 			=> get_bloginfo('url'),
+			"steps" 		=> $steps,
+			"image"			=> AWESOMECODER_URL . "/assets/img/image.svg",
+			"ajaxurl"		=> admin_url("admin-ajax.php?action="),
+		));
 	}
 
+	/**
+	 * Register the JavaScript for the public-facing side of the site.
+	 *
+	 * @since    1.0.0
+	 */
+	function hasChildren($array, $parentId)
+	{
+		foreach ($array as $item) {
+			if ($item['parent_id'] == $parentId) {
+				return true; // Found at least one child
+			}
+		}
+		return false; // No children with the given parent_id found
+	}
 }

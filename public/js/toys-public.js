@@ -1,5 +1,5 @@
-(function( $ ) {
-	'use strict';
+(function ($) {
+	"use strict";
 
 	/**
 	 * All of the code for your public-facing JavaScript source
@@ -28,5 +28,49 @@
 	 * Although scripts in the WordPress core, Plugins and Themes may be
 	 * practising this, we should strive to set a better example in our own work.
 	 */
+	const data = awesomecoder?.steps ?? [];
+	let steps = structureData(data);
 
-})( jQuery );
+	// start steps
+	$(document).on("click", "#toys-start-btn", function (e) {
+		e.stopPropagation();
+		$("#toys-reset-btn").show();
+		$(this).hide();
+		steps[0]?.children?.map((item) => $(`#toys-item-${item.id}`).show());
+	});
+
+	// reset steps
+	$(document).on("click", "#toys-reset-btn", function (e) {
+		e.stopPropagation();
+		$("#toys-start-btn").show();
+		$(".toys-grid-item").hide();
+		$(this).hide();
+		steps[0]?.children?.map((item) => $(`#toys-item-${item.id}`).show());
+	});
+
+	// next steps
+	$(document).on("click", ".toys-grid-item", function (e) {
+		e.stopPropagation();
+		let next = $(this).attr("data-id");
+		let hasChildren = data?.filter((i) => i?.parent_id == next)?.length > 0;
+		console.log("data", data);
+		if (hasChildren) {
+			$(".toys-grid-item").hide();
+			data?.map((item) => {
+				if (item?.parent_id == next) {
+					$(`#toys-item-${item.id}`).show();
+				}
+			});
+		} else {
+			$(".toys-grid-selection").hide();
+		}
+
+		console.log("hasChildren", hasChildren);
+
+		console.log("id", next);
+
+		// $("#toys-start-btn").show();
+		// $(".toys-grid-item").hide();
+		// $(this).hide();
+	});
+})(jQuery);

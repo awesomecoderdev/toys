@@ -21,113 +21,72 @@
 <div class="toys-container">
     <div class="toys-grid">
         <?php foreach ($steps as $key => $step) : ?>
-            <div class="toys-grid-item <?php echo $key % 2 == 1 ? 'toys-grid-item-even' : 'toys-grid-item-odd' ?>" id="toys-item-<?php echo $step["id"] ?>">
-                <?php
-                // echo "<pre>";
-                // print_r($step);
-                // echo "</pre>";
-                ?>
+            <?php if ($key != 0) : ?>
+                <div class="toys-grid-item <?php echo $key % 2 == 1 ? 'toys-grid-item-even' : 'toys-grid-item-odd' ?>" id="toys-item-<?php echo $step["id"] ?>" data-id="<?php echo $step["id"] ?>" style="display: none;">
+                    <?php
+                    // echo "<pre>";
+                    // print_r($step);
+                    // echo "</pre>";
+                    ?>
 
-                <div class="toys-grid-content">
+                    <div class="toys-grid-content">
+                        <?php if (isset($step["image"]) && !empty($step["image"])) : ?>
+                            <div class="toys-grid-box">
+                                <div class="toys-item-image" style="background-image: url(<?php echo $step["image"] ?>);"></div>
+                                <div class="toys-item-image-overlay"></div>
+                            </div>
+                        <?php else : ?>
+                            <div class="toys-grid-box toys-grid-content-box ">
+                                <div class="toys-item-description">
+                                    <p class="toys-item-description-text"><?php echo strlen($step["description"]) > 100 ? substr($step["description"], 0, 100) . "..." : substr($step["description"], 0, 50) ?></p>
+                                </div>
+                                <div class="toys-item-image-background"></div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+
                     <?php if (isset($step["image"]) && !empty($step["image"])) : ?>
-                        <div class="toys-grid-box">
-                            <div class="toys-item-image" style="background-image: url(<?php echo $step["image"] ?>);"></div>
-                            <div class="toys-item-image-overlay"></div>
+                        <div class="toys-grid-footer">
+                            <h2 class="toys-grid-item-heading"><?php echo $step["title"]; ?></h2>
                         </div>
                     <?php else : ?>
-                        <div class="toys-grid-box toys-grid-content-box ">
-                            <div class="toys-item-description">
-                                <p class="toys-item-description-text"><?php echo strlen($step["description"]) > 100 ? substr($step["description"], 0, 100) . "..." : substr($step["description"], 0, 50) ?></p>
-                            </div>
-                            <div class="toys-item-image-background"></div>
-                        </div>
+
                     <?php endif; ?>
-                </div>
 
-                <?php if (isset($step["image"]) && !empty($step["image"])) : ?>
-                    <div class="toys-grid-footer">
-                        <h2 class="toys-grid-item-heading"><?php echo $step["title"]; ?></h2>
+
+
+                    <div class="toys-grid-selection" id="toys-item-select-<?php echo $step["id"] ?>" style="display: none;">
+                        <div class="toys-wrap">
+                            <p class="toys-item-selection-text"><?php echo $step["description"]; ?></p>
+
+                            <a href="<?php echo !empty($step["link"]) ? $step["link"] : "javascript:void(0);" ?>" class="toys-btn">
+                                <?php echo isset($step["title"]) ? substr($step["title"], 0, 10) : _("Select", "toys") ?>
+                                <svg style="height: 18px;width:18px; margin-left:15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
+                                    <path d="M5 12h14" />
+                                    <path d="m12 5 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                <?php else : ?>
 
-                <?php endif; ?>
-
-            </div>
-
+                </div>
+            <?php endif; ?>
         <?php endforeach; ?>
-        <!-- <div class="selector-choice-holder">
-
-
-        <a href="javascript: void(0)" onclick="selector_selectAnswer(455708, 455752)" class="selector-answer selector-image-answer" data-answer="455752">
-
-            <div class="selector-choice-image">
-                <img src="/__files/ic/173545/Coin%20Desktop.jpg">
-                <div class="selector-choice-image-overlay"></div>
-            </div>
-
-            <div class="selector-choice-image-mobile" style="background-image: url('/__files/ic/173546/DS_coins-jewellery.jpg'); background-size: cover">
-                <div class="selector-choice-image-overlay-mobile"></div>
-            </div>
-
-
-            <div class="selector-choice-text">Coins and Jewellery</div>
+    </div>
+    <div class="toys-flex">
+        <a href="javascript:void(0);" class="toys-btn" id="toys-start-btn">
+            <?php echo isset($steps[0]["title"]) ? $steps[0]["title"] : _("Start", "toys") ?>
+            <svg style="height: 18px;width:18px; margin-left:15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+            </svg>
         </a>
-
-
-
-
-        <a href="javascript: void(0)" onclick="selector_selectAnswer(455708, 455766)" class="selector-answer selector-image-answer" data-answer="455766">
-
-            <div class="selector-choice-image">
-                <img src="/__files/ic/173547/Relicdesktop.jpg">
-                <div class="selector-choice-image-overlay"></div>
-            </div>
-
-            <div class="selector-choice-image-mobile" style="background-image: url('/__files/ic/173548/DS_relic.jpg'); background-size: cover">
-                <div class="selector-choice-image-overlay-mobile"></div>
-            </div>
-
-
-            <div class="selector-choice-text">Relics</div>
+        <a href="javascript:void(0);" class="toys-btn" id="toys-reset-btn" style="display: none;">
+            <?php _e("Start Over", "toys") ?>
+            <svg style="height: 18px;width:18px; margin-left:15px; transform: rotate(180deg);" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                <path d="M3 3v5h5" />
+            </svg>
         </a>
-
-
-
-
-        <a href="javascript: void(0)" onclick="selector_selectAnswer(455708, 455780)" class="selector-answer selector-image-answer" data-answer="455780">
-
-            <div class="selector-choice-image">
-                <img src="/__files/ic/173549/Gold%20Desktop.jpg">
-                <div class="selector-choice-image-overlay"></div>
-            </div>
-
-            <div class="selector-choice-image-mobile" style="background-image: url('/__files/ic/173550/DS_gold.jpg'); background-size: cover">
-                <div class="selector-choice-image-overlay-mobile"></div>
-            </div>
-
-
-            <div class="selector-choice-text">Gold Nuggets</div>
-        </a>
-
-
-
-
-        <a href="javascript: void(0)" onclick="selector_selectAnswer(455708, 455794)" class="selector-answer selector-image-answer" data-answer="455794">
-
-            <div class="selector-choice-image">
-                <img src="/__files/ic/173551/allround.jpg">
-                <div class="selector-choice-image-overlay"></div>
-            </div>
-
-            <div class="selector-choice-image-mobile" style="background-image: url('/__files/ic/173552/Allroundmobile.jpg'); background-size: cover">
-                <div class="selector-choice-image-overlay-mobile"></div>
-            </div>
-
-
-            <div class="selector-choice-text">All-Round</div>
-        </a>
-
-
-    </div> -->
     </div>
 </div>
