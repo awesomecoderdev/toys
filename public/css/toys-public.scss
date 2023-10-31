@@ -40,7 +40,7 @@ $desktop: 1200px;
 .toys-container {
 	position: relative;
 	// overflow: hidden;
-	padding: 0 4rem;
+	padding: 0 1rem;
 	@include device(tablet) {
 		// padding: 0 1rem;
 		padding: 0;
@@ -51,33 +51,34 @@ $desktop: 1200px;
 
 	.toys-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+		grid-template-columns: repeat(4, minmax(250px, 1fr));
+		gap: 1.6rem;
+
+		@include device(laptop) {
+			grid-template-columns: repeat(3, minmax(250px, 1fr));
+		}
 		@include device(tablet) {
-			grid-template-columns: repeat(auto-fit, minmax(250px, 50%));
+			grid-template-columns: repeat(2, minmax(250px, 1fr));
 		}
 		@include device(phone) {
 			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-			gap: 2rem;
 		}
 		// grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
 		// 285px
 		.toys-grid-item {
 			position: relative;
 			cursor: pointer;
-			padding: 0.6rem;
 			// background-color: #ef4444;
 			// background-color: #f07037;
 			@include device(tablet) {
 				padding: 0;
-				margin-bottom: 1.5rem;
 
-				&:nth-of-type(odd) {
-					margin-right: 1rem;
-				}
+				// &:nth-of-type(odd) {
+				// 	margin-right: 1rem;
+				// }
 
-				&:nth-of-type(even) {
-					margin-left: 1rem;
-				}
+				// &:nth-of-type(even) {
+				// }
 			}
 
 			@include device(phone) {
@@ -87,13 +88,7 @@ $desktop: 1200px;
 			.toys-grid-content {
 				position: relative;
 				display: flex;
-				justify-content: end;
-				@include device(tablet) {
-					justify-content: start;
-				}
-				@include device(phone) {
-					justify-content: center;
-				}
+				justify-content: center;
 
 				.toys-grid-box {
 					overflow: hidden;
@@ -102,9 +97,9 @@ $desktop: 1200px;
 					// background-color: #f07037;
 					border: 1px solid #aaaaaa;
 					// width: calc(100% - 100px);
-					width: 265px;
+					width: 100%;
 					height: 150px;
-					transform: skewX(-30deg);
+					// transform: skewX(-30deg);
 					display: flex;
 					justify-content: center;
 					align-items: center;
@@ -125,9 +120,8 @@ $desktop: 1200px;
 
 					.toys-item-image {
 						position: absolute;
-						transform: skewX(30deg);
-						left: -45px;
-						width: 350px;
+						// transform: skewX(30deg);
+						width: 100%;
 						height: 100%;
 						background-repeat: no-repeat;
 						background-position: center;
@@ -147,7 +141,7 @@ $desktop: 1200px;
 					}
 
 					.toys-item-description {
-						transform: skewX(30deg);
+						// transform: skewX(30deg);
 						text-align: center;
 						padding: 0 35px;
 						z-index: 1;
@@ -214,8 +208,7 @@ $desktop: 1200px;
 
 			.toys-grid-footer {
 				position: relative;
-				margin-left: -45px;
-				margin-top: 20px;
+				padding: 0.5rem 0.2rem;
 
 				.toys-grid-item-heading {
 					line-height: 1.5;
@@ -227,6 +220,7 @@ $desktop: 1200px;
 					font-size: 16px !important;
 					letter-spacing: 0.6px;
 					max-width: 285px;
+					margin-bottom: 0 !important;
 
 					@include device(tablet) {
 						text-align: center;
@@ -239,34 +233,20 @@ $desktop: 1200px;
 					}
 				}
 
-				@include device(laptop) {
-					margin-left: -40px;
-				}
-
 				@include device(tablet) {
-					margin-left: 0px;
 					margin-top: 10px;
 				}
 
 				@include device(phone) {
-					margin-left: 0px;
 					margin-top: 10px;
 				}
 			}
 
 			.toys-grid-selection {
 				position: relative;
-				margin-left: -45px;
-				margin-top: -20px;
 				width: 100%;
-
-				@include device(tablet) {
-					margin-left: 0px;
-				}
-
-				@include device(phone) {
-					margin-left: 0px;
-				}
+				padding: 0 0.2rem;
+				padding-bottom: 0.5rem;
 
 				p.toys-item-selection-text {
 					display: flex;
@@ -387,7 +367,7 @@ $desktop: 1200px;
 		align-items: center;
 		padding: 1rem 0;
 
-		.toys-start-btn {
+		a.toys-start-btn {
 			line-height: 20px;
 			position: relative;
 			font-family: industrybold, "Open Sans Bold", sans-serif;
@@ -444,7 +424,7 @@ $desktop: 1200px;
 			}
 		}
 
-		.toys-reset-btn {
+		a.toys-reset-btn {
 			line-height: 20px;
 			position: relative;
 			font-family: industrybold, "Open Sans Bold", sans-serif;

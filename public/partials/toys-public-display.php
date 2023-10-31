@@ -12,13 +12,12 @@
  * @subpackage Toys/public/partials
  */
 ?>
-
 <pre>
     <?php //print_r($steps)
     ?>
 </pre>
 <div class="toys-container">
-    <div class="toys-grid">
+    <div class="toys-grid grid-cols">
         <?php foreach ($steps as $key => $step) : ?>
             <?php if ($key != 0) : ?>
                 <div class="toys-grid-item" id="toys-item-<?php echo $step["id"] ?>" data-id="<?php echo $step["id"] ?>" style="display: none;">

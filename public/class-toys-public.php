@@ -76,7 +76,6 @@ class Toys_Public
 		 */
 
 		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/toys-public.min.css', array(), md5(time()) ?? $this->version, 'all');
-		wp_enqueue_style("{$this->plugin_name}-selector", plugin_dir_url(__FILE__) . 'css/selector.css', array(), md5(time()) ?? $this->version, 'all');
 	}
 
 	/**
@@ -108,12 +107,6 @@ class Toys_Public
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		wp_enqueue_script('uploads');
-		if (function_exists('wp_enqueue_media')) {
-			// this enqueues all the media upload stuff
-			wp_enqueue_media();
-		}
-
 
 		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/toys-init.js', array('jquery'), md5(time()) ?? $this->version, false);
 		wp_enqueue_script("{$this->plugin_name}-public", plugin_dir_url(__FILE__) . 'js/toys-public.js', array('jquery'), md5(time()) ?? $this->version, true);
