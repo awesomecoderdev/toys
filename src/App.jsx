@@ -27,7 +27,7 @@ const App = () => {
 				{...events}
 				ref={canvas}
 			>
-				<div className="relative border-zinc-600 inline-flex justify-between space-x-10 border-t py-10 mr-10 p-10 no-scrollbar">
+				<div className="relative border-zinc-600 inline-flex justify-between space-x-10 py-10 mr-10 p-10 no-scrollbar">
 					{steps.map((step, i) => (
 						<Fragment key={step.id + i}>
 							<Card

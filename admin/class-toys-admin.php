@@ -114,6 +114,17 @@ class Toys_Admin
 		$table = "{$wpdb->prefix}toys";
 		$data = $wpdb->get_results($wpdb->prepare("SELECT * FROM $table"), ARRAY_A);
 
+		if($wpdb->num_rows == 0){
+			$result = $wpdb->insert($table, [
+				"parent_id" => null,
+				"title" => "Start",
+			]);
+
+			if (!is_wp_error($result)) {
+				$data = $wpdb->get_results($wpdb->prepare("SELECT * FROM $table"), ARRAY_A);
+			}
+		}
+
 		/**
 		 * This function is provided for demonstration purposes only.
 		 *
