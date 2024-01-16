@@ -262,6 +262,133 @@ class Toys_Admin
 		}
 	}
 
+	/**
+	 * Register the JavaScript for the admin area.
+	 *
+	 * @since    1.0.0
+	 */
+	public function insert($request)
+	{
+		$result = $this->wpdb->insert($this->table, [
+			"parent_id" =>  $request["parent_id"] == "" ? null : $request["parent_id"],
+			"thumbnail_id" =>  $request["thumbnail_id"] == "" ? null : $request["thumbnail_id"],
+			"title" => $request["title"],
+			"description" =>  $request["description"] == "" ? null : $request["description"],
+			"image" =>  $request["image"] == "" ? null : $request["image"],
+			"link" => $request["link"],
+			"question" => $request["question"],
+		]);
+
+		if(!is_wp_error($result)){
+			return $this->wpdb->insert_id;
+		}
+
+		return null;
+	}
+
+	/**
+	 * Register the JavaScript for the admin area.
+	 *
+	 * @since    1.0.0
+	 */
+	public function set_nested_structure($steps = [], $parent_id = null)
+	{
+		foreach ($steps as $key => $step) {
+			$step["parent_id"] = $parent_id;
+			$new_parent_id = $this->insert($step);
+
+			if(count($step["children"]) > 0){
+				$this->set_nested_structure($step["children"],$new_parent_id);
+			}
+		}
+	}
+
+	/**
+	 * Register the JavaScript for the admin area.
+	 *
+	 * @since    1.0.0
+	 */
+	public function duplicate($request)
+	{
+		$steps = $this->get_nested_structure($request["id"]);
+		$parent_id = $request["parent_id"] == "" ? null : $request["parent_id"];
+		$new_parent_id = $this->insert($request);
+
+		try {
+		$this->set_nested_structure($steps, $new_parent_id);
+			$steps = $this->wpdb->get_results($this->wpdb->prepare("SELECT * FROM $this->table"), ARRAY_A);
+			wp_send_json_success([
+				"success" => true,
+				"status"  => 200,
+				"message" => __("Step Duplicated Successfully.", "toys"),
+				"data" => [
+					"steps" => $steps
+				]
+			]);
+		} catch (\Exception $e) {
+			// throw $e;
+			wp_send_json_error([
+				"success" => false,
+				"status"  => 403,
+				"message" => __("Something went wrong.", "toys"),
+			]);
+		}
+		// wp_send_json_success([
+		// 	"success" => true,
+		// 	"status"  => 200,
+		// 	"message" => __("Step Deleted Successfully.", "toys"),
+		// 	"result" => $this->wpdb->insert_id,
+		// 	"request" => $request,
+		// 	"data" =>[
+		// 		"steps"=> $steps,
+		// 	],
+		// ]);
+
+
+		// $deleteByID = $this->wpdb->delete($this->table, [
+		// 	"id" => $request["id"],
+		// ]);
+
+		// $deleteByParentID = $this->wpdb->delete($this->table, [
+		// 	"parent_id" => $request["id"],
+		// ]);
+
+		// if (!is_wp_error($deleteByParentID || $deleteByID)) {
+		// 	$steps = $this->wpdb->get_results($this->wpdb->prepare("SELECT * FROM $this->table"), ARRAY_A);
+		// 	wp_send_json_success([
+		// 		"success" => true,
+		// 		"status"  => 200,
+		// 		"message" => __("Step Deleted Successfully.", "toys"),
+		// 		"data" => [
+		// 			"steps" => $steps
+		// 		]
+		// 	]);
+		// } else {
+		// 	wp_send_json_error([
+		// 		"success" => false,
+		// 		"status"  => 403,
+		// 		"message" => __("Something went wrong.", "toys"),
+		// 	]);
+		// }
+	}
+
+	/**
+	 * Register the JavaScript for the admin area.
+	 *
+	 * @since    1.0.0
+	 */
+	public function get_nested_structure($parent_id = null)
+	{
+		$data = $this->wpdb->get_results($this->wpdb->prepare("SELECT * FROM $this->table WHERE parent_id = %d", $parent_id), ARRAY_A);
+		$result = [];
+		foreach ($data as $record) {
+			$record['children'] = $this->get_nested_structure($record['id']);
+			$result[] = $record;
+		}
+
+		return $result;
+	}
+
 
 	/**
 	 * Register the JavaScript for the admin area.

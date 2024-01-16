@@ -330,6 +330,75 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 		}
 	};
 
+	const duplicateDataToLists = (e, step) => {
+		e.preventDefault();
+		console.log("e", e);
+		console.log("step", step.children);
+		try {
+			axios
+				.post(
+					endpoint,
+					{
+						do: "duplicate",
+						id: step.id,
+						parent_id: step.parent_id,
+						thumbnail_id: step.thumbnail_id,
+						description: step.description,
+						title: step.title,
+						image: step.image,
+						link: step.link,
+						question: step.question,
+					},
+					{
+						headers: {
+							"X-Requested-With": "XMLHttpRequest",
+							"Content-type": "multipart/form-data",
+							// "Keep-Alive": "timeout=5, max=1000",
+						},
+					}
+				)
+				.then(({ data: { data } }) => {
+					const response = data;
+					console.log("step", response.data.steps);
+					console.log("res", data);
+
+					if (response.success) {
+						toast.success(response.message);
+						if (response.data.steps) {
+							try {
+								setSteps(structureData(response.data.steps));
+							} catch (err) {
+								console.log("err", err);
+								console.log("err", err);
+
+								if (err.message) {
+									toast.error(err.message);
+								} else {
+									toast.error("Something went wrong.");
+								}
+							}
+						}
+					} else {
+						toast.error(response.message);
+					}
+
+					// setTimeout(() => {
+					// 	setOpen(false);
+					// }, 800);
+				})
+				.catch((err) => {
+					console.log("err", err);
+					if (err.message) {
+						toast.error(err.message);
+					} else {
+						toast.error("Something went wrong.");
+					}
+				});
+		} catch (error) {
+			toast.error(error.message);
+		}
+	};
+
 	const removeImageFromDataLists = (e, step) => {
 		e.preventDefault();
 		try {
@@ -423,6 +492,34 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 								<p className="truncate w-40">{tree?.title}</p>
 
 								<div className="relative flex space-x-2">
+									{!isFirst &&
+										{
+											/* awesomecoder.url ==
+											"https://wordpress.co.bd" &&
+											 */
+										}(
+											<svg
+												onClick={(e) =>
+													duplicateDataToLists(
+														e,
+														tree
+													)
+												}
+												xmlns="http://www.w3.org/2000/svg"
+												fill="none"
+												viewBox="0 0 24 24"
+												strokeWidth="1.5"
+												stroke="currentColor"
+												className="cursor-pointer w-4 h-4"
+											>
+												<path
+													strokeLinecap="round"
+													strokeLinejoin="round"
+													d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"
+												/>
+											</svg>
+										)}
+
 									<Dialog open={open} onOpenChange={setOpen}>
 										<DialogTrigger asChild>
 											<svg
@@ -550,7 +647,6 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 											</form>
 										</DialogContent>
 									</Dialog>
-
 									<svg
 										onClick={(e) =>
 											addNewDataToLists(e, tree)

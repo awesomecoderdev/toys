@@ -19,7 +19,7 @@
 <script>
     const toysLoadingScreen = document.getElementById("toysLoadingScreen"),
         toyStyles = document.querySelectorAll("link"),
-        toyScripts = document.querySelectorAll("scripts"),
+        toyScripts = document.querySelectorAll("script"),
         toyStyleTags = document.querySelectorAll("style");
     toyStyles.forEach((e => {
         const t = e.getAttribute("rel"),

@@ -51,7 +51,7 @@ class Toys_Activator
 		dbDelta($sql);
 	}
 
-	function get_nested_structure($parent_id = null)
+	public function get_nested_structure($parent_id = null)
 	{
 		global $wpdb;
 		$table = "{$wpdb->prefix}toys";
