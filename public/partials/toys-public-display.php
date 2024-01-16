@@ -63,6 +63,19 @@
                                 </a>
                             </div>
                         </div>
+                    <?php else: ?>
+                        <div class="toys-grid-selection" id="toys-item-select-<?php echo $step["id"] ?>">
+                            <div class="toys-wrap">
+                                <p class="toys-item-selection-text"><?php echo $step["description"]; ?></p>
+                                <span class="toys-select-btn">
+                                    <?php _e("Next", "toys") ?>
+                                    <svg style="height: 18px;width:18px; margin-left:15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
+                                        <path d="M5 12h14" />
+                                        <path d="m12 5 7 7-7 7" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>

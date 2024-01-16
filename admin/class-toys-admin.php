@@ -239,7 +239,8 @@ class Toys_Admin
 		$result = $this->wpdb->insert($this->table, [
 			"parent_id" => $id,
 			"title" => "New Step $id",
-			"question" => "Question For Step $id",
+			// "question" => "Question For Step $id",
+			"question" => "",
 		]);
 
 		if (!is_wp_error($result)) {
@@ -305,13 +306,13 @@ class Toys_Admin
 	{
 		$data = [];
 		if (isset($request["title"]) && !empty($request["title"])) {
-			$data["title"] = $request["title"];
+			$data["title"] = ltrim($request["title"]);
 		}
 		if (isset($request["link"]) && !empty($request["link"])) {
-			$data["link"] = $request["link"];
+			$data["link"] = ltrim($request["link"]);
 		}
 		if (isset($request["question"]) && !empty($request["question"])) {
-			$data["question"] = $request["question"];
+			$data["question"] = ltrim($request["question"]);
 		}
 
 		if (isset($request["thumbnail_id"], $request["image"]) && !empty($request["thumbnail_id"])) {

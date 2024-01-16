@@ -501,6 +501,10 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 														}
 														className="col-span-4"
 														placeholder={"Question"}
+														disabled={
+															tree?.children
+																?.length == 0
+														}
 														onChange={(e) =>
 															setQuestion(
 																e.target.value
