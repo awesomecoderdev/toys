@@ -43,6 +43,7 @@ class Toys_Activator
 			description TEXT,
 			image VARCHAR(255),
 			link VARCHAR(255),
+			question VARCHAR(255),
 			PRIMARY KEY (id)
 		);";
 

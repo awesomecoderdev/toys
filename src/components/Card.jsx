@@ -43,6 +43,7 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 	const imageRef = useRef(null);
 	const [title, setTitle] = useState(null);
 	const [link, setLink] = useState(null);
+	const [question, setQuestion] = useState(null);
 	const [description, setDescription] = useState(null);
 
 	const handleMediaUploader = (e, step) => {
@@ -278,6 +279,7 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 						id: step.id,
 						title,
 						link,
+						question,
 						description,
 					},
 					{
@@ -490,6 +492,21 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 															)
 														}
 													/>
+													<Input
+														id="question"
+														defaultValue={
+															question
+																? question
+																: tree?.question
+														}
+														className="col-span-4"
+														placeholder={"Question"}
+														onChange={(e) =>
+															setQuestion(
+																e.target.value
+															)
+														}
+													/>
 													<div className="relative col-span-4">
 														<Textarea
 															name="description"
@@ -497,7 +514,7 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 															placeholder={
 																"e.g. I'm Mohammad Ibrahim. I live in the Future, where I develop the universe. For more details visit https://www.awesomecoder.dev/."
 															}
-															rows="10"
+															rows="8"
 															className="capitalize"
 															onChange={(e) =>
 																setDescription(

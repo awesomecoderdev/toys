@@ -49,6 +49,13 @@ $desktop: 1200px;
 		padding: 0;
 	}
 
+	.toys-question {
+		padding: 1rem 0 !important;
+		margin: 0 !important;
+		font-size: 34px !important;
+		text-align: center;
+	}
+
 	.toys-grid {
 		display: grid;
 		grid-template-columns: repeat(4, minmax(250px, 1fr));

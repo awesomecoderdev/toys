@@ -45,6 +45,8 @@
 		e.stopPropagation();
 		$("#toys-start-btn").show();
 		$(".toys-grid-item").hide();
+		$(".toys-question").hide();
+		$(".toys-question:first-child").show();
 		$(this).hide();
 		steps[0]?.children?.map((item) => $(`#toys-item-${item.id}`).show());
 	});
@@ -60,6 +62,8 @@
 		console.log("hasChild", hasChild);
 		if (hasChild) {
 			$(".toys-grid-item").hide();
+			$(".toys-question").hide();
+			$(`#question-for-step-${next}`).show();
 
 			data?.map((item) => {
 				if (item?.parent_id == next) {

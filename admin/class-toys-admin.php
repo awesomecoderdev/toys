@@ -239,6 +239,7 @@ class Toys_Admin
 		$result = $this->wpdb->insert($this->table, [
 			"parent_id" => $id,
 			"title" => "New Step $id",
+			"question" => "Question For Step $id",
 		]);
 
 		if (!is_wp_error($result)) {
@@ -309,6 +310,10 @@ class Toys_Admin
 		if (isset($request["link"]) && !empty($request["link"])) {
 			$data["link"] = $request["link"];
 		}
+		if (isset($request["question"]) && !empty($request["question"])) {
+			$data["question"] = $request["question"];
+		}
+
 		if (isset($request["thumbnail_id"], $request["image"]) && !empty($request["thumbnail_id"])) {
 			$data["thumbnail_id"] = $request["thumbnail_id"];
 			$data["image"] = $request["image"];

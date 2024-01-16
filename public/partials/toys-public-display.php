@@ -17,6 +17,9 @@
     ?>
 </pre>
 <div class="toys-container">
+    <?php foreach ($steps as $key => $step) : ?>
+        <h2 class="toys-question" id="question-for-step-<?php echo $step["id"] ?>" data-children="<?php echo isset($step["children"]) ? 1 : 0  ?>" <?php echo $key != 0 ? "style='display:none;'" : "";  ?>><?php echo $step["question"] ?></h2>
+    <?php endforeach; ?>
     <div class="toys-grid grid-cols">
         <?php foreach ($steps as $key => $step) : ?>
             <?php if ($key != 0) : ?>
@@ -61,10 +64,6 @@
                             </div>
                         </div>
                     <?php endif; ?>
-
-
-
-
                 </div>
             <?php endif; ?>
         <?php endforeach; ?>
