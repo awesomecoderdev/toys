@@ -95,7 +95,7 @@ class Toys_Admin
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		// wp_enqueue_media();
+		wp_enqueue_media();
 
 		if ($hook == "toplevel_page_toys") {
 			wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/toys-admin.css', array(), md5(time()) ?? $this->version, 'all');
@@ -284,6 +284,34 @@ class Toys_Admin
 		}
 
 		return null;
+	}
+
+
+	/**
+	 * Register the JavaScript for the admin area.
+	 *
+	 * @since    1.0.0
+	 */
+	public function get($request)
+	{
+		try {
+			$steps = $this->wpdb->get_results($this->wpdb->prepare("SELECT * FROM $this->table"), ARRAY_A);
+			wp_send_json_success([
+				"success" => true,
+				"status"  => 200,
+				"message" => __("Step Duplicated Successfully.", "toys"),
+				"data" => [
+					"steps" => $steps
+				]
+			]);
+		} catch (\Exception $e) {
+			// throw $e;
+			wp_send_json_error([
+				"success" => false,
+				"status"  => 403,
+				"message" => __("Something went wrong.", "toys"),
+			]);
+		}
 	}
 
 	/**

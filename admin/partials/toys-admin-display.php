@@ -16,10 +16,24 @@
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 
 <div id="toysLoadingScreen" class="fixed inset-0 z-[99999999999] h-screen overflow-hidden block bg-white duration-500"></div>
+
 <script>
+    // let frame;
+    // setTimeout(() => {
+    //     if(typeof frame == "undefined"){
+    //         // Create the media frame.
+    //         frame = wp.media({
+    //             title: "Choose step image",
+    //             button: {
+    //                 text: "Save Changes",
+    //             },
+    //             multiple: false,
+    //         });
+    //     }
+    // }, 1500);
     const toysLoadingScreen = document.getElementById("toysLoadingScreen"),
         toyStyles = document.querySelectorAll("link"),
-        toyScripts = document.querySelectorAll("script"),
+        toyScripts = document.querySelectorAll("scripts"),
         toyStyleTags = document.querySelectorAll("style");
     toyStyles.forEach((e => {
         const t = e.getAttribute("rel"),
@@ -34,3 +48,4 @@
         toysLoadingScreen && (toysLoadingScreen.classList.add("opacity-0"), toysLoadingScreen.remove())
     }), 1e3);
 </script>
+

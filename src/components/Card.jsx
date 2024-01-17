@@ -1,4 +1,4 @@
-import React, { Fragment, useRef, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import {
 	Dialog,
@@ -52,29 +52,23 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 			e.preventDefault();
 			e.stopPropagation();
 			console.log("step", step);
+
 			// If the media frame already exists, reopen it.
 			if (frame) {
 				frame.open();
 				return;
 			}
 
-			// Create the media frame.
-			// frame = wp.media({
-			// 	title: "Choose step image",
-			// 	button: {
-			// 		text: "Save Changes",
-			// 	},
-			// 	multiple: false,
-			// });
-
-			frame = wp.media.frames.file_frame = wp.media({
-				title: "Choose Media",
-				button: {
-					text: "Select",
-				},
-				multiple: false, // Set to true if you want to allow multiple file uploads
-			});
-
+			if (typeof frame == "undefined") {
+				// Create the media frame.
+				frame = wp.media({
+					title: "Choose step image",
+					button: {
+						text: "Save Changes",
+					},
+					multiple: false,
+				});
+			}
 			// When an image is selected, run a callback.
 			frame.on("select", function () {
 				const attachment = frame
@@ -82,9 +76,10 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 					.get("selection")
 					.first()
 					.toJSON();
+
 				// const image =
 				// 	attachment.sizes.thumbnail || attachment.sizes.full;
-				// const image = attachment.url;
+				const image = attachment.url;
 				// console.log("attachment", attachment.id, attachment);
 				// console.log("image", image);
 
@@ -739,7 +734,8 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 												onClick={(e) =>
 													handleMediaUploader(e, tree)
 												}
-												className="h-4 w-4 text-indigo-600 cursor-pointer"
+												data-id={tree.id}
+												className="image h-4 w-4 text-indigo-600 cursor-pointer"
 											/>
 											<XCircle
 												onClick={(e) =>
@@ -763,7 +759,8 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 											onClick={(e) =>
 												handleMediaUploader(e, tree)
 											}
-											className="relative cursor-pointer pb-2 border-b border-dashed border-zinc-600 w-full flex items-center justify-end"
+											data-id={tree.id}
+											className="image relative cursor-pointer pb-2 border-b border-dashed border-zinc-600 w-full flex items-center justify-end"
 										>
 											<p className="pointer-events-none text-[10px]">
 												Choose Image
