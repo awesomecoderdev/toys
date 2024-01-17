@@ -6,7 +6,7 @@ import { Card } from "@/components/Card";
 
 const App = () => {
 	const [steps, setSteps] = useState(structureData(defaultSteps));
-	console.log("steps", steps);
+	// console.log("steps", steps);
 
 	const canvas = useRef(); // We will use React useRef hook to reference the wrapping div:
 	const { events } = useDraggable(canvas); // Now we pass the reference to the useDraggable hook:

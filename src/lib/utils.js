@@ -28,7 +28,7 @@ export function structureData(data) {
 	return result;
 }
 const a = awesomecoder;
-console.log("awesomecoder", awesomecoder.data);
+// console.log("awesomecoder", awesomecoder.data);
 
 export const defaultSteps = typeof a !== "undefined" ? a.data : [];
 export const site_url = typeof a !== "undefined" ? a.url : "/";
