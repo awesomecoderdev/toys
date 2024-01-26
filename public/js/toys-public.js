@@ -36,6 +36,8 @@
 		e.stopPropagation();
 		$("#toys-reset-btn").show();
 		$(".toys-grid-item").hide();
+		$(".toys-banner-container").toggleClass("opened");
+		$(".toys-question:first-child").show();
 		$(this).hide();
 		steps[0]?.children?.map((item) => $(`#toys-item-${item.id}`).show());
 	});

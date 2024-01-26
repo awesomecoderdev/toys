@@ -39,10 +39,9 @@ $desktop: 1200px;
 
 .toys-container {
 	position: relative;
-	// overflow: hidden;
 	padding: 0 1rem;
+
 	@include device(tablet) {
-		// padding: 0 1rem;
 		padding: 0;
 	}
 	@include device(phone) {
@@ -50,10 +49,14 @@ $desktop: 1200px;
 	}
 
 	.toys-question {
+		color: #1c1d1f I !important;
 		padding: 1rem 0 !important;
 		margin: 0 !important;
 		font-size: 34px !important;
 		text-align: center;
+		font-family: "Playfair Display", Sans-serif;
+		font-weight: 600;
+		margin-bottom: 25px !important;
 	}
 
 	.toys-grid {
@@ -502,6 +505,163 @@ $desktop: 1200px;
 
 			&:hover::after {
 				border-color: black transparent transparent transparent;
+			}
+		}
+	}
+
+	.toys-banner-container {
+		position: relative;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		min-height: 470px;
+		z-index: 1;
+
+		@include device(tablet) {
+			min-height: 350px;
+		}
+		@include device(phone) {
+			min-height: 320px;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			height: 470px;
+			width: 100%;
+			right: -40px;
+			bottom: 0;
+			background-image: url("../../assets/img/base.png");
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: right;
+
+			@include device(tablet) {
+				right: -40px;
+				height: 300px;
+			}
+
+			@include device(phone) {
+				opacity: 0.25;
+				height: 100%;
+				bottom: -30px;
+			}
+		}
+
+		&.opened {
+			display: none;
+		}
+
+		.toys-banner-content {
+			position: relative;
+			width: 100%;
+
+			.toys-banner-title {
+				color: #1c1d1f;
+				font-family: "Playfair Display", Sans-serif;
+				font-size: 42px;
+				font-weight: 600;
+				line-height: 52px;
+				max-width: 40%;
+				text-transform: uppercase;
+				margin-bottom: 25px;
+
+				@include device(laptop) {
+					max-width: 30%;
+				}
+
+				@include device(tablet) {
+					font-size: 38px;
+					line-height: 34px;
+					max-width: 60%;
+				}
+
+				@include device(phone) {
+					line-height: 34px;
+					font-size: 32px;
+					max-width: 100%;
+					margin-bottom: 15px;
+				}
+			}
+
+			.toys-banner-tagline {
+				color: #1c1d1f;
+				max-width: 40%;
+				font-family: "Lato", Sans-serif;
+				font-size: 24px;
+				line-height: 28px;
+				margin-bottom: 32px;
+
+				@include device(laptop) {
+					max-width: 40%;
+				}
+
+				@include device(tablet) {
+					max-width: 60%;
+				}
+
+				@include device(phone) {
+					max-width: 85%;
+				}
+			}
+
+			a.toys-start-btn {
+				line-height: 20px;
+				position: relative;
+				font-family: industrybold, "Open Sans Bold", sans-serif;
+				font-weight: 700;
+				font-size: 16px;
+				color: white;
+				letter-spacing: 0.6px;
+				background-color: #f07037;
+				height: 50px !important;
+				border: 0 !important;
+				padding: 18px 32px 18px 48px !important;
+				display: inline-block;
+				text-decoration: none !important;
+				transition: border-color 0.4s;
+				display: inline-flex;
+				align-items: center;
+
+				&:hover {
+					background-color: black;
+					transition: background-color 0.4s;
+				}
+				&:hover::after {
+					border-color: black transparent transparent transparent;
+					transition: border-color 0.4s;
+				}
+				&:active {
+					background-color: rgb(41, 41, 41);
+					transition: background-color 0s;
+				}
+				&:active::after {
+					border-color: rgb(41, 41, 41) transparent transparent
+						transparent;
+					transition: border-color 0s;
+				}
+				&:focus {
+					outline: 0;
+				}
+
+				&::after {
+					position: absolute;
+					content: "";
+					top: 0;
+					left: 100%;
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 50px 33px 0 0;
+					border-color: #f07037 transparent transparent transparent;
+					cursor: pointer;
+				}
+
+				&:hover::after {
+					border-color: black transparent transparent transparent;
+				}
 			}
 		}
 	}

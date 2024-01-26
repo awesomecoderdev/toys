@@ -18,7 +18,7 @@
 </pre>
 <div class="toys-container">
     <?php foreach ($steps as $key => $step) : ?>
-        <h2 class="toys-question" id="question-for-step-<?php echo $step["id"] ?>" data-children="<?php echo isset($step["children"]) ? 1 : 0  ?>" <?php echo $key != 0 ? "style='display:none;'" : "";  ?>><?php echo $step["question"] ?></h2>
+        <h2 class="toys-question" id="question-for-step-<?php echo $step["id"] ?>" data-children="<?php echo isset($step["children"]) ? 1 : 0  ?>" style='display:none;'><?php echo $step["question"] ?></h2>
     <?php endforeach; ?>
     <div class="toys-grid grid-cols">
         <?php foreach ($steps as $key => $step) : ?>
@@ -81,14 +81,21 @@
             <?php endif; ?>
         <?php endforeach; ?>
     </div>
+    <div class="toys-banner-container">
+        <div class="toys-banner-content">
+            <h2 class="toys-banner-title"> Kids Party Decision Maker </h2>
+            <p class="toys-banner-tagline">Let us help you find the best match for your next adventure.</p>
+            <a href="javascript:void(0);" class="toys-start-btn" id="toys-start-btn">
+                <?php echo isset($steps[0]["title"]) ? $steps[0]["title"] : _("Start", "toys") ?>
+                <svg style="height: 18px;width:18px; margin-left:15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
     <div class="toys-flex">
-        <a href="javascript:void(0);" class="toys-start-btn" id="toys-start-btn">
-            <?php echo isset($steps[0]["title"]) ? $steps[0]["title"] : _("Start", "toys") ?>
-            <svg style="height: 18px;width:18px; margin-left:15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-            </svg>
-        </a>
         <a href="javascript:void(0);" class="toys-reset-btn" id="toys-reset-btn" style="display: none;">
             <?php _e("Start Over", "toys") ?>
             <svg style="height: 18px;width:18px; margin-left:15px; transform: rotate(180deg);" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw">
