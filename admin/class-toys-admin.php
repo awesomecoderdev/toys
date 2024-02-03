@@ -150,6 +150,7 @@ class Toys_Admin
 			"data" 			=> $data,
 			"image"			=> AWESOMECODER_URL . "/assets/img/image.svg",
 			"ajaxurl"		=> admin_url("admin-ajax.php?action="),
+			// "duplicate"		=> true
 		));
 
 		if ($hook == "toplevel_page_toys") {

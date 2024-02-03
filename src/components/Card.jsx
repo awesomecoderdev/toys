@@ -33,6 +33,7 @@ import {
 	default_image,
 	endpoint,
 	defaultSteps,
+	canDuplicate,
 } from "@/lib/utils";
 import axios from "axios";
 
@@ -496,7 +497,7 @@ export const Card = ({ tree, step, position, end, setSteps, isFirst }) => {
 								<div className="relative flex space-x-2">
 									{/* awesomecoder.url == "https://wordpress.co.bd" && */}
 
-									{!isFirst && (
+									{!isFirst && canDuplicate && (
 										<svg
 											onClick={(e) =>
 												duplicateDataToLists(e, tree)

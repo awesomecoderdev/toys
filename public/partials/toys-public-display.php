@@ -12,10 +12,6 @@
  * @subpackage Toys/public/partials
  */
 ?>
-<pre>
-    <?php //print_r($steps)
-    ?>
-</pre>
 <div class="toys-container">
     <?php foreach ($steps as $key => $step) : ?>
         <h2 class="toys-question" id="question-for-step-<?php echo $step["id"] ?>" data-children="<?php echo isset($step["children"]) ? 1 : 0  ?>" style='display:none;'><?php echo $step["question"] ?></h2>
